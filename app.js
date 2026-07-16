@@ -221,18 +221,23 @@ const categories = [
       },
       {
         id: "teleoperation",
-        title: "Teleoperation Preview",
+        title: "Teleoperation 설정과 송신",
         useCases: ["UC-028"],
-        summary: "입력 손과 로봇 핸드 모델을 선택해 로컬 변환 Preview와 UDP·feedback 상태를 확인합니다.",
-        covers: ["왼손·오른손 입력 선택", "로봇 핸드 모델 선택", "View mode, 축 표시와 연결 상태"],
-        prerequisites: ["유효한 손 트래킹", "Teleoperation 페이지 열기", "Preview할 입력 손 선택"],
+        summary: "한 손 또는 두 손의 트래킹 데이터를 로봇 핸드 동작으로 변환해 확인하고, 손별로 설정한 UDP Endpoint 또는 ROS 2 Topic으로 송신합니다.",
+        covers: ["한 손·두 손 입력과 Robot View 선택", "로봇 핸드 모델 선택과 동작 확인", "좌우 UDP·ROS Endpoint 저장", "UDP·ROS 송신 시작과 중지"],
+        prerequisites: ["글러브 연결과 유효한 손 트래킹", "수신 프로그램 또는 ROS 2 Subscriber 실행", "사용할 UDP IP·Port 또는 ROS Topic 확인"],
         steps: [
-          ["입력 손 선택", "왼손 또는 오른손 중 유효한 입력을 선택합니다."],
-          ["로봇 핸드 선택", "Gallery에서 사용할 로봇 핸드 모델을 선택하고 적용합니다."],
-          ["상태 검증", "View mode와 축 표시를 조정하며 Pose와 지연 상태를 확인합니다."]
+          ["입력과 화면 모드 선택", "상단의 Teleoperation 페이지를 열고 오른쪽 Teleop 탭에서 Mode를 선택합니다. One Hand에서는 Left 또는 Right 입력과 Current·Wrist Fixed 뷰를 선택합니다. Two Hands에서는 양손 입력 상태가 모두 LIVE인지 확인하고 Dual Robot·Dual Fixed 뷰를 선택합니다. 양손 모드에서는 입력 스켈레톤을 숨기고 좌우 로봇 핸드만 표시합니다.", [
+            { src: "assets/56.%20teleop_onehand.png", alt: "One Hand 모드에서 왼손 입력 스켈레톤과 로봇 핸드 Target이 표시된 Teleoperation 화면", caption: "One Hand를 선택한 뒤 Input Hand에서 Left 또는 Right를 지정합니다. 왼쪽 Input이 LIVE이고 오른쪽 Robot Hand가 TARGET으로 표시되며 실제 손 움직임에 따라 로봇 핸드가 반응하는지 확인합니다." },
+            { src: "assets/57.%20teleop_twohand.png", alt: "Two Hands와 Dual Fixed가 선택되어 좌우 로봇 핸드가 표시된 Teleoperation 화면", caption: "Two Hands에서는 Left Hand와 Right Hand가 모두 LIVE인지 확인한 뒤 Dual Robot 또는 Dual Fixed를 선택합니다. 입력 스켈레톤은 숨겨지고 좌우 로봇 핸드만 각각 표시됩니다." }
+          ]],
+          ["로봇 핸드 선택", "Robot Mesh 영역에서 Open Gallery를 눌러 Robot Hand Gallery를 엽니다. 사용할 모델 카드를 선택해 Preview와 DOF 정보를 확인한 뒤 Apply Selection을 누릅니다. 실제 손을 천천히 움직여 선택한 로봇 핸드가 자연스럽게 반응하는지 확인합니다.", { src: "assets/58.%20hand_gallery.png", alt: "OmniHand와 DG5F-S 및 XHand1을 선택할 수 있는 Robot Hand Gallery", caption: "Robot Hand Gallery에서 OmniHand, DG5F-S 20·15 또는 XHand1 카드를 선택합니다. 오른쪽 Selected details에서 상태와 DOF를 확인하고 Apply Selection을 눌러 적용합니다. None을 선택하면 로봇 핸드 모델이 숨겨집니다." }],
+          ["송신 대상 입력", "Teleoperation Output의 Destination에서 왼손과 오른손에 사용할 UDP host, UDP port와 ROS topic을 각각 입력합니다. UDP host에는 IPv4 주소를, UDP port에는 1~65535 범위의 포트를 입력하고 ROS topic은 /로 시작하도록 입력합니다. 입력을 마친 뒤 아래의 저장 아이콘을 누릅니다.", { src: "assets/59.%20teleop_save_endpoint.png", alt: "Teleoperation Output의 좌우 UDP host와 port 및 ROS topic 입력 영역", caption: "Left hand와 Right hand에 사용할 UDP host·port와 ROS topic을 각각 입력합니다. 아래의 저장 아이콘을 누른 뒤 상단에 Teleoperation output endpoints saved 상태가 표시되는지 확인합니다." }],
+          ["Endpoint 저장 확인", "저장 아이콘을 누른 뒤 Teleoperation Endpoints Saved 팝업이 표시되면 설정이 정상적으로 저장된 것입니다. OK를 눌러 팝업을 닫습니다. One Hand에서는 선택한 손의 설정을 사용하고 Two Hands에서는 왼손과 오른손 설정을 각각 사용합니다.", { src: "assets/60.%20teleop_save_popup.png", alt: "Teleoperation Endpoints Saved 저장 완료 팝업", caption: "Teleoperation endpoints were saved 메시지가 표시되면 저장이 완료된 것입니다. OK를 눌러 작업 화면으로 돌아갑니다." }],
+          ["송신 시작과 중지", "로봇 핸드 동작과 수신 프로그램 준비를 확인한 뒤 UDP Send 또는 ROS Send를 누릅니다. UDP 또는 ROS 2 상태가 Sending으로 바뀌고 설정한 수신 대상에 데이터가 도착하는지 확인합니다. 작업을 마칠 때는 활성화된 UDP Stop 또는 ROS Stop을 누릅니다.", { src: "assets/61.%20send_teleop_udp.png", alt: "UDP Sending 상태와 활성화된 UDP Stop 버튼", caption: "UDP Send를 누르면 상태가 UDP: Sending으로 바뀌고 UDP Stop 버튼이 활성화됩니다. 수신 프로그램에서 데이터 도착을 확인한 뒤 UDP Stop을 눌러 송신을 종료합니다." }]
         ],
-        result: "선택한 입력 손의 움직임이 로봇 핸드 모델에 시각화되고 로컬 입력과 UDP 상태가 표시됩니다.",
-        note: "현재 버전은 원격 target pose와 feedback이 연결되지 않은 Preview입니다. 이 화면만으로 실제 로봇을 제어할 수 있다고 판단하면 안 됩니다."
+        result: "선택한 한 손 또는 두 손의 움직임이 로봇 핸드에 시각화되고, 변환된 데이터가 저장된 UDP Endpoint 또는 ROS 2 Topic으로 전송됩니다.",
+        note: "Teleoperation Output의 UDP 설정은 UDP Streaming 탭의 Endpoint와 별도로 저장됩니다. ROS 송신은 Linux ROS2 빌드에서만 활성화되며 Windows에서는 ROS Topic을 입력하고 저장할 수 있지만 송신 버튼은 사용할 수 없습니다. 기본 UDP Endpoint는 양손 모두 127.0.0.1:5000입니다. 실제 로봇을 연결하기 전에는 비상 정지 수단과 로봇의 안전 범위를 먼저 확인하세요."
       }
     ]
   },
