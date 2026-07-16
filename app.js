@@ -28,14 +28,14 @@ const categories = [
         useCases: ["UC-001"],
         summary: "MOTI Studio를 사용할 PC 환경을 확인하고 프로그램을 설치한 뒤 Hand Metrics 기본 화면까지 정상적으로 실행합니다.",
         covers: ["지원 운영체제와 필수 하드웨어", "설치 파일 실행과 설치 위치", "Hand Metrics 기본 화면과 정상 실행 확인"],
-        prerequisites: ["MOTI Studio 설치 파일", "관리자 권한을 사용할 수 있는 Windows PC", "연결할 장비와 사용 가능한 USB 포트"],
+        prerequisites: ["MOTI Studio 설치 파일", "관리자 권한을 사용할 수 있는 PC", "연결할 장비와 사용 가능한 USB 포트"],
         steps: [
           ["시스템 요구사항 확인", "운영체제, 그래픽 환경과 연결할 장비가 요구사항을 만족하는지 확인합니다."],
           ["프로그램 설치", "설치 파일을 실행하고 안내에 따라 설치를 완료합니다.", { src: "assets/1.%20download.png", alt: "MOTI Studio 설치 프로그램의 추가 작업 선택 화면" }],
           ["첫 실행 확인", "MOTI Studio를 실행해 Hand Metrics 기본 화면과 상단의 Hand Metrics, Live View, Teleoperation 탭이 표시되는지 확인합니다.", { src: "assets/2.%20hand_matrics.png", alt: "MOTI Studio 첫 실행 시 표시되는 Hand Metrics 화면" }]
         ],
         result: "MOTI Studio가 오류 없이 실행되고 Hand Metrics 기본 화면이 표시됩니다.",
-        note: "실행 직후 오류가 발생하면 오류 문구와 로그 위치를 기록한 뒤 문제 해결 문서를 확인하세요."
+        note: "실행 직후 오류가 발생하면 Quester 팀에 문의바랍니다."
       },
       {
         id: "interface-modes",
@@ -413,8 +413,8 @@ function renderHome() {
       <section class="home-hero">
         <div class="hero-copy">
           <span class="eyebrow">MOTI Studio Documentation</span>
-          <h1>처음 연결부터<br>정확한 모션 데이터까지</h1>
-          <p>장비 설정, 캘리브레이션, 실시간 트래킹과 데이터 출력까지 실제 작업 순서에 따라 안내합니다.</p>
+          <h1>Everything You Need to Get Started</h1>
+          <p>장비 설정부터 캘리브레이션, 실시간 트래킹과 데이터 출력까지 전체 사용 과정을 담고 있습니다.</p>
           <div class="hero-actions">
             <a class="button primary" href="${topicHref("installation")}" data-page="installation">가이드 시작하기 ${icon("arrow")}</a>
             <a class="button" href="${topicHref("diagnostics")}" data-page="diagnostics">문제 해결</a>
@@ -423,7 +423,7 @@ function renderHome() {
         <aside class="hero-checklist" aria-label="시작 전 준비물">
           <h2>시작 전 준비</h2>
           <p>첫 트래킹 전에 확인하세요.</p>
-          ${["MOTI Studio가 설치된 Windows PC", "MOTI Glove와 USB 동글", "지원 트래커", "장비를 움직일 수 있는 작업 공간"].map((item) => `<div class="check-item"><span class="check-icon">${icon("check")}</span>${item}</div>`).join("")}
+          ${["MOTI Studio가 설치된 PC", "MOTI Glove와 USB 동글", "지원 트래커", "장비를 움직일 수 있는 작업 공간"].map((item) => `<div class="check-item"><span class="check-icon">${icon("check")}</span>${item}</div>`).join("")}
         </aside>
       </section>
 
