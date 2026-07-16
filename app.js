@@ -41,35 +41,35 @@ const categories = [
         id: "interface-modes",
         title: "화면 구성과 동작 모드",
         useCases: ["UC-002"],
-        summary: "주요 페이지를 이해하고 Live View에서 작업 목적에 맞게 Camera mode 또는 Tracker mode를 선택합니다.",
-        covers: ["상단 페이지 탭과 Live View Inspector", "Live View 하단 Timeline", "Camera mode에서 비활성화되는 Tracker 작업"],
-        prerequisites: ["MOTI Studio 실행", "사용할 추적 방식 결정", "Camera 또는 Tracker 장비 준비"],
+        summary: "주요 페이지를 이해하고 현재 지원되는 Tracker mode에서 작업을 시작합니다.",
+        covers: ["상단 페이지 탭과 Live View Inspector", "Live View 하단 Timeline", "Tracker mode 작업 흐름"],
+        prerequisites: ["MOTI Studio 실행", "Tracker mode 확인", "사용할 추적 장비 준비"],
         steps: [
           ["Live View 열기", "상단 탭에서 Live View로 이동해 3D View, Inspector와 하단 Timeline의 위치를 확인합니다.", [
             { src: "assets/3.%20live_view.png", alt: "MOTI Studio Live View 화면", caption: "Live View에서는 추적 장비와 손 모델을 3D 공간에서 확인하고 화면 구도를 조작할 수 있습니다." },
-            { src: "assets/4.%20task_panel.png", alt: "Live View 오른쪽 작업 패널", caption: "오른쪽 Task Panel에서 장비, 캘리브레이션, View, Teleoperation, UDP와 Debug 상태를 탭별로 확인합니다." },
+            { src: "assets/4.%20task_panel.png", alt: "Live View 오른쪽 작업 패널", caption: "오른쪽 Task Panel에서 장비, 캘리브레이션, View, Teleoperation과 UDP 상태를 탭별로 확인합니다. 개발 빌드에만 표시되는 Debug 탭은 배포판에 포함되지 않습니다." },
             { src: "assets/5.%20timeline.png", alt: "Live View 하단 Timeline", caption: "하단 Timeline에서 동작을 녹화하고 프레임 탐색, 재생, 저장과 CSV Export를 실행합니다." }
           ]],
-          ["모드 비교", "Tracker mode는 바인딩·글러브 캘리브레이션·손 트래킹·Capture를 사용하고, Camera mode는 이 단계를 비활성화하고 카메라 Preview 흐름을 사용합니다."],
-          ["동작 모드 선택", "Live View의 Operation Mode에서 Camera 또는 Tracker를 선택합니다.", { src: "assets/6.%20tracker_mode.png", alt: "Tracker mode 선택 영역", caption: "Tracker mode에서는 Binding과 GHOST Cal을 사용해 추적 장비 바인딩과 글러브 캘리브레이션을 진행합니다." }]
+          ["모드 확인", "현재 지원되는 동작 모드는 Tracker mode입니다. Camera mode는 아직 구현되지 않았으므로 사용하지 않습니다."],
+          ["Tracker mode 선택", "Live View의 Operation Mode가 Tracker mode인지 확인합니다.", { src: "assets/6.%20tracker_mode.png", alt: "Tracker mode 선택 영역", caption: "Tracker mode에서는 Binding과 Calibration을 사용해 추적 장비 바인딩과 글러브 캘리브레이션을 진행합니다. Camera mode는 현재 미구현 기능입니다." }]
         ],
-        result: "선택한 모드에 맞춰 사용할 수 있는 작업 단계와 장비 상태가 표시됩니다.",
-        note: "Tracker가 기본 모드입니다. Camera mode에서는 글러브 바인딩, 캘리브레이션, 트래킹과 Timeline Capture를 사용할 수 없습니다."
+        result: "Tracker mode에서 바인딩, 캘리브레이션, 트래킹과 Timeline 작업을 진행할 수 있습니다.",
+        note: "Camera mode는 현재 미구현 기능입니다. 정식 지원 전까지 기본값인 Tracker mode를 사용하세요."
       }
     ]
   },
   {
     id: "devices",
     title: "장비 연결",
-    description: "카메라와 추적 장비 준비",
+    description: "추적 장비 준비와 상태 확인",
     icon: "cable",
     topics: [
       {
         id: "device-discovery",
-        title: "장비 검색과 상태 확인",
-        useCases: ["UC-003", "UC-006", "UC-007", "UC-023"],
-        summary: "연결된 글러브와 OpenVR 장비의 자동 인식 상태를 확인하고, 필요할 때 카메라 목록만 수동으로 갱신합니다.",
-        covers: ["OpenVR 장비 자동 갱신", "글러브 자동 연결·재시도", "카메라 목록 수동 Refresh"],
+        title: "장비 연결과 상태 확인",
+        useCases: ["UC-006", "UC-007", "UC-023"],
+        summary: "연결된 글러브와 OpenVR 추적 장비가 자동으로 인식되는지 확인합니다.",
+        covers: ["OpenVR 장비 자동 갱신", "글러브 자동 연결·재시도", "장비별 연결·추적 상태 확인"],
         prerequisites: ["사용할 장비의 전원 켜기", "USB 동글과 유선 장비 연결", "트래커 Runtime 실행"],
         steps: [
           ["장비 연결", "글러브 동글을 연결하고 OpenVR Runtime과 사용할 추적 장비를 준비합니다.", [
@@ -77,25 +77,23 @@ const categories = [
             { src: "assets/8.%20wear_glove.png", alt: "MOTI 글러브를 손에 착용한 모습", caption: "손가락과 손목 스트랩이 느슨하지 않도록 글러브를 밀착해 착용하고 센서 모듈이 안정적으로 고정되었는지 확인합니다." }
           ]],
           ["자동 인식 확인", "트래커, 베이스 스테이션, HMD, 컨트롤러와 글러브가 자동으로 목록에 나타나는지 확인합니다.", { src: "assets/9.%20check_device.png", alt: "Task Panel의 Devices 탭에 인식된 장비 목록", caption: "Devices 탭에서 장비 종류별 인식 수, ready·pose 상태와 배터리 잔량을 확인합니다. 사용할 글러브와 추적 장비가 모두 목록에 표시되어야 합니다." }],
-          ["카메라만 갱신", "새 카메라가 보이지 않을 때 Camera mode의 Refresh를 사용하고 장비별 연결·추적 상태를 확인합니다."]
+          ["장비 상태 확인", "Devices 탭에서 사용할 글러브와 추적 장비의 연결·추적 상태를 확인합니다."]
         ],
         result: "사용할 모든 장비가 목록에 나타나고 준비 상태를 확인할 수 있습니다.",
-        note: "모든 장비를 한 번에 갱신하는 공통 버튼은 없습니다. OpenVR 장비와 글러브는 자동 갱신됩니다."
+        note: "모든 장비를 한 번에 갱신하는 공통 버튼은 없습니다. OpenVR 장비와 글러브는 자동 갱신됩니다. Camera mode는 현재 미구현입니다."
       },
       {
         id: "camera",
-        title: "카메라 연결과 Preview",
-        useCases: ["UC-004", "UC-005"],
-        summary: "카메라를 연결하거나 해제하고 영상 Preview로 입력 상태를 확인합니다.",
-        covers: ["검색된 카메라 식별", "카메라 연결과 해제", "Preview 영상과 상태 확인"],
-        prerequisites: ["지원 카메라 연결", "Camera mode 선택", "다른 프로그램의 카메라 점유 해제"],
+        title: "카메라 연결과 Preview (미구현)",
+        useCases: ["UC-003", "UC-004", "UC-005"],
+        summary: "Camera mode와 카메라 연결·Preview 기능은 현재 제공되지 않습니다.",
+        covers: ["Camera mode 구현 상태", "카메라 목록 갱신", "카메라 연결과 Preview"],
+        prerequisites: ["현재 사용할 수 없음"],
         steps: [
-          ["카메라 검색", "장비 목록을 갱신하고 사용할 카메라를 식별합니다."],
-          ["카메라 연결", "목록에서 카메라를 선택해 연결을 시작합니다."],
-          ["Preview 확인", "영상이 끊김 없이 표시되는지 확인하고 필요하면 연결을 해제합니다."]
+          ["구현 상태 확인", "Camera mode, 카메라 목록 갱신, 연결·해제와 영상 Preview는 현재 미구현 기능입니다."]
         ],
-        result: "선택한 카메라 영상이 Preview에 표시되고 연결 상태가 Ready로 확인됩니다.",
-        note: "Preview가 검게 보이면 다른 애플리케이션이 카메라를 사용 중인지 확인하세요."
+        result: "현재 배포판에서는 Camera mode를 사용할 수 없습니다.",
+        note: "기능이 정식으로 제공된 이후 실제 연결 절차와 Preview 화면을 업데이트할 예정입니다."
       }
     ]
   },
@@ -331,48 +329,48 @@ const categories = [
         id: "settings",
         title: "View Settings와 성능 설정",
         useCases: ["UC-022"],
-        summary: "Viewport Settings에서 화면과 언어를 조정하고 Live View의 Debug 탭에서 성능을 설정합니다.",
+        summary: "Viewport Settings에서 화면과 언어를 조정하고 Task Panel의 View 탭에서 렌더링 성능을 설정합니다.",
         covers: ["Grid·Actor와 장비 표시", "글러브 스켈레톤과 실험용 메쉬", "이동·회전·확대 감도와 성능 설정"],
         prerequisites: ["MOTI Studio 실행", "조정할 View 또는 성능 문제 파악", "현재 설정값 확인"],
         steps: [
-          ["Settings 열기", "3D View의 Settings를 열고 Scene, Controls와 Language 영역을 확인합니다."],
-          ["화면과 조작 조정", "장면 표시와 키보드·마우스 감도를 작업 환경에 맞춥니다. Glove Render는 기본 Skeleton을 사용하며 Mesh와 Both는 실험용 표시 옵션입니다."],
-          ["언어 설정", "Viewport Settings의 Language에서 English 또는 한국어를 선택합니다."],
-          ["성능 설정", "Live View 우측 Debug 탭에서 FPS/Tracking Overlay, VSync, Max FPS와 Performance log를 조정합니다."]
+          ["Settings 열기", "화면 상단의 Settings 버튼을 눌러 Scene, View Controls, Glove Render와 Language 설정 창을 엽니다.", { src: "assets/50.%20setting.png", alt: "MOTI Studio의 Viewport Settings 창", caption: "상단의 톱니바퀴 버튼을 누르면 Viewport Settings가 열립니다. 이 창에서 장면 표시, 카메라 조작 감도, 글러브 표현 방식과 언어를 설정할 수 있습니다." }],
+          ["화면과 조작 조정", "장면 표시와 키보드·마우스 감도를 작업 환경에 맞춥니다. Glove Render는 기본 Skeleton을 사용하며 Mesh와 Both는 실험용 표시 옵션입니다.", [
+            { src: "assets/51.%20view_control.png", alt: "Viewport Settings의 View Controls 설정", caption: "Keyboard Move, Mouse Pan, Mouse Rotate와 Mouse Zoom 값을 조정해 3D 화면의 이동·회전·확대 감도를 맞춥니다. 아래 초기화 버튼을 누르면 기본값으로 되돌릴 수 있습니다." },
+            { src: "assets/52.%20glove_render_setting.png", alt: "Viewport Settings의 Glove Render 설정", caption: "Glove Render에서 Skeleton, Mesh 또는 Both를 선택합니다. 일반 사용에는 기본값인 Skeleton을 권장하며 Mesh와 Both는 미완성 실험 기능입니다." }
+          ]],
+          ["언어 설정", "Viewport Settings의 Language에서 English 또는 한국어를 선택합니다.", { src: "assets/53.%20language_setting.png", alt: "Viewport Settings의 Language 선택 항목", caption: "Language 목록에서 사용할 UI 언어를 선택합니다. 현재 적용된 언어는 아래 Current UI language에서 확인할 수 있습니다." }],
+          ["성능 설정", "Task Panel의 View 탭에서 Performance 영역을 찾아 VSync와 Max FPS를 조정합니다.", { src: "assets/54.%20perf_setting.png", alt: "Task Panel View 탭의 Performance 설정", caption: "우측 Task Panel에서 View 탭을 열고 아래 Performance 영역에서 VSync를 켜거나 끄고 Max FPS 제한값을 설정합니다." }]
         ],
         result: "화면 표시와 조작 반응이 작업 환경에 맞게 적용되고 선택한 언어로 UI가 표시됩니다.",
-        note: "손 메쉬는 미완성 실험 기능이므로 일반 사용에서는 Skeleton을 유지하세요. 언어는 앱을 다시 실행하면 English로 초기화되며, 성능 설정은 Viewport Settings가 아니라 Debug 탭에 있습니다."
+        note: "손 메쉬는 미완성 실험 기능이므로 일반 사용에서는 Skeleton을 유지하세요. 언어는 앱을 다시 실행하면 English로 초기화됩니다. FPS/Tracking Overlay와 Performance log는 개발 빌드 전용이며 배포판에는 표시되지 않습니다."
       },
       {
         id: "state-restore",
-        title: "종료와 작업 상태 복원",
+        title: "프로그램 종료와 재실행",
         useCases: ["UC-021"],
-        summary: "프로그램을 정상 종료하고 재실행했을 때 유지되는 설정과 초기화되는 session 상태를 구분합니다.",
-        covers: ["정상 종료와 확인 창", "유지되는 창·View·바인딩·저장 경로", "초기화되는 페이지·모드·언어"],
+        summary: "진행 중인 작업을 정리하고 프로그램을 정상 종료한 뒤 재실행 상태를 확인합니다.",
+        covers: ["진행 작업 정리", "정상 종료와 확인 창", "재실행 후 주요 설정 확인"],
         prerequisites: ["저장할 설정과 바인딩 확인", "진행 중인 녹화 정리", "Streaming과 트래킹 상태 확인"],
         steps: [
           ["진행 작업 정리", "녹화와 Streaming을 먼저 종료한 뒤 앱을 닫습니다."],
-          ["프로그램 종료", "종료 확인 창을 통해 MOTI Studio를 정상적으로 닫습니다."],
-          ["상태 복원 확인", "재실행 후 창, Live View 카메라, 바인딩, 프로필, 객체 이름, 부착 offset, Timeline 경로와 UDP 설정을 확인합니다."],
-          ["초기화 상태 확인", "현재 페이지는 Hand Metrics, 동작 모드는 Tracker, 언어는 English로 초기화되는지 확인합니다."]
+          ["프로그램 종료", "창의 닫기 버튼을 누른 뒤 종료 확인 창에서 Exit를 선택해 MOTI Studio를 정상적으로 닫습니다.", { src: "assets/55.%20exit_popup.png", alt: "MOTI Studio 종료 확인 팝업", caption: "종료 확인 팝업이 화면 중앙에 표시되면 Tracking과 Capture 화면이 함께 닫히는지 확인하고 Exit를 누릅니다. 작업을 계속하려면 Cancel 또는 우측 상단의 닫기 버튼을 선택합니다." }],
+          ["재실행 확인", "MOTI Studio를 다시 실행해 창, View 설정, 바인딩과 저장 경로가 유지되는지 확인합니다. 현재 페이지, 동작 모드와 언어 등의 session 상태는 기본값으로 시작합니다."]
         ],
-        result: "영구 저장되는 설정은 다시 사용할 수 있고 session-only 화면 상태는 기본값으로 시작합니다.",
-        note: "현재 페이지, Camera/Tracker 모드, 언어, Debug/Settings 열림 상태는 복원 대상이 아닙니다."
+        result: "프로그램이 정상 종료되고, 재실행 후 저장된 주요 설정을 다시 사용할 수 있습니다.",
+        note: "현재 페이지, Camera/Tracker 모드, 언어와 Settings 열림 상태는 복원 대상이 아닙니다."
       },
       {
         id: "diagnostics",
-        title: "로그, 진단과 오류 보고",
+        title: "로그, 진단과 오류 보고 (미구현)",
         useCases: ["UC-020", "UC-032"],
-        summary: "Live View Debug 정보를 확인하고 연결 오류 popup이 제공하는 문제 보고서 초안을 엽니다.",
-        covers: ["Runtime·workflow gate·성능 정보", "Debug 탭 사용 중 진단 로그", "연결 오류 보고서 파일·폴더 열기"],
-        prerequisites: ["오류 메시지 또는 재현 상황 기록", "로그 폴더 접근", "문제가 발생한 장비 정보"],
+        summary: "이 항목은 향후 제공 예정인 진단 및 오류 보고 기능으로, 현재 배포판에서는 사용할 수 없습니다.",
+        covers: ["향후 제공 예정인 진단 정보", "오류 보고서 생성과 확인", "기술 지원용 자료 준비"],
+        prerequisites: ["현재 미구현 기능으로 별도의 사전 준비가 필요하지 않습니다."],
         steps: [
-          ["상황 기록", "오류가 발생한 작업 단계, 장비와 화면 메시지를 기록합니다."],
-          ["진단 자료 확인", "Live View 우측 Debug 탭에서 Runtime, workflow gate, FPS와 tracking latency를 확인합니다."],
-          ["연결 오류 보고서 열기", "연결 오류 popup에 Incident report draft가 표시되면 Open Report 또는 Open Folder를 사용해 자료를 확인합니다."]
+          ["구현 상태 확인", "로그 수집, 진단 정보 확인과 오류 보고서 생성 기능은 현재 배포판에서 제공되지 않습니다. 내부 진단용 Debug 탭은 개발 빌드에만 포함됩니다."]
         ],
-        result: "연결 오류가 발생한 경우 생성된 보고서 초안과 폴더를 열어 기술 지원용 자료를 준비할 수 있습니다.",
-        note: "Incident Report는 언제든 실행하는 일반 메뉴가 아닙니다. 연결 오류 popup이 보고서 초안을 제공할 때만 열 수 있습니다."
+        result: "현재 버전에서는 진단 보고서나 오류 보고서 파일이 생성되지 않습니다.",
+        note: "배포판 기준 미구현 기능입니다. 기능이 정식으로 제공된 이후 실제 사용 절차와 화면을 업데이트할 예정입니다."
       }
     ]
   }
@@ -420,7 +418,7 @@ function renderHome() {
         <aside class="hero-checklist" aria-label="시작 전 준비물">
           <h2>시작 전 준비</h2>
           <p>첫 트래킹 전에 확인하세요.</p>
-          ${["MOTI Studio가 설치된 Windows PC", "MOTI Glove와 USB 동글", "트래커 또는 지원 카메라", "장비를 움직일 수 있는 작업 공간"].map((item) => `<div class="check-item"><span class="check-icon">${icon("check")}</span>${item}</div>`).join("")}
+          ${["MOTI Studio가 설치된 Windows PC", "MOTI Glove와 USB 동글", "지원 트래커", "장비를 움직일 수 있는 작업 공간"].map((item) => `<div class="check-item"><span class="check-icon">${icon("check")}</span>${item}</div>`).join("")}
         </aside>
       </section>
 
