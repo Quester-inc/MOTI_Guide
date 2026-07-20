@@ -237,6 +237,8 @@ const categories = [
           ["송신 시작과 중지", "로봇 핸드 동작과 수신 프로그램 준비를 확인한 뒤 UDP Send 또는 ROS Send를 누릅니다. UDP 또는 ROS 2 상태가 Sending으로 바뀌고 설정한 수신 대상에 데이터가 도착하는지 확인합니다. 작업을 마칠 때는 활성화된 UDP Stop 또는 ROS Stop을 누릅니다.", { src: "assets/61.%20send_teleop_udp.png", alt: "UDP Sending 상태와 활성화된 UDP Stop 버튼", caption: "UDP Send를 누르면 상태가 UDP: Sending으로 바뀌고 UDP Stop 버튼이 활성화됩니다. 수신 프로그램에서 데이터 도착을 확인한 뒤 UDP Stop을 눌러 송신을 종료합니다." }]
         ],
         result: "선택한 한 손 또는 두 손의 움직임이 로봇 핸드에 시각화되고, 변환된 데이터가 저장된 UDP Endpoint 또는 ROS 2 Topic으로 전송됩니다.",
+        packetFormatTitle: "데이터 패킷 형식",
+        packetFormatBody: "<strong><br>기본 형식</strong><br>UDP 송신 데이터는 little-endian 바이너리 패킷이며,<br><b>\"MQP1\" | sequence_id | count | side | qpos[0] ... qpos[N-1]</b> 순서로 구성됩니다.<br><br><strong>필드 의미</strong><br>\"MQP1\"은 4바이트 헤더입니다.<br>sequence_id와 count는 uint32, side와 qpos는 float32입니다.<br>count는 side를 포함한 전체 float 개수이므로 qpos 개수 + 1 값을 사용합니다.<br>side는 <b>left=0.0, right=1.0</b>입니다.<br>qpos 순서는 선택한 로봇 핸드 모델의 <b>URDF</b>에서 <b>mimic이 아닌 revolute joint 순서</b>를 따릅니다.<br><br><strong>OmniHand 예시</strong><br>OmniHand는 qpos가 10개이므로 count는 11이고 총 패킷 크기는 56 bytes입니다.<br><br>q0 = L_thumb_roll_joint<br>q1 = L_thumb_abad_joint<br>q2 = L_thumb_mcp_joint<br><br>q3 = L_index_abad_joint<br>q4 = L_index_pip_joint<br><br>q5 = L_middle_pip_joint<br><br>q6 = L_ring_abad_joint<br>q7 = L_ring_pip_joint<br><br>q8 = L_pinky_abad_joint<br>q9 = L_pinky_pip_joint<br><br>왼손은 L_, 오른손은 R_ 접두사를 붙여 같은 순서를 사용합니다.",
         note: "Teleoperation Output의 UDP 설정은 UDP Streaming 탭의 Endpoint와 별도로 저장됩니다. ROS 송신은 Linux ROS2 빌드에서만 활성화되며 Windows에서는 ROS Topic을 입력하고 저장할 수 있지만 송신 버튼은 사용할 수 없습니다. 기본 UDP Endpoint는 양손 모두 127.0.0.1:5000입니다. 실제 로봇을 연결하기 전에는 비상 정지 수단과 로봇의 안전 범위를 먼저 확인하세요."
       }
     ]
@@ -260,6 +262,8 @@ const categories = [
           ["Streaming 실행", "Streaming을 시작하고 수신 프로그램에서 데이터 도착을 확인합니다.", { src: "assets/38.%20udp_send.png", alt: "UDP Streaming이 실행 중인 화면", caption: "시작 버튼을 누른 뒤 상단과 UDP 탭의 상태가 초록색 streaming으로 바뀌는지 확인하고, 수신 프로그램에서 좌우 손 데이터가 도착하는지 점검합니다." }]
         ],
         result: "좌우 손 데이터가 설정한 UDP Endpoint로 전송되고 상태가 Streaming으로 표시됩니다.",
+        packetFormatTitle: "데이터 패킷 형식",
+        packetFormatBody: "<br><strong>기본 형식</strong><br>UDP 송신 데이터는 little-endian 바이너리 패킷이며,<br><b>sequence_id | count | body ... | CRC32</b> 순서로 구성됩니다.<br><br><strong>필드 의미</strong><br>sequence_id는 uint32(byte 0~3)이며 사용하지 않으면 건너뜁니다.<br>count는 uint8(byte 4)이며 body 개수를 의미합니다.<br>body 데이터는 한 개당 32 bytes이고, 마지막 4 bytes는 CRC32이며 사용하지 않으면 무시할 수 있습니다.<br><br><strong>Body 데이터 구성</strong><br>body 시작 + 0 : body_id (int32)<br>body 시작 + 4 : position.x (float32)<br>body 시작 + 8 : position.y (float32)<br>body 시작 + 12 : position.z (float32)<br>body 시작 + 16 : quaternion.x (float32)<br>body 시작 + 20 : quaternion.y (float32)<br>body 시작 + 24 : quaternion.z (float32)<br>body 시작 + 28 : quaternion.w (float32)<br><br><strong>Body Index / 명칭</strong><br>0: Wrist<br>1: Thumb_CMC<br>2: Index_MCP<br>3: Middle_MCP<br>4: Ring_MCP<br>5: Pinky_MCP<br>6: Thumb_MCP<br>7: Index_PIP<br>8: Middle_PIP<br>9: Ring_PIP<br>10: Pinky_PIP<br>11: Thumb_IP<br>12: Index_DIP<br>13: Middle_DIP<br>14: Ring_DIP<br>15: Pinky_DIP<br><br><strong>좌우 구분</strong><br>moti_udp 패킷 내부에는 side 값이 없습니다.<br>좌우는 수신 포트로 구분하며, 왼손은 <b>UDP port 9000</b>, 오른손은 <b>UDP port 9002</b>가 기본으로 설정되어 있습니다.",
         note: "주소를 변경했다면 Streaming을 중지한 뒤 다시 시작해야 새 설정이 적용됩니다."
       },
       {
@@ -483,6 +487,7 @@ function renderDocument(topic) {
             return `<li class="step-card"><strong>${step[0]}</strong><span>${step[1]}</span>${stepImages.length ? `<div class="step-images">${stepImages.map((image) => `<figure class="step-figure"><img class="step-image${image.compact ? " step-image-compact" : ""}" src="${image.src}" alt="${image.alt}" loading="lazy">${image.caption ? `<figcaption>${image.caption}</figcaption>` : ""}</figure>`).join("")}</div>` : ""}</li>`;
           }).join("")}</ol></section>
           <section class="doc-section" id="result"><h2>정상 결과</h2><div class="callout"><span class="callout-icon">${icon("check")}</span><div><strong>완료 확인</strong><p>${topic.result}</p></div></div></section>
+          ${topic.packetFormatTitle ? `<section class="doc-section" id="packet-format"><h2>${topic.packetFormatTitle}</h2><div class="callout"><span class="callout-icon">${icon("check")}</span><div><strong>${topic.packetFormatTitle}</strong><p>${topic.packetFormatBody}</p></div></div></section>` : ""}
           <section class="doc-section" id="note"><h2>주의사항</h2><div class="callout warning"><span class="callout-icon">${icon("alert")}</span><div><strong>작업 전 확인</strong><p>${topic.note}</p></div></div></section>
 
           <nav class="document-footer" aria-label="이전 및 다음 문서">
@@ -492,7 +497,7 @@ function renderDocument(topic) {
         </article>
         <aside class="page-toc" aria-label="이 페이지의 목차">
           <h2>이 페이지에서</h2>
-          <a href="#overview">다룰 내용</a><a href="#prepare">사전 준비</a><a href="#steps">사용 방법</a><a href="#result">정상 결과</a><a href="#note">주의사항</a>
+          <a href="#overview">다룰 내용</a><a href="#prepare">사전 준비</a><a href="#steps">사용 방법</a><a href="#result">정상 결과</a>${topic.packetFormatTitle ? `<a href="#packet-format">데이터 패킷 형식</a>` : ""}<a href="#note">주의사항</a>
         </aside>
       </div>
     </div>
