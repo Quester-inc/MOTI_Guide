@@ -249,6 +249,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .document-main h1 { margin: 0 0 16px; color: var(--gray-900); font-size: clamp(32px, 4vw, 42px); line-height: 1.22; letter-spacing: -.04em; }
 .document-lead { margin: 0 0 20px; color: var(--gray-500); font-size: 16px; line-height: 1.8; }
 .uc-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 40px; }
+.uc-list:empty { display: none; }
 .uc-badge { padding: 4px 8px; border: 1px solid var(--blue-100); border-radius: 999px; color: var(--blue-700); background: var(--blue-50); font-family: "Cascadia Code", Consolas, monospace; font-size: 9px; font-weight: 700; }
 
 .doc-section { scroll-margin-top: calc(var(--header-height) + 24px); margin-top: 44px; }
@@ -258,6 +259,16 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .content-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
 .content-list li { position: relative; padding-left: 19px; color: var(--gray-600); }
 .content-list li::before { content: ""; position: absolute; left: 1px; top: .72em; width: 5px; height: 5px; border-radius: 50%; background: var(--blue-500); }
+
+.license-table-wrap { overflow-x: auto; border: 1px solid var(--gray-200); border-radius: var(--radius-md); }
+.license-table { width: 100%; min-width: 1080px; border-collapse: collapse; background: var(--white); font-size: 12px; line-height: 1.55; }
+.license-table th, .license-table td { padding: 12px 14px; border-bottom: 1px solid var(--gray-100); text-align: left; vertical-align: top; }
+.license-table th { color: var(--gray-600); background: var(--gray-50); font-size: 10px; font-weight: 800; letter-spacing: .03em; }
+.license-table tr:last-child td { border-bottom: 0; }
+.license-table td { color: var(--gray-500); }
+.license-table td:first-child { color: var(--gray-800); font-weight: 700; white-space: nowrap; }
+.license-table a { color: var(--blue-700); text-decoration: underline; text-decoration-color: var(--blue-200); text-underline-offset: 3px; }
+.license-status { display: inline-flex; padding: 3px 7px; border: 1px solid var(--gray-200); border-radius: 999px; color: var(--gray-600); background: var(--gray-50); white-space: nowrap; font-size: 10px; font-weight: 700; }
 
 .steps { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; counter-reset: guide-step; }
 .step-card { position: relative; min-height: 92px; padding: 19px 20px 19px 62px; border: 1px solid var(--gray-200); border-radius: var(--radius-md); background: var(--white); counter-increment: guide-step; }
@@ -277,6 +288,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .callout-icon svg { width: 16px; }
 .callout strong { display: block; margin-bottom: 2px; color: var(--gray-800); font-size: 12px; }
 .callout p { margin: 0; color: var(--gray-600); font-size: 12px; }
+.document-alert { align-items: flex-start; margin: 28px 0 44px; }
 
 .page-toc { position: sticky; top: calc(var(--header-height) + 32px); padding-left: 18px; border-left: 1px solid var(--gray-200); }
 .page-toc h2 { margin: 0 0 10px; color: var(--gray-400); font-size: 10px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }

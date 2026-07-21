@@ -17,6 +17,40 @@ const icon = (name, className = "") => `<svg class="${className}" aria-hidden="t
 
 const categories = [
   {
+    id: "safety",
+    title: "안전 및 주의사항",
+    description: "사용 전 반드시 확인",
+    icon: "alert",
+    topics: [
+      {
+        id: "safety-guidelines",
+        title: "안전 지침",
+        useCases: [],
+        summary: "MOTI 제품의 손상과 오작동을 예방하고 안전하게 착용·충전·보관하기 위한 필수 지침입니다.",
+        hideOverview: true,
+        prepareTitle: "사용 전 확인",
+        resultTitle: "사용을 중단해야 하는 경우",
+        resultLabel: "사용 중단 기준",
+        noteTitle: "추가 주의사항",
+        noteLabel: "제품 안내",
+        criticalWarningLabel: "이상이 있으면 즉시 사용을 중단하십시오",
+        criticalWarning: "제품이 비정상적으로 뜨겁거나 부풀고, 연기·이상한 냄새·액체 누출·소음이 발생하거나 제품과 충전 포트가 물에 젖은 경우 즉시 사용과 충전을 중단하고 전원을 끄십시오. 손상된 제품을 다시 충전하거나 임의로 분해하지 마십시오.",
+        stepsTitle: "안전 수칙",
+        covers: ["사용 전 제품과 작업 공간 점검", "안전한 착용과 사용 방법", "충전·보관·폐기 및 이상 발생 시 조치"],
+        prerequisites: ["제품을 사용하거나 충전하기 전에 본 지침 전체 읽기", "제품 본체, 글러브 원단, 손목 고정부와 USB Type-C 포트 상태 확인", "주변 사람이나 물체와 충돌하지 않는 작업 공간 확보"],
+        steps: [
+          ["사용 전 점검", "제품 본체, 글러브 원단, 손목 고정부와 USB Type-C 포트에 손상이 없는지 확인합니다. 포트와 연결 단자에 이물질이나 습기가 없어야 하며, 지정된 글러브·동글·트래커와 부속품만 사용하십시오. 연결 장치를 탈착할 때는 먼저 제품 전원을 끄십시오."],
+          ["착용 및 사용", "손목 고정부를 지나치게 조이지 마십시오. 손 저림, 통증 또는 피부색 변화가 나타나면 즉시 제품을 벗으십시오. 제품을 물, 습기, 직사광선, 화기 또는 고온 환경에 노출시키지 말고, 착용 중 불편함이나 어지러움이 발생하면 사용을 중단하고 휴식을 취하십시오."],
+          ["사용 공간과 충돌 예방", "사용하기 전에 주변 사람, 장애물과 케이블을 정리하고 손과 팔을 움직일 수 있는 충분한 공간을 확보하십시오. 트래킹 중에는 주변 물체와 충돌하거나 케이블에 걸리지 않도록 주의하고, 장비 상태를 확인할 때는 움직임을 멈춘 뒤 화면을 확인하십시오."],
+          ["충전과 배터리", "상태가 양호한 일반 USB Type-C 케이블과 MOTI 제품의 정격에 맞는 전원 공급 장치를 사용하십시오. 별도의 전용 충전 케이블은 필요하지 않습니다. 충전 중인 제품을 장시간 방치하거나 불에 타기 쉬운 물체 위와 밀폐된 공간에서 충전하지 마십시오. 제품이 젖었거나 손상된 상태에서는 충전하지 말고, 충전이 끝나면 케이블을 분리하십시오."],
+          ["보관 및 폐기", "직사광선과 고온·다습한 장소를 피해 어린이나 반려동물이 만질 수 없는 곳에 보관하십시오. 장기간 사용하지 않을 때는 배터리가 완전히 방전되지 않도록 정기적으로 상태를 확인하고, 제품과 배터리는 지역 전자제품 및 배터리 수거 규정에 따라 지정된 장소에 폐기하십시오."]
+        ],
+        result: "사용 전 점검이 완료되고 제품과 작업 공간에 손상, 습기, 과열 또는 충돌 위험이 없어야 합니다. 하나라도 이상이 있으면 제품을 사용하지 마십시오.",
+        note: "제품 라벨과 함께 제공된 MOTI 공식 설명서의 정격 전압, 사용·충전 온도 및 보관 조건을 우선하십시오. 이상이 발견되면 제품을 임의로 수리하거나 분해하지 말고 Quester 지원팀에 문의하십시오."
+      }
+    ]
+  },
+  {
     id: "getting-started",
     title: "시작하기",
     description: "설치부터 화면 이해까지",
@@ -42,6 +76,12 @@ const categories = [
         title: "화면 구성과 동작 모드",
         useCases: ["UC-002"],
         summary: "주요 페이지를 이해하고 현재 지원되는 Tracker mode에서 작업을 시작합니다.",
+        hideOverview: true,
+        hidePrerequisites: true,
+        hideResult: true,
+        stepsTitle: "화면 및 동작 모드",
+        noteTitle: "지원 상태",
+        noteLabel: "현재 제공 범위",
         covers: ["상단 페이지 탭과 Live View Inspector", "Live View 하단 Timeline", "Tracker mode 작업 흐름"],
         prerequisites: ["MOTI Studio 실행", "Tracker mode 확인", "사용할 추적 장비 준비"],
         steps: [
@@ -74,7 +114,7 @@ const categories = [
         steps: [
           ["장비 연결", "글러브 동글을 연결하고 OpenVR Runtime과 사용할 추적 장비를 준비합니다.", [
             { src: "assets/7.%20connect_dongle.png?v=20260716-2", alt: "PC USB 포트에 글러브 동글을 연결하는 모습", caption: "글러브 동글을 PC의 사용 가능한 USB 포트에 끝까지 연결합니다." },
-            { src: "assets/8.%20wear_glove.png", alt: "MOTI 글러브를 손에 착용한 모습", caption: "손가락과 손목 스트랩이 느슨하지 않도록 글러브를 밀착해 착용하고 센서 모듈이 안정적으로 고정되었는지 확인합니다." }
+            { src: "assets/8.%20wear_glove.png", alt: "MOTI 글러브를 손에 착용한 모습", caption: "손가락 부분과 손목 고정부가 느슨하지 않도록 글러브를 밀착해 착용하고 센서 모듈이 안정적으로 고정되었는지 확인합니다." }
           ]],
           ["자동 인식 확인", "트래커, 베이스 스테이션, HMD, 컨트롤러와 글러브가 자동으로 목록에 나타나는지 확인합니다.", { src: "assets/9.%20check_device.png", alt: "Task Panel의 Devices 탭에 인식된 장비 목록", caption: "Devices 탭에서 장비 종류별 인식 수, ready·pose 상태와 배터리 잔량을 확인합니다. 사용할 글러브와 추적 장비가 모두 목록에 표시되어야 합니다." }],
           ["장비 상태 확인", "Devices 탭에서 사용할 글러브와 추적 장비의 연결·추적 상태를 확인합니다."]
@@ -373,6 +413,12 @@ const categories = [
         title: "로그, 진단과 오류 보고 (미구현)",
         useCases: ["UC-020", "UC-032"],
         summary: "이 항목은 향후 제공 예정인 진단 및 오류 보고 기능으로, 현재 배포판에서는 사용할 수 없습니다.",
+        hideOverview: true,
+        hidePrerequisites: true,
+        hideResult: true,
+        stepsTitle: "현재 지원 상태",
+        noteTitle: "업데이트 안내",
+        noteLabel: "향후 제공 예정",
         covers: ["향후 제공 예정인 진단 정보", "오류 보고서 생성과 확인", "기술 지원용 자료 준비"],
         prerequisites: ["현재 미구현 기능으로 별도의 사전 준비가 필요하지 않습니다."],
         steps: [
@@ -380,6 +426,77 @@ const categories = [
         ],
         result: "현재 버전에서는 진단 보고서나 오류 보고서 파일이 생성되지 않습니다.",
         note: "배포판 기준 미구현 기능입니다. 기능이 정식으로 제공된 이후 실제 사용 절차와 화면을 업데이트할 예정입니다."
+      }
+    ]
+  },
+  {
+    id: "legal",
+    title: "법적 고지",
+    description: "사용권과 제3자 소프트웨어",
+    icon: "info",
+    topics: [
+      {
+        id: "software-license",
+        title: "소프트웨어 라이선스",
+        useCases: [],
+        summary: "MOTI Studio의 소유권과 허용된 사용 범위, 제3자 소프트웨어에 적용되는 조건을 안내합니다.",
+        hideOverview: true,
+        hidePrerequisites: true,
+        hideResult: true,
+        stepsTitle: "라이선스 안내",
+        noteTitle: "적용 기준",
+        noteLabel: "문서 우선순위",
+        covers: ["MOTI Studio의 저작권과 소유권", "허용된 사용 범위와 제한되는 행위", "제3자 소프트웨어 고지와 라이선스 문의"],
+        prerequisites: ["MOTI Studio와 함께 제공된 계약서, 주문서 또는 사용권 증서 확인", "설치 패키지의 LICENSE 및 THIRD-PARTY-LICENSE 문서 확인"],
+        steps: [
+          ["소유권", "MOTI Studio와 이에 포함된 주식회사 퀘스터의 소프트웨어, 문서, 디자인 및 기타 자료는 주식회사 퀘스터의 독점 자산입니다. 저작권과 기타 지식재산권은 주식회사 퀘스터 또는 정당한 권리자에게 귀속됩니다."],
+          ["허용된 사용", "사용자는 주식회사 퀘스터가 제공한 서면 계약서, 주문서 또는 사용권 증서에 명시된 목적과 범위 안에서만 MOTI Studio를 사용할 수 있습니다. 해당 문서에서 정한 사용자, 장치, 사업장 및 사용 기간 등의 조건이 적용됩니다."],
+          ["사용 제한", "주식회사 퀘스터의 사전 서면 동의 없이 MOTI Studio를 복제, 수정, 판매, 대여, 배포, 재사용권 설정하거나 제3자에게 제공할 수 없습니다. 사용권 인증이나 기술적 보호조치를 회피하거나 소스 코드를 알아내기 위한 역설계, 디컴파일 및 역어셈블도 제한됩니다."],
+          ["법령상 허용되는 이용", "관련 법령에서 특정 이용을 명시적으로 허용하고 계약으로 제한할 수 없는 경우에는 해당 법령이 정한 범위가 우선합니다."],
+          ["제3자 소프트웨어", "MOTI Studio에 포함된 제3자 소프트웨어에는 각 권리자가 정한 별도의 라이선스가 적용됩니다. 자세한 저작권 고지와 조건은 설치 패키지에 포함된 THIRD-PARTY-LICENSE 문서를 확인하십시오."]
+        ],
+        result: "MOTI Studio는 사용권 문서에 명시된 범위에서 이용하고, LICENSE와 THIRD-PARTY-LICENSE 문서를 제품과 함께 보관해야 합니다.",
+        note: "이 페이지는 라이선스 조건의 요약입니다. 별도의 계약서, 주문서, 사용권 증서 또는 설치 패키지에 포함된 라이선스 문서와 내용이 다른 경우 해당 문서의 조건이 우선합니다. 문의: redruka1@quester.kr"
+      },
+      {
+        id: "third-party-software",
+        title: "제3자 소프트웨어",
+        useCases: [],
+        summary: "MOTI Studio 1.5 출시 패키지에서 확인한 주요 제3자 구성요소와 상용 배포 전에 확인해야 할 라이선스 조건을 안내합니다.",
+        hideOverview: true,
+        hidePrerequisites: true,
+        hideResult: true,
+        criticalWarningLabel: "현재 패키지는 상용 출시 전 라이선스 정리가 필요합니다",
+        criticalWarning: "CPD 생성 코드에는 상업적 이용을 허용하지 않는 Academic License 문구가 있으며, Harfang은 여러 라이브러리와 함께 정적으로 링크되어 있습니다. 해당 코드의 상용 이용 권리와 Harfang 라이선스 경로를 확정하기 전에는 현재 패키지를 비공개 상용 소프트웨어로 출시하지 마십시오.",
+        stepsTitle: "배포 전 확인 절차",
+        noteTitle: "검토 기준",
+        noteLabel: "출시 빌드 기준",
+        covers: ["주요 제3자 구성요소와 적용 라이선스", "허용적 오픈소스와 공급사 SDK의 차이", "비공개 상용 배포 전 필수 확인 사항"],
+        prerequisites: ["실제 출시 빌드에 포함되는 DLL·라이브러리 목록 확정", "각 구성요소의 정확한 버전과 원본 LICENSE·NOTICE 확보", "Harfang에 적용할 라이선스 경로 및 공급사 SDK 재배포 권한 확인"],
+        licenseComponents: [
+          { name: "OpenVR", version: "2.15.6", release: "포함 · openvr_api.dll", license: "BSD-3-Clause", action: "저작권과 라이선스 원문을 배포 문서에 포함", status: "고지 필요", source: "https://github.com/ValveSoftware/openvr/blob/master/LICENSE" },
+          { name: "Eigen", version: "3.4.0", release: "포함 · 헤더 코드", license: "MPL-2.0 중심", action: "사용한 모듈과 함께 제공된 개별 COPYING 파일을 확인", status: "고지 필요", source: "https://eigen.tuxfamily.org/index.php?title=Main_Page#License" },
+          { name: "spdlog / fmt", version: "1.17.0 / 12.1.0", release: "포함 · 헤더 코드", license: "MIT", action: "spdlog과 번들된 fmt의 저작권 및 MIT 고지를 포함", status: "고지 필요", source: "https://github.com/gabime/spdlog/blob/v1.x/LICENSE" },
+          { name: "toml11", version: "3.7.0", release: "포함 · 헤더 코드", license: "MIT", action: "저작권과 MIT 라이선스 원문을 포함", status: "고지 필요", source: "https://github.com/ToruNiina/toml11/blob/main/LICENSE" },
+          { name: "Boost", version: "1.82.0", release: "포함 · 헤더 코드", license: "Boost Software License 1.0", action: "사용한 Asio와 circular_buffer 모듈의 저작권 및 라이선스를 확인", status: "고지 확인", source: "https://www.boost.org/LICENSE_1_0.txt" },
+          { name: "Harfang", version: "3.2.7", release: "포함 · 정적 링크", license: "GPLv3 / LGPLv3 / 상용", action: "상용 라이선스 또는 LGPLv3 준수 경로를 확정하고 정적 링크 방식을 검토", status: "출시 차단", source: "https://github.com/harfang3d/harfang3d#license" },
+          { name: "Harfang 하위 구성요소", version: "출시 SDK 포함 버전", release: "포함 · 정적 링크 및 DLL", license: "구성요소별 상이", action: "GLFW, Lua, bgfx/bx/bimg, ImGui, OpenAL, OpenXR Loader, Bullet, Recast/Detour, meshoptimizer, stb 등의 원문 고지를 복원", status: "고지 누락", source: "https://github.com/harfang3d/harfang3d" },
+          { name: "CPD 생성 코드", version: "저장소 포함본", release: "포함 · moti.dll", license: "MathWorks Academic License 표기", action: "상용 이용 권리를 증명하거나 상용 배포 가능한 구현으로 교체", status: "출시 차단", source: "https://www.mathworks.com/pricing-licensing.html" },
+          { name: "CFR-Sync", version: "저장소 포함본", release: "헤더 포함 여부 확인", license: "라이선스 파일 없음", action: "권리자와 사용 조건을 문서화하고 제3자 코드라면 배포 허가를 확보", status: "권리 확인", source: "" },
+          { name: "Open3D", version: "0.19.0", release: "현재 패키지 미포함", license: "MIT", action: "Open3D 옵션을 켜는 출시 빌드에서만 하위 종속성 고지까지 포함", status: "미포함", source: "https://github.com/isl-org/Open3D/blob/main/LICENSE" },
+          { name: "OpenCV", version: "출시 패키지 미사용", release: "현재 패키지 미포함", license: "버전에 따라 Apache-2.0 또는 BSD-3-Clause", action: "Vision 또는 RealSense 옵션을 켤 때 버전과 NOTICE를 다시 확인", status: "미포함", source: "https://opencv.org/license/" },
+          { name: "RealSense SDK", version: "출시 패키지 미사용", release: "현재 패키지 미포함", license: "Apache-2.0", action: "RealSense 옵션을 켤 때 realsense2.dll과 LICENSE·NOTICE를 확인", status: "미포함", source: "https://github.com/realsenseai/librealsense/blob/master/LICENSE" },
+          { name: "ZED SDK", version: "출시 패키지 미사용", release: "현재 패키지 미포함", license: "Stereolabs SDK 약관", action: "Vision 빌드를 출시할 때 해당 SDK EULA의 재배포 범위를 확인", status: "미포함", source: "https://www.stereolabs.com/developers" },
+          { name: "CUDA Toolkit", version: "출시 패키지 미사용", release: "현재 패키지 미포함", license: "NVIDIA SDK EULA", action: "Vision 빌드를 출시할 때 지정된 재배포 가능 런타임만 포함", status: "미포함", source: "https://docs.nvidia.com/cuda/eula/" },
+          { name: "TensorRT", version: "출시 패키지 미사용", release: "현재 패키지 미포함", license: "NVIDIA TensorRT SLA", action: "Vision 빌드를 출시할 때 허용된 런타임 DLL과 약관 조건을 확인", status: "미포함", source: "https://docs.nvidia.com/deeplearning/tensorrt/latest/reference/sla.html" }
+        ],
+        steps: [
+          ["출시 구성 확정", "개발 PC에 설치되어 있기만 한 SDK와 실제 설치 패키지에 포함되는 DLL·라이브러리를 구분합니다. 사용하지 않거나 배포하지 않는 선택 기능은 고지 목록에서 별도로 표시합니다."],
+          ["원문 고지 구성", "THIRD-PARTY-LICENSE 문서에 구성요소 이름, 버전, 저작권자, 라이선스 식별자와 원문을 연결합니다. Apache-2.0 구성요소에 NOTICE 파일이 있으면 해당 고지도 함께 유지합니다."],
+          ["차단 항목 해소", "CPD 생성 코드의 상용 이용 권리를 증명하거나 코드를 교체하고, Harfang은 상용 라이선스 또는 LGPLv3 준수 경로를 확정해야 합니다. CFR-Sync의 권리 관계와 Harfang 하위 구성요소의 고지도 함께 정리합니다."]
+        ],
+        result: "출시 패키지의 모든 제3자 바이너리가 구성요소별 고지와 연결되고, 계약형 SDK는 재배포 권한과 허용 파일이 확인되어야 합니다.",
+        note: "2026년 7월 20일 생성된 MOTI-Studio-Setup-1.5.exe와 build_dist 설정을 기준으로 확인했습니다. 현재 소스가 변경된 뒤 다시 빌드하면 포함 결과가 달라질 수 있으므로 실제 출시 직전에 동일한 검사를 반복해야 합니다."
       }
     ]
   }
@@ -420,7 +537,7 @@ function renderHome() {
           <h1>Everything You Need to Get Started</h1>
           <p>장비 설정부터 캘리브레이션, 실시간 트래킹과 데이터 출력까지 전체 사용 과정을 담고 있습니다.</p>
           <div class="hero-actions">
-            <a class="button primary" href="${topicHref("installation")}" data-page="installation">가이드 시작하기 ${icon("arrow")}</a>
+            <a class="button primary" href="${topicHref("safety-guidelines")}" data-page="safety-guidelines">안전 지침부터 보기 ${icon("arrow")}</a>
             <a class="button" href="${topicHref("diagnostics")}" data-page="diagnostics">문제 해결</a>
           </div>
         </div>
@@ -447,7 +564,7 @@ function renderHome() {
 
       <section aria-labelledby="all-guides-heading">
         <div class="section-heading">
-          <div><h2 id="all-guides-heading">전체 사용 가이드</h2><p>19개 문서를 6개 작업 영역으로 정리했습니다.</p></div>
+          <div><h2 id="all-guides-heading">전체 사용 가이드</h2><p>22개 문서를 8개 작업 영역으로 정리했습니다.</p></div>
         </div>
         <div class="category-grid">
           ${categories.map((category) => `
@@ -480,15 +597,18 @@ function renderDocument(topic) {
             <div class="uc-list">${topic.useCases.map((useCase) => `<span class="uc-badge">${useCase}</span>`).join("")}</div>
           </header>
 
-          <section class="doc-section" id="overview"><h2>이 페이지에서 다룰 내용</h2><ul class="content-list">${topic.covers.map((item) => `<li>${item}</li>`).join("")}</ul></section>
-          <section class="doc-section" id="prepare"><h2>사전 준비</h2><ul class="content-list">${topic.prerequisites.map((item) => `<li>${item}</li>`).join("")}</ul></section>
-          <section class="doc-section" id="steps"><h2>사용 방법</h2><ol class="steps">${topic.steps.map((step) => {
+          ${topic.criticalWarning ? `<div class="callout warning document-alert"><span class="callout-icon">${icon("alert")}</span><div><strong>${topic.criticalWarningLabel || "중요 경고"}</strong><p>${topic.criticalWarning}</p></div></div>` : ""}
+
+          ${topic.hideOverview ? "" : `<section class="doc-section" id="overview"><h2>이 페이지에서 다룰 내용</h2><ul class="content-list">${topic.covers.map((item) => `<li>${item}</li>`).join("")}</ul></section>`}
+          ${topic.licenseComponents ? `<section class="doc-section" id="components"><h2>구성요소별 라이선스</h2><div class="license-table-wrap"><table class="license-table"><thead><tr><th>구성요소</th><th>확인 버전</th><th>출시 패키지</th><th>라이선스</th><th>배포 전 조치</th><th>상태</th></tr></thead><tbody>${topic.licenseComponents.map((component) => `<tr><td>${component.source ? `<a href="${component.source}" target="_blank" rel="noopener noreferrer">${component.name}</a>` : component.name}</td><td>${component.version}</td><td>${component.release}</td><td>${component.license}</td><td>${component.action}</td><td><span class="license-status">${component.status}</span></td></tr>`).join("")}</tbody></table></div></section>` : ""}
+          ${topic.hidePrerequisites ? "" : `<section class="doc-section" id="prepare"><h2>${topic.prepareTitle || "사전 준비"}</h2><ul class="content-list">${topic.prerequisites.map((item) => `<li>${item}</li>`).join("")}</ul></section>`}
+          <section class="doc-section" id="steps"><h2>${topic.stepsTitle || "사용 방법"}</h2><ol class="steps">${topic.steps.map((step) => {
             const stepImages = Array.isArray(step[2]) ? step[2] : step[2] ? [step[2]] : [];
             return `<li class="step-card"><strong>${step[0]}</strong><span>${step[1]}</span>${stepImages.length ? `<div class="step-images">${stepImages.map((image) => `<figure class="step-figure"><img class="step-image${image.compact ? " step-image-compact" : ""}" src="${image.src}" alt="${image.alt}" loading="lazy">${image.caption ? `<figcaption>${image.caption}</figcaption>` : ""}</figure>`).join("")}</div>` : ""}</li>`;
           }).join("")}</ol></section>
-          <section class="doc-section" id="result"><h2>정상 결과</h2><div class="callout"><span class="callout-icon">${icon("check")}</span><div><strong>완료 확인</strong><p>${topic.result}</p></div></div></section>
+          ${topic.hideResult ? "" : `<section class="doc-section" id="result"><h2>${topic.resultTitle || "정상 결과"}</h2><div class="callout"><span class="callout-icon">${icon("check")}</span><div><strong>${topic.resultLabel || "완료 확인"}</strong><p>${topic.result}</p></div></div></section>`}
           ${topic.packetFormatTitle ? `<section class="doc-section" id="packet-format"><h2>${topic.packetFormatTitle}</h2><div class="callout"><span class="callout-icon">${icon("check")}</span><div><strong>${topic.packetFormatTitle}</strong><p>${topic.packetFormatBody}</p></div></div></section>` : ""}
-          <section class="doc-section" id="note"><h2>주의사항</h2><div class="callout warning"><span class="callout-icon">${icon("alert")}</span><div><strong>작업 전 확인</strong><p>${topic.note}</p></div></div></section>
+          <section class="doc-section" id="note"><h2>${topic.noteTitle || "주의사항"}</h2><div class="callout warning"><span class="callout-icon">${icon("alert")}</span><div><strong>${topic.noteLabel || "작업 전 확인"}</strong><p>${topic.note}</p></div></div></section>
 
           <nav class="document-footer" aria-label="이전 및 다음 문서">
             ${previous ? `<a href="${topicHref(previous.id)}" data-page="${previous.id}">← 이전 문서<strong>${previous.title}</strong></a>` : '<span class="empty"></span>'}
@@ -497,7 +617,7 @@ function renderDocument(topic) {
         </article>
         <aside class="page-toc" aria-label="이 페이지의 목차">
           <h2>이 페이지에서</h2>
-          <a href="#overview">다룰 내용</a><a href="#prepare">사전 준비</a><a href="#steps">사용 방법</a><a href="#result">정상 결과</a>${topic.packetFormatTitle ? `<a href="#packet-format">데이터 패킷 형식</a>` : ""}<a href="#note">주의사항</a>
+          ${topic.hideOverview ? "" : `<a href="#overview">다룰 내용</a>`}${topic.licenseComponents ? `<a href="#components">구성요소별 라이선스</a>` : ""}${topic.hidePrerequisites ? "" : `<a href="#prepare">${topic.prepareTitle || "사전 준비"}</a>`}<a href="#steps">${topic.stepsTitle || "사용 방법"}</a>${topic.hideResult ? "" : `<a href="#result">${topic.resultTitle || "정상 결과"}</a>`}${topic.packetFormatTitle ? `<a href="#packet-format">데이터 패킷 형식</a>` : ""}<a href="#note">${topic.noteTitle || "주의사항"}</a>
         </aside>
       </div>
     </div>
