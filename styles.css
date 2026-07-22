@@ -268,6 +268,15 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .license-table td { color: var(--gray-500); }
 .license-table td:first-child { color: var(--gray-800); font-weight: 700; white-space: nowrap; }
 .license-table a { color: var(--blue-700); text-decoration: underline; text-decoration-color: var(--blue-200); text-underline-offset: 3px; }
+.license-notices { display: grid; gap: 10px; margin-top: 18px; }
+.license-notice { overflow: hidden; border: 1px solid var(--gray-200); border-radius: var(--radius-md); background: var(--white); }
+.license-notice summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 16px; color: var(--gray-800); cursor: pointer; font-weight: 750; }
+.license-notice summary:hover { background: var(--gray-50); }
+.license-notice summary small { color: var(--gray-500); font-size: 11px; font-weight: 600; text-align: right; }
+.license-notice-body { padding: 2px 16px 16px; border-top: 1px solid var(--gray-100); }
+.license-notice-body p { margin: 12px 0 0; font-size: 13px; line-height: 1.65; }
+.license-terms { max-height: 320px; overflow: auto; margin: 14px 0 0; padding: 14px; border: 1px solid var(--gray-200); border-radius: 8px; color: var(--gray-600); background: var(--gray-50); font: 11px/1.65 "Cascadia Code", Consolas, monospace; white-space: pre-wrap; }
+.license-notice-body a { display: inline-block; margin-top: 12px; color: var(--blue-700); font-size: 13px; font-weight: 700; text-decoration: underline; text-decoration-color: var(--blue-200); text-underline-offset: 3px; }
 .license-status { display: inline-flex; padding: 3px 7px; border: 1px solid var(--gray-200); border-radius: 999px; color: var(--gray-600); background: var(--gray-50); white-space: nowrap; font-size: 10px; font-weight: 700; }
 
 .steps { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; counter-reset: guide-step; }
@@ -354,6 +363,8 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
   .document-main h1 { font-size: 32px; }
   .document-lead { font-size: 15px; }
   .step-card { padding-left: 56px; }
+  .license-notice summary { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .license-notice summary small { text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {
