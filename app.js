@@ -458,9 +458,9 @@ const categories = [
         steps: [
           ["소유권", "MOTI Studio와 이에 포함된 주식회사 퀘스터의 소프트웨어, 문서, 디자인 및 기타 자료는 주식회사 퀘스터의 독점 자산입니다. 저작권과 기타 지식재산권은 주식회사 퀘스터 또는 정당한 권리자에게 귀속됩니다."],
           ["허용된 사용", "사용자는 주식회사 퀘스터가 제공한 서면 계약서, 주문서 또는 사용권 증서에 명시된 목적과 범위 안에서만 MOTI Studio를 사용할 수 있습니다. 해당 문서에서 정한 사용자, 장치, 사업장 및 사용 기간 등의 조건이 적용됩니다."],
-          ["사용 제한", "주식회사 퀘스터의 사전 서면 동의 없이 MOTI Studio를 복제, 수정, 판매, 대여, 배포, 재사용권 설정하거나 제3자에게 제공할 수 없습니다. 사용권 인증이나 기술적 보호조치를 회피하거나 소스 코드를 알아내기 위한 역설계, 디컴파일 및 역어셈블도 제한됩니다."],
+          ["사용 제한", "주식회사 퀘스터의 사전 서면 동의 없이 MOTI Studio를 복제, 수정, 판매, 대여, 배포, 재사용권 설정하거나 제3자에게 제공할 수 없습니다. 다만 이 제한은 제3자 라이선스가 별도로 부여하는 권리를 축소하지 않으며, BodyParts3D 손 뼈 메쉬에는 적용되지 않습니다. 사용권 인증이나 기술적 보호조치를 회피하거나 소스 코드를 알아내기 위한 역설계, 디컴파일 및 역어셈블도 제한됩니다."],
           ["법령상 허용되는 이용", "관련 법령에서 특정 이용을 명시적으로 허용하고 계약으로 제한할 수 없는 경우에는 해당 법령이 정한 범위가 우선합니다."],
-          ["제3자 소프트웨어", "MOTI Studio에 포함된 제3자 소프트웨어에는 각 권리자가 정한 별도의 라이선스가 적용됩니다. 자세한 저작권 고지와 조건은 설치 패키지에 포함된 THIRD-PARTY-LICENSE 문서를 확인하십시오."]
+          ["제3자 소프트웨어 및 콘텐츠", "MOTI Studio에 포함된 제3자 소프트웨어와 콘텐츠에는 각 권리자가 정한 별도의 라이선스가 적용됩니다. BodyParts3D 손 뼈 메쉬는 CC BY-SA 2.1 Japan에 따라 상업적으로 이용할 수 있고, 사용자는 해당 라이선스가 허용하는 범위에서 메쉬를 복제·공유·변경할 수 있습니다. 공유할 때에는 저작자 표시, 라이선스 링크, 변경 사항 표시 및 동일조건변경허락 의무를 준수해야 합니다. 자세한 조건은 설치 패키지의 THIRD-PARTY-LICENSE 문서를 확인하십시오."]
         ],
         result: "MOTI Studio는 사용권 문서에 명시된 범위에서 이용하고, LICENSE와 THIRD-PARTY-LICENSE 문서를 제품과 함께 보관해야 합니다.",
         note: "이 페이지는 라이선스 조건의 요약입니다. 별도의 계약서, 주문서, 사용권 증서 또는 설치 패키지에 포함된 라이선스 문서와 내용이 다른 경우 해당 문서의 조건이 우선합니다. 문의: redruka1@quester.kr"
@@ -486,7 +486,7 @@ const categories = [
           { name: "spdlog / fmt", version: "1.17.0 / 12.1.0", release: "포함 · 헤더 코드", license: "MIT", action: "두 프로젝트의 저작권자와 MIT 원문 링크를 아래 공개 고지에 수록", status: "고지 제공", source: "https://github.com/gabime/spdlog/blob/v1.x/LICENSE" },
           { name: "toml11", version: "3.7.0", release: "포함 · 헤더 코드", license: "MIT", action: "저작권자와 MIT 원문 링크를 아래 공개 고지에 수록", status: "고지 제공", source: "https://github.com/ToruNiina/toml11/blob/v3.7.0/LICENSE" },
           { name: "Boost", version: "1.82.0", release: "포함 · 헤더 코드", license: "Boost Software License 1.0", action: "라이선스 원문 링크를 아래 공개 고지에 수록", status: "고지 제공", source: "https://www.boost.org/LICENSE_1_0.txt" },
-          { name: "BodyParts3D / Anatomography 손 뼈 메쉬", version: "FMA ID 기반 STL", release: "포함 · ui_assets/hand_mesh", license: "CC BY-SA 2.1 Japan", action: "BodyParts3D 저작자 표시, 라이선스 링크와 변경 사항을 배포 문서에 유지하고 파생 메쉬는 동일 라이선스 조건으로 제공", status: "고지·동일조건", source: "https://lifesciencedb.jp/bp3d/info_en/license/index.html" },
+          { name: "BodyParts3D / Anatomography 손 뼈 메쉬", version: "FMA ID 기반 STL · 정확한 원본 릴리스 미확인", release: "포함 · ui_assets/hand_mesh", license: "CC BY-SA 2.1 Japan · 상업 이용 허용", action: "독점 사용 제한에서 제외. 원본 릴리스·변환 이력을 확인하기 전까지 파생 메쉬로 보수적으로 취급하여 저작자 표시, 라이선스 링크, 변경 사항 표시와 동일조건을 유지", status: "고지 완료·이력 확인", source: "https://lifesciencedb.jp/bp3d/info_en/license/index.html" },
           { name: "Harfang", version: "3.2.7", release: "포함 · 정적 링크", license: "GPLv3 / LGPLv3 / 상용", action: "상용 라이선스 또는 LGPLv3 준수 경로를 확정하고 정적 링크 방식을 검토", status: "출시 차단", source: "https://github.com/harfang3d/harfang3d#license" },
           { name: "Harfang 하위 구성요소 · 허용적 라이선스", version: "Harfang 3.2.7 고정 커밋", release: "포함 · 정적 링크 및 DLL", license: "MIT / BSD / zlib / Apache-2.0 등", action: "확인된 저작권자와 라이선스 원문 링크를 아래 공개 고지에 수록", status: "고지 제공", source: "https://github.com/harfang3d/harfang3d/tree/v3.2.7/extern" },
           { name: "Harfang 하위 구성요소 · 추가 조건", version: "Harfang 3.2.7 고정 커밋", release: "포함 가능 · 정적 라이브러리", license: "OpenAL Soft LGPL-2.0 / Mali ASTC EULA", action: "단순 고지만으로 끝나지 않으므로 실제 링크·사용 여부와 재링크 또는 EULA 조건을 별도 확인", status: "추가 의무", source: "https://github.com/harfang3d/harfang3d/tree/v3.2.7/extern" },
@@ -506,7 +506,7 @@ const categories = [
           { name: "fmt", version: "12.1.0", copyright: "Copyright (c) 2012-present, Victor Zverovich and fmt contributors.", license: "MIT License", term: "MIT", source: "https://github.com/fmtlib/fmt/blob/12.1.0/LICENSE" },
           { name: "toml11", version: "3.7.0", copyright: "Copyright (c) 2017, Toru Niina.", license: "MIT License", term: "MIT", source: "https://github.com/ToruNiina/toml11/blob/v3.7.0/LICENSE" },
           { name: "Boost", version: "1.82.0", copyright: "Copyright notices are retained in the individual Boost source files.", license: "Boost Software License 1.0", term: "BSL", source: "https://www.boost.org/LICENSE_1_0.txt" },
-          { name: "BodyParts3D / Anatomography hand bone meshes", version: "FMA ID 기반 STL", copyright: "BodyParts3D, Copyright © 2008 Life Science Integrated Database Center.", license: "Creative Commons Attribution-ShareAlike 2.1 Japan. MOTI Studio는 선택된 손 뼈 메쉬를 런타임에 재배치·회전·스케일링하여 렌더링합니다.", source: "https://lifesciencedb.jp/bp3d/info_en/license/index.html" },
+          { name: "BodyParts3D / Anatomography hand bone meshes", version: "FMA ID 기반 STL · 저장소 최초 기록 493a721d", copyright: "BodyParts3D, Copyright © 2008 Life Science Integrated Database Center.", license: "Creative Commons Attribution-ShareAlike 2.1 Japan. 비영리 제한이 없어 상업 이용이 허용됩니다. 이 메쉬는 MOTI Studio의 독점 사용 제한에서 제외됩니다. MOTI Studio는 선택된 메쉬를 런타임에 재배치·회전·스케일링하며 저장된 STL을 덮어쓰지 않습니다. 정확한 원본 릴리스와 변환 이력은 확인 중이므로 현재 배포본은 파생 메쉬로 보수적으로 취급합니다.", source: "https://lifesciencedb.jp/bp3d/info_en/license/index.html" },
           { name: "bgfx / bx / bimg", version: "Harfang 3.2.7 고정 커밋", copyright: "Copyright 2010-2022, Branimir Karadzic.", license: "BSD 2-Clause License", term: "BSD2", source: "https://github.com/harfang3d/harfang3d/tree/v3.2.7/extern/bgfx" },
           { name: "GLFW", version: "3.3.7", copyright: "Copyright (c) 2002-2006 Marcus Geelnard; Copyright (c) 2006-2019 Camilla Löwy.", license: "zlib License", term: "ZLIB", source: "https://github.com/glfw/glfw/blob/3.3.7/LICENSE.md" },
           { name: "Lua", version: "5.4.4", copyright: "Copyright (C) 1994-2022 Lua.org, PUC-Rio.", license: "MIT License", term: "MIT", source: "https://www.lua.org/license.html" },
@@ -531,7 +531,7 @@ const categories = [
         steps: [
           ["출시 구성 확정", "개발 PC에 설치되어 있기만 한 SDK와 실제 설치 패키지에 포함되는 DLL·라이브러리를 구분합니다. 사용하지 않거나 배포하지 않는 선택 기능은 고지 목록에서 별도로 표시합니다."],
           ["원문 고지 구성", "THIRD-PARTY-LICENSE 문서에 구성요소 이름, 버전, 저작권자, 라이선스 식별자와 원문을 연결합니다. Apache-2.0 구성요소에 NOTICE 파일이 있으면 해당 고지도 함께 유지합니다."],
-          ["차단 항목 해소", "CPD 생성 코드의 상용 이용 권리를 증명하거나 코드를 교체하고, Harfang은 상용 라이선스 또는 LGPLv3 준수 경로를 확정해야 합니다. BodyParts3D 파생 메쉬의 CC BY-SA 동일조건 제공 범위를 확인하고, CFR-Sync의 권리 관계와 Harfang 하위 구성요소의 고지도 함께 정리합니다."]
+          ["차단 항목 해소", "CPD 생성 코드의 상용 이용 권리를 증명하거나 코드를 교체하고, Harfang은 상용 라이선스 또는 LGPLv3 준수 경로를 확정해야 합니다. BodyParts3D 메쉬는 상업 이용이 가능하지만 원본 릴리스·다운로드 경로·변환 이력을 복원하고, 확인 전까지는 파생 메쉬로 보수적으로 취급해 CC BY-SA 동일조건으로 제공합니다. CFR-Sync의 권리 관계와 Harfang 하위 구성요소의 고지도 함께 정리합니다."]
         ],
         result: "출시 패키지의 모든 제3자 바이너리가 구성요소별 고지와 연결되고, 계약형 SDK는 재배포 권한과 허용 파일이 확인되어야 합니다.",
         note: "위 공개 고지는 2026년 7월 20일 생성된 MOTI-Studio-Setup-1.5.exe, build_dist 설정 및 Harfang 3.2.7의 고정 종속성 커밋을 기준으로 작성했습니다. 고지는 해당 제3자 권리자의 라이선스를 대체하지 않으며, 각 항목의 링크에서 원문이 적용됩니다. BodyParts3D 메쉬에는 CC BY-SA 2.1 Japan의 저작자 표시와 동일조건 의무가 적용됩니다. OpenAL Soft, Mali ASTC, Harfang 본체, CPD 생성 코드와 CFR-Sync는 단순 고지만으로 해결되지 않습니다. 현재 소스나 출시 구성이 변경되면 실제 출시 직전에 목록을 다시 생성해야 합니다."
