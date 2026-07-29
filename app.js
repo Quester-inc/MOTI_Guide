@@ -188,27 +188,38 @@ const categories = [
       },
       {
         id: "glove-calibration",
-        title: "캘리브레이션과 프로필 관리",
+        title: "캘리브레이션 5단계와 핀치 보정",
         useCases: ["UC-010", "UC-026"],
-        summary: "대상 글러브별 GHOST 캘리브레이션 단계를 수행하고 결과를 프로필로 저장해 다시 적용합니다.",
-        covers: ["Hinge·Flat·Tracking 단계", "글러브별 대상 선택과 Reset", "프로필 생성·선택·갱신·이름 변경·삭제"],
+        summary: "대상 글러브에서 Hinge Optimization, Fist Calibration, Thumb Range, Flat, Tracking Start를 순서대로 진행하고, 필요한 경우 핀치 동작을 추가로 보정한 뒤 결과를 프로필로 저장합니다.",
+        covers: ["캘리브레이션 5단계", "단계별 자세와 동작", "선택 핀치 보정", "프로필 생성·선택·갱신·이름 변경·삭제"],
         prerequisites: ["글러브 연결과 자동 인식", "센서 데이터 정상 수신", "안내 자세를 취할 수 있는 공간"],
         steps: [
-          ["Hinge 단계", "Calibration 탭에서 대상 글러브를 선택하고 Hinge를 시작한 뒤 안내 자세가 안정되면 Apply hinge를 실행합니다.", [
-            { src: "assets/18.%20calibration_panel.png", alt: "Calibration 탭의 글러브 선택과 캘리브레이션 Workflow", caption: "Calibration 탭에서 대상 글러브를 선택하고 New profile을 누른 뒤 Start hinge로 첫 번째 Hinge motion 단계를 시작합니다." },
-            { src: "assets/23.%20hinge_motion.png", alt: "손가락을 쥐었다 펴는 Hinge 모션 안내", caption: "손가락을 끝까지 쥐었다가 끝까지 펴는 동작을 안정된 속도로 반복합니다. 손목은 가능한 한 움직이지 않도록 유지하세요." },
-            { src: "assets/19.%20apply_hinge.png", alt: "Hinge motion 완료 후 Apply hinge 버튼", caption: "Hinge motion이 완료되어 첫 단계가 done으로 바뀌면 Apply hinge를 눌러 측정 결과를 적용합니다." }
+          ["캘리브레이션 시작", "Calibration 탭에서 대상 글러브를 선택하고 New profile을 누릅니다. Workflow에 표시되는 5단계를 위에서부터 순서대로 진행합니다.", { src: "assets/18.%20calibration_panel.png", alt: "최신 Calibration 패널의 5단계 Workflow", caption: "최신 Workflow는 Hinge Optimization, Fist Calibration, Thumb Range, Flat, Tracking Start의 5단계로 구성됩니다." }],
+          ["1. Hinge Optimization", "Start Hinge Optimization을 누른 뒤 손가락을 끝까지 쥐었다가 펴는 동작을 일정한 속도로 반복합니다. 손목과 팔은 가능한 한 고정하고 손가락 관절만 움직이세요. 1단계가 done으로 표시되고 2단계가 next로 바뀌면 다음 단계로 이동합니다.", { src: "assets/23.%20hinge_motion.png", alt: "손가락을 쥐었다 펴는 Hinge Optimization 동작", caption: "손가락을 충분히 쥐고 펴는 동작을 반복합니다. 진행 조건을 충족하면 다음 단계가 활성화됩니다." }],
+          ["2. Fist Calibration", "Start Fist Capture를 누르고 주먹을 계속 쥔 상태에서 아래팔을 천천히 회전합니다. 손등이 위를 향하는 자세와 손바닥이 위를 향하는 자세를 번갈아 반복하세요. 손목을 꺾거나 주먹으로 원을 그리지 말고, 팔꿈치에서 주먹까지 이어지는 축을 중심으로 아래팔 전체를 돌립니다. 유효한 동작이 충분히 수집되면 계산과 적용이 자동으로 진행됩니다.", [
+            { src: "assets/19.%20fist_calivration_panel.png", alt: "Fist Calibration 단계의 Start Fist Capture 버튼", caption: "Hinge Optimization이 done으로 표시되고 Fist Calibration이 next 상태가 되면 Start Fist Capture를 누릅니다." },
+            { src: "assets/62.%20fist_motion.png", alt: "주먹을 쥐고 손등과 손바닥이 번갈아 위를 향하도록 아래팔을 회전하는 동작", caption: "주먹을 펴지 않은 채 손등이 위인 자세와 손바닥이 위인 자세 사이를 천천히 왕복합니다." }
           ]],
-          ["Flat과 Tracking 단계", "Flat 자세를 적용한 뒤 Tracking 준비를 실행하고 손가락 움직임이 정상적으로 반영되는지 확인합니다.", [
-            { src: "assets/20.%20flat_pose.png", alt: "Hinge 적용 완료 후 Flat pose 버튼", caption: "Hinge 적용이 완료되면 손을 안내된 평평한 자세로 유지하고 Flat pose를 눌러 세 번째 단계를 진행합니다." },
-            { src: "assets/24.%20flat_motion.png", alt: "책상 위에서 유지하는 Flat 모션 정지 자세 안내", caption: "손가락을 모으고 손바닥 전체가 책상에 닿도록 편 상태에서 움직이지 말고 자세를 유지합니다." },
-            { src: "assets/21.%20prepare_tracking.png", alt: "Flat pose 완료 후 Prepare tracking 버튼", caption: "Flat pose가 done으로 표시되면 Prepare tracking을 눌러 추적을 준비한 뒤 손가락 움직임이 3D 손 모델에 정상적으로 반영되는지 확인합니다." },
-            { src: "assets/25.%20tracking_motion.png", alt: "손등과 손바닥을 위아래로 회전하는 Tracking 모션 안내", caption: "손등과 손바닥이 번갈아 위를 향하도록 손목을 부드럽고 일정한 속도로 회전하며 추적 상태를 확인합니다." }
+          ["3. Thumb Range", "Start Thumb Range를 누른 뒤 나머지 네 손가락은 편 상태로 유지합니다. 엄지를 손바닥 안쪽으로 최대한 구부렸다가 바깥쪽으로 충분히 펴는 동작을 천천히 반복하세요. 손목을 돌리거나 다른 손가락을 함께 움직이지 말고 엄지만 움직입니다. 진행 표시의 movement와 coverage가 충분히 채워지면 Finish Thumb Range를 눌러 범위를 계산합니다.", [
+            { src: "assets/63.%20thumb_range_panel.png", alt: "Thumb Range 단계의 Start Thumb Range 버튼과 진행 표시", caption: "Fist Calibration이 done으로 표시되고 Thumb Range가 next 상태가 되면 Start Thumb Range를 누릅니다. movement와 coverage에서 수집 진행 상황을 확인할 수 있습니다." },
+            { src: "assets/64.%20thumb_range_motion.png", alt: "엄지를 손바닥 안쪽으로 구부렸다가 바깥쪽으로 펴는 Thumb Range 동작", caption: "나머지 손가락을 편 채 엄지를 손바닥 안쪽으로 구부렸다가 다시 바깥쪽으로 펴는 동작을 반복합니다." }
           ]],
-          ["프로필 저장", "Tracking 준비가 완료되면 이름을 입력해 새 프로필로 저장하거나 선택한 프로필을 갱신합니다.", { src: "assets/22.%20save_profile.png", alt: "Tracking ready 상태와 프로필 이름 및 Save 버튼", caption: "Tracking ready가 ready로 표시되면 Profile name에 이름을 입력하고 Save를 눌러 캘리브레이션 결과를 프로필로 저장합니다." }]
+          ["4. Flat", "Start Flat을 누른 뒤 손가락을 모아 편 상태로 손바닥 전체를 평평한 면에 댑니다. 화면의 유지 시간이 완료될 때까지 손을 움직이지 마세요.", [
+            { src: "assets/20.%20flat_pose.png", alt: "Flat 단계의 Start Flat 버튼", caption: "Thumb Range가 done으로 표시되고 Flat이 next 상태가 되면 Start Flat을 누릅니다." },
+            { src: "assets/24.%20flat_motion.png", alt: "손바닥 전체를 평평한 면에 대고 유지하는 Flat 자세", caption: "손가락을 모아 펴고 손바닥 전체가 바닥에 닿은 상태를 안정적으로 유지합니다." }
+          ]],
+          ["5. Tracking Start", "Flat 단계가 완료되면 Start Tracking을 누릅니다. Tracking Start가 done 또는 Ready to track으로 표시되는지 확인한 뒤 손가락을 자연스럽게 움직여 3D 손 모델이 같은 동작을 따라가는지 확인합니다."],
+          ["선택: Pinch Adjustment", "엄지와 다른 손가락을 맞댔을 때 3D 손 모델의 손끝 위치가 어긋나는 경우에만 사용합니다. Enable pinch adjustment를 켠 뒤 엄지와 검지, 중지, 약지, 소지를 차례로 가볍게 맞댑니다. 손끝끼리 세게 누르지 말고 자연스럽게 닿은 자세를 유지한 채 해당 Capture 버튼을 누르세요. 네 조합이 모두 수집되어 4/4가 되면 Calculate를 누르고, Preview로 결과를 확인한 다음 Apply를 누릅니다. 다시 진행하려면 Reset Pinch Adjustment를 사용합니다.", [
+            { src: "assets/65.%20pinch_adjust_panel.png", alt: "엄지와 네 손가락의 핀치 위치를 수집하는 Optional Pinch Adjustment 패널", caption: "T-I는 엄지-검지, T-M은 엄지-중지, T-R은 엄지-약지, T-L은 엄지-소지를 뜻합니다. 네 조합을 각각 한 번씩 수집합니다." },
+            { src: "assets/66.%20pinch1.png", alt: "엄지와 검지 끝을 맞대는 T-I 핀치 자세", caption: "T-I: 엄지와 검지 끝을 자연스럽게 맞대고 Capture T-I를 누릅니다. 나머지 손가락은 편안하게 펴세요." },
+            { src: "assets/67.%20pinch2.png", alt: "엄지와 중지 끝을 맞대는 T-M 핀치 자세", caption: "T-M: 엄지와 중지 끝을 자연스럽게 맞대고 Capture T-M을 누릅니다." },
+            { src: "assets/68.%20pinch3.png", alt: "엄지와 약지 끝을 맞대는 T-R 핀치 자세", caption: "T-R: 엄지와 약지 끝을 자연스럽게 맞대고 Capture T-R을 누릅니다." },
+            { src: "assets/69.%20pinch4.png", alt: "엄지와 소지 끝을 맞대는 T-L 핀치 자세", caption: "T-L: 엄지와 소지 끝을 자연스럽게 맞대고 Capture T-L을 누릅니다." }
+          ]],
+          ["프로필 저장", "5단계가 모두 done이고 Ready to track이 표시되는지 확인합니다. 선택 핀치 보정을 사용했다면 Apply까지 완료한 뒤 Profile name에 구분하기 쉬운 이름을 입력하고 Save를 누릅니다. 기존 프로필을 다시 보정한 경우에는 같은 위치에서 변경 결과를 저장합니다.", { src: "assets/22.%20save_profile.png", alt: "캘리브레이션 완료 상태와 프로필 이름 및 Save 버튼이 표시된 최신 패널", caption: "Calibration status에서 Fist calibration, Thumb range, Flat hand hold, Tracking start 상태를 확인한 뒤 Profile name을 입력하고 Save를 눌러 결과를 저장합니다. 선택 핀치 보정은 필요한 경우에만 수행합니다." }]
         ],
         result: "글러브 Pose가 정상적으로 계산되고 저장된 프로필을 다음 실행에서 다시 적용할 수 있습니다.",
-        note: "결과가 잘못되면 대상 글러브를 확인한 뒤 Reset하고 단계를 다시 수행하세요. Hinge Optimize와 Flat 개발자 단계는 일반 절차가 아닙니다."
+        note: "단계가 진행되지 않거나 결과가 잘못되면 대상 글러브를 다시 확인하고 해당 단계를 다시 실행하세요. Fist Calibration 중에는 주먹을 펴지 말고 손목을 위아래 또는 좌우로 꺾지 마세요."
       }
     ]
   },
@@ -298,20 +309,21 @@ const categories = [
     topics: [
       {
         id: "udp-streaming",
-        title: "Hand Tracking UDP 설정과 실행",
+        title: "Hand Tracking UDP 설정과 송신",
         useCases: ["UC-013"],
-        summary: "Tracking Output에서 좌우 손의 UDP 목적지와 포트를 설정하고 핸드 트래킹 데이터 전송을 시작하거나 중지합니다.",
-        covers: ["좌우 손 IP와 Port 설정", "설정 저장과 재시작 조건", "Tracking UDP 상태 확인"],
-        prerequisites: ["수신 프로그램 실행", "목적지 IP와 Port 확인", "손 트래킹 데이터 준비"],
+        summary: "Tracking Output에서 왼손과 오른손의 UDP 송신 대상을 설정하고 핸드 트래킹 데이터 송신을 시작하거나 중지합니다.",
+        covers: ["좌우 손 IP와 Send·Echo Port 설정", "설정 저장과 재시작 조건", "UDP 송신 시작·중지와 상태 확인"],
+        prerequisites: ["글러브 연결과 손 트래킹 시작", "UDP 수신 프로그램 실행", "수신 대상 IP와 사용할 Port 확인"],
         steps: [
-          ["Endpoint 입력", "Task Panel의 Tracking Output 탭을 열고 왼손과 오른손의 목적지 IP, Send Port와 Echo Port를 입력합니다."],
-          ["설정 적용", "UDP 설정을 저장하고 재시작이 필요한지 상태 메시지를 확인합니다.", { src: "assets/37.%20udp_endpoint_save.png", alt: "UDP Endpoint 저장 완료 팝업", caption: "저장 버튼을 누른 뒤 UDP Endpoints Saved 팝업이 표시되면 설정이 정상적으로 저장된 것입니다. 송신 중에 변경했다면 중지 후 다시 시작해야 적용됩니다." }],
-          ["Streaming 실행", "Hand Tracking UDP를 시작하고 상단의 Tracking UDP와 Tracking Output 탭의 상태가 초록색 streaming으로 바뀌는지 확인합니다. 수신 프로그램에서 좌우 손 데이터가 도착하는지도 점검합니다."]
+          ["UDP 패널과 Endpoint 입력", "Tracking Output 탭에서 왼손과 오른손의 수신 대상 IP, Send Port와 Echo Port를 입력합니다. Send Port는 트래킹 데이터를 보낼 포트이고, Echo Port는 응답을 받을 로컬 포트입니다.", { src: "assets/36.%20udp_streaming.png", alt: "좌우 손 IP와 Send 및 Echo Port를 설정하는 Hand Tracking UDP 패널", caption: "UDP가 정지된 상태에서는 ready와 UDP idle.이 표시됩니다. 좌우 손의 IP와 send·echo 포트를 수신 프로그램 구성에 맞게 입력합니다." }],
+          ["Endpoint 저장", "입력값을 변경한 뒤 패널 아래의 저장 아이콘을 누릅니다. UDP Endpoints Saved 팝업이 표시되면 저장이 완료된 것입니다. OK를 눌러 패널로 돌아갑니다.", { src: "assets/37.%20udp_endpoint_save.png", alt: "UDP Endpoints Saved 저장 완료 팝업", caption: "UDP endpoints were saved. 메시지가 표시되면 설정이 저장된 것입니다. UDP 송신 중에 저장했다면 중지한 뒤 다시 시작해야 새 설정이 적용됩니다." }],
+          ["UDP 송신 시작", "글러브 트래킹과 수신 프로그램이 준비되었는지 확인한 뒤 재생 모양의 Start Tracking UDP 버튼을 누릅니다. 상태 배지가 초록색 streaming으로 바뀌고 UDP streaming.이 표시되는지 확인한 다음, 수신 프로그램에서 왼손과 오른손 데이터가 각각 설정한 Send Port로 들어오는지 확인합니다.", { src: "assets/38.%20udp_send.png", alt: "Hand Tracking UDP가 streaming 상태로 실행 중인 패널", caption: "송신이 시작되면 상태가 streaming으로 바뀝니다. 실행 중에는 붉은색 연결 해제 모양의 Stop Tracking UDP 버튼으로 송신을 중지할 수 있습니다." }],
+          ["변경 적용과 송신 중지", "송신 중 Endpoint를 변경했다면 저장 후 Stop Tracking UDP를 누르고 다시 Start Tracking UDP를 눌러야 새 설정이 적용됩니다. 작업을 마칠 때도 Stop Tracking UDP를 눌러 상태가 ready와 UDP idle.로 돌아오는지 확인합니다."]
         ],
-        result: "좌우 손 데이터가 설정한 UDP Endpoint로 전송되고 Tracking UDP 상태가 Streaming으로 표시됩니다.",
+        result: "좌우 손 트래킹 데이터가 각 Send Port로 전송되고 Hand Tracking UDP 상태가 streaming으로 표시됩니다.",
         packetFormatTitle: "데이터 패킷 형식",
         packetFormatBody: "<br><strong>기본 형식</strong><br>UDP 송신 데이터는 little-endian 바이너리 패킷이며,<br><b>sequence_id | count | body ... | CRC32</b> 순서로 구성됩니다.<br><br><strong>필드 의미</strong><br>sequence_id는 uint32(byte 0~3)이며 사용하지 않으면 건너뜁니다.<br>count는 uint8(byte 4)이며 body 개수를 의미합니다.<br>body 데이터는 한 개당 32 bytes이고, 마지막 4 bytes는 CRC32이며 사용하지 않으면 무시할 수 있습니다.<br><br><strong>Body 데이터 구성</strong><br>body 시작 + 0 : body_id (int32)<br>body 시작 + 4 : position.x (float32)<br>body 시작 + 8 : position.y (float32)<br>body 시작 + 12 : position.z (float32)<br>body 시작 + 16 : quaternion.x (float32)<br>body 시작 + 20 : quaternion.y (float32)<br>body 시작 + 24 : quaternion.z (float32)<br>body 시작 + 28 : quaternion.w (float32)<br><br><strong>Body Index / 명칭</strong><br>0: Wrist<br>1: Thumb_CMC<br>2: Index_MCP<br>3: Middle_MCP<br>4: Ring_MCP<br>5: Pinky_MCP<br>6: Thumb_MCP<br>7: Index_PIP<br>8: Middle_PIP<br>9: Ring_PIP<br>10: Pinky_PIP<br>11: Thumb_IP<br>12: Index_DIP<br>13: Middle_DIP<br>14: Ring_DIP<br>15: Pinky_DIP<br><br><strong>좌우 구분</strong><br>moti_udp 패킷 내부에는 side 값이 없습니다.<br>좌우는 수신 포트로 구분하며, 왼손은 <b>UDP port 9000</b>, 오른손은 <b>UDP port 9002</b>가 기본으로 설정되어 있습니다.",
-        note: "주소를 변경했다면 Streaming을 중지한 뒤 다시 시작해야 새 설정이 적용됩니다."
+        note: "왼손과 오른손의 Send Port 및 Echo Port는 서로 겹치지 않게 설정하세요. 포트가 다른 프로그램에서 사용 중이면 UDP 송신을 시작하지 못할 수 있습니다."
       },
       {
         id: "recording",
@@ -469,36 +481,15 @@ const categories = [
         id: "third-party-software",
         title: "제3자 소프트웨어",
         useCases: [],
-        summary: "MOTI Studio 1.5 출시 패키지에서 확인한 주요 제3자 구성요소와 상용 배포 전에 확인해야 할 라이선스 조건을 안내합니다.",
+        summary: "MOTI Studio에 포함된 제3자 소프트웨어와 콘텐츠의 저작권 및 라이선스 정보를 안내합니다.",
         hideOverview: true,
         hidePrerequisites: true,
         hideResult: true,
-        criticalWarningLabel: "현재 패키지는 상용 출시 전 라이선스 정리가 필요합니다",
-        criticalWarning: "CPD 생성 코드에는 상업적 이용을 허용하지 않는 Academic License 문구가 있으며, Harfang은 여러 라이브러리와 함께 정적으로 링크되어 있습니다. 손 뼈 메쉬는 CC BY-SA 2.1 Japan이 적용되는 BodyParts3D 자료이므로 저작자 표시와 파생 메쉬의 동일조건 배포 범위도 준수해야 합니다. 해당 코드의 상용 이용 권리와 Harfang 라이선스 경로를 확정하기 전에는 현재 패키지를 비공개 상용 소프트웨어로 출시하지 마십시오.",
-        stepsTitle: "배포 전 확인 절차",
-        noteTitle: "검토 기준",
-        noteLabel: "출시 빌드 기준",
-        covers: ["주요 제3자 구성요소와 적용 라이선스", "허용적 오픈소스와 공급사 SDK의 차이", "비공개 상용 배포 전 필수 확인 사항"],
-        prerequisites: ["실제 출시 빌드에 포함되는 DLL·라이브러리 목록 확정", "각 구성요소의 정확한 버전과 원본 LICENSE·NOTICE 확보", "Harfang에 적용할 라이선스 경로 및 공급사 SDK 재배포 권한 확인"],
-        licenseComponents: [
-          { name: "OpenVR", version: "2.15.6", release: "포함 · openvr_api.dll", license: "BSD-3-Clause", action: "아래 공개 고지에 저작권자와 원문 링크 수록", status: "고지 제공", source: "https://github.com/ValveSoftware/openvr/blob/master/LICENSE" },
-          { name: "Eigen", version: "3.4.0", release: "포함 · 헤더 코드", license: "MPL-2.0 중심", action: "MPL 대상 소스와 라이선스 링크를 아래 공개 고지에 수록. 사용 모듈 변경 시 재검토", status: "고지·소스 제공", source: "https://gitlab.com/libeigen/eigen/-/blob/3.4.0/COPYING.MPL2" },
-          { name: "spdlog / fmt", version: "1.17.0 / 12.1.0", release: "포함 · 헤더 코드", license: "MIT", action: "두 프로젝트의 저작권자와 MIT 원문 링크를 아래 공개 고지에 수록", status: "고지 제공", source: "https://github.com/gabime/spdlog/blob/v1.x/LICENSE" },
-          { name: "toml11", version: "3.7.0", release: "포함 · 헤더 코드", license: "MIT", action: "저작권자와 MIT 원문 링크를 아래 공개 고지에 수록", status: "고지 제공", source: "https://github.com/ToruNiina/toml11/blob/v3.7.0/LICENSE" },
-          { name: "Boost", version: "1.82.0", release: "포함 · 헤더 코드", license: "Boost Software License 1.0", action: "라이선스 원문 링크를 아래 공개 고지에 수록", status: "고지 제공", source: "https://www.boost.org/LICENSE_1_0.txt" },
-          { name: "BodyParts3D / Anatomography 손 뼈 메쉬", version: "FMA ID 기반 STL · 정확한 원본 릴리스 미확인", release: "포함 · ui_assets/hand_mesh", license: "CC BY-SA 2.1 Japan · 상업 이용 허용", action: "독점 사용 제한에서 제외. 원본 릴리스·변환 이력을 확인하기 전까지 파생 메쉬로 보수적으로 취급하여 저작자 표시, 라이선스 링크, 변경 사항 표시와 동일조건을 유지", status: "고지 완료·이력 확인", source: "https://lifesciencedb.jp/bp3d/info_en/license/index.html" },
-          { name: "Harfang", version: "3.2.7", release: "포함 · 정적 링크", license: "GPLv3 / LGPLv3 / 상용", action: "상용 라이선스 또는 LGPLv3 준수 경로를 확정하고 정적 링크 방식을 검토", status: "출시 차단", source: "https://github.com/harfang3d/harfang3d#license" },
-          { name: "Harfang 하위 구성요소 · 허용적 라이선스", version: "Harfang 3.2.7 고정 커밋", release: "포함 · 정적 링크 및 DLL", license: "MIT / BSD / zlib / Apache-2.0 등", action: "확인된 저작권자와 라이선스 원문 링크를 아래 공개 고지에 수록", status: "고지 제공", source: "https://github.com/harfang3d/harfang3d/tree/v3.2.7/extern" },
-          { name: "Harfang 하위 구성요소 · 추가 조건", version: "Harfang 3.2.7 고정 커밋", release: "포함 가능 · 정적 라이브러리", license: "OpenAL Soft LGPL-2.0 / Mali ASTC EULA", action: "단순 고지만으로 끝나지 않으므로 실제 링크·사용 여부와 재링크 또는 EULA 조건을 별도 확인", status: "추가 의무", source: "https://github.com/harfang3d/harfang3d/tree/v3.2.7/extern" },
-          { name: "CPD 생성 코드", version: "저장소 포함본", release: "포함 · moti.dll", license: "MathWorks Academic License 표기", action: "상용 이용 권리를 증명하거나 상용 배포 가능한 구현으로 교체", status: "출시 차단", source: "https://www.mathworks.com/pricing-licensing.html" },
-          { name: "CFR-Sync", version: "저장소 포함본", release: "헤더 포함 여부 확인", license: "라이선스 파일 없음", action: "권리자와 사용 조건을 문서화하고 제3자 코드라면 배포 허가를 확보", status: "권리 확인", source: "" },
-          { name: "Open3D", version: "0.19.0", release: "현재 패키지 미포함", license: "MIT", action: "Open3D 옵션을 켜는 출시 빌드에서만 하위 종속성 고지까지 포함", status: "미포함", source: "https://github.com/isl-org/Open3D/blob/main/LICENSE" },
-          { name: "OpenCV", version: "출시 패키지 미사용", release: "현재 패키지 미포함", license: "버전에 따라 Apache-2.0 또는 BSD-3-Clause", action: "Vision 또는 RealSense 옵션을 켤 때 버전과 NOTICE를 다시 확인", status: "미포함", source: "https://opencv.org/license/" },
-          { name: "RealSense SDK", version: "출시 패키지 미사용", release: "현재 패키지 미포함", license: "Apache-2.0", action: "RealSense 옵션을 켤 때 realsense2.dll과 LICENSE·NOTICE를 확인", status: "미포함", source: "https://github.com/realsenseai/librealsense/blob/master/LICENSE" },
-          { name: "ZED SDK", version: "출시 패키지 미사용", release: "현재 패키지 미포함", license: "Stereolabs SDK 약관", action: "Vision 빌드를 출시할 때 해당 SDK EULA의 재배포 범위를 확인", status: "미포함", source: "https://www.stereolabs.com/developers" },
-          { name: "CUDA Toolkit", version: "출시 패키지 미사용", release: "현재 패키지 미포함", license: "NVIDIA SDK EULA", action: "Vision 빌드를 출시할 때 지정된 재배포 가능 런타임만 포함", status: "미포함", source: "https://docs.nvidia.com/cuda/eula/" },
-          { name: "TensorRT", version: "출시 패키지 미사용", release: "현재 패키지 미포함", license: "NVIDIA TensorRT SLA", action: "Vision 빌드를 출시할 때 허용된 런타임 DLL과 약관 조건을 확인", status: "미포함", source: "https://docs.nvidia.com/deeplearning/tensorrt/latest/reference/sla.html" }
-        ],
+        stepsTitle: "사용자 안내",
+        noteTitle: "라이선스 안내",
+        noteLabel: "원문 확인",
+        covers: ["제3자 소프트웨어와 콘텐츠의 저작권 및 라이선스", "사용자가 별도로 확인해야 하는 경우", "라이선스 원문 확인 방법"],
+        prerequisites: [],
         licenseNotices: [
           { name: "OpenVR", version: "2.15.6 및 Harfang 번들 1.16.8", copyright: "Copyright (c) 2015, Valve Corporation. All rights reserved.", license: "BSD 3-Clause License", term: "BSD3", source: "https://github.com/ValveSoftware/openvr/blob/master/LICENSE" },
           { name: "Eigen", version: "3.4.0", copyright: "Copyright © Eigen contributors", license: "Mozilla Public License 2.0 중심. 이 배포에서 사용하는 MPL 대상 원본 소스는 링크에서 제공됩니다.", source: "https://gitlab.com/libeigen/eigen/-/tree/3.4.0" },
@@ -517,7 +508,6 @@ const categories = [
           { name: "stb_image / stb_image_write / stb_truetype / stb_vorbis", version: "2.27 / 1.16 / 1.26 / 1.22", copyright: "Copyright (c) 2017, Sean Barrett and stb contributors.", license: "MIT License 또는 Public Domain 중 MIT License 선택", term: "MIT", source: "https://github.com/nothings/stb/blob/master/LICENSE" },
           { name: "miniz", version: "2.2.0", copyright: "Copyright 2013-2014 RAD Game Tools and Valve Software; Copyright 2010-2014 Rich Geldreich and Tenacious Software LLC.", license: "MIT License", term: "MIT", source: "https://github.com/richgel999/miniz/blob/2.2.0/LICENSE" },
           { name: "MikkTSpace", version: "1.0", copyright: "Copyright (C) 2011, Morten S. Mikkelsen.", license: "zlib License", term: "ZLIB", source: "https://github.com/mmikk/MikkTSpace" },
-          { name: "cmft", version: "commit 3b89802", copyright: "Copyright 2014-2015, Dario Manesku. All rights reserved.", license: "BSD 2-Clause License", term: "BSD2", source: "https://github.com/dariomanesku/cmft/blob/master/LICENSE" },
           { name: "NVTT / BC6H / BC7", version: "Harfang bimg 고정 커밋", copyright: "Copyright (c) 2007, NVIDIA Corporation; portions Copyright 2011-2022, Branimir Karadzic.", license: "MIT License / Apache License 2.0 / BSD 2-Clause License", source: "https://github.com/bkaradzic/bimg/tree/663f724186e26caf46494e389ed82409106205fb/3rdparty/nvtt" },
           { name: "ASTC Codec", version: "Harfang bimg 고정 커밋", copyright: "Copyright notices are retained in the Google ASTC codec source.", license: "Apache License 2.0", source: "https://github.com/bkaradzic/bimg/tree/663f724186e26caf46494e389ed82409106205fb/3rdparty/astc-codec" },
           { name: "ETC1", version: "Harfang bimg 고정 커밋", copyright: "Copyright notices are retained in the Android ETC1 source.", license: "Apache License 2.0", source: "https://github.com/bkaradzic/bimg/tree/663f724186e26caf46494e389ed82409106205fb/3rdparty/etc1" },
@@ -529,12 +519,12 @@ const categories = [
           { name: "OpenXR Loader", version: "commit c16a18c", copyright: "Copyright notices are retained by The Khronos Group Inc. and contributors.", license: "Apache License 2.0", source: "https://github.com/KhronosGroup/OpenXR-SDK/blob/c16a18c99740ea5dd251e3af117e0e5aea4ceaa9/LICENSE" }
         ],
         steps: [
-          ["출시 구성 확정", "개발 PC에 설치되어 있기만 한 SDK와 실제 설치 패키지에 포함되는 DLL·라이브러리를 구분합니다. 사용하지 않거나 배포하지 않는 선택 기능은 고지 목록에서 별도로 표시합니다."],
-          ["원문 고지 구성", "THIRD-PARTY-LICENSE 문서에 구성요소 이름, 버전, 저작권자, 라이선스 식별자와 원문을 연결합니다. Apache-2.0 구성요소에 NOTICE 파일이 있으면 해당 고지도 함께 유지합니다."],
-          ["차단 항목 해소", "CPD 생성 코드의 상용 이용 권리를 증명하거나 코드를 교체하고, Harfang은 상용 라이선스 또는 LGPLv3 준수 경로를 확정해야 합니다. BodyParts3D 메쉬는 상업 이용이 가능하지만 원본 릴리스·다운로드 경로·변환 이력을 복원하고, 확인 전까지는 파생 메쉬로 보수적으로 취급해 CC BY-SA 동일조건으로 제공합니다. CFR-Sync의 권리 관계와 Harfang 하위 구성요소의 고지도 함께 정리합니다."]
+          ["일반적인 사용", "MOTI Studio를 설치하고 사용하는 경우에는 제3자 소프트웨어와 관련해 별도로 설정하거나 진행할 작업이 없습니다."],
+          ["콘텐츠 재사용", "MOTI Studio에 포함된 BodyParts3D 손 뼈 메쉬를 복사·수정·공유하는 경우에는 저작자와 라이선스를 표시하고, 변경 사항을 밝히며, 변경한 자료에도 같은 라이선스를 적용해야 합니다."],
+          ["세부 조건 확인", "구성요소별 항목을 펼치면 저작권자와 적용 라이선스를 확인할 수 있습니다. 정확한 조건이 필요한 경우 각 항목의 원문 링크를 확인하십시오."]
         ],
-        result: "출시 패키지의 모든 제3자 바이너리가 구성요소별 고지와 연결되고, 계약형 SDK는 재배포 권한과 허용 파일이 확인되어야 합니다.",
-        note: "위 공개 고지는 2026년 7월 20일 생성된 MOTI-Studio-Setup-1.5.exe, build_dist 설정 및 Harfang 3.2.7의 고정 종속성 커밋을 기준으로 작성했습니다. 고지는 해당 제3자 권리자의 라이선스를 대체하지 않으며, 각 항목의 링크에서 원문이 적용됩니다. BodyParts3D 메쉬에는 CC BY-SA 2.1 Japan의 저작자 표시와 동일조건 의무가 적용됩니다. OpenAL Soft, Mali ASTC, Harfang 본체, CPD 생성 코드와 CFR-Sync는 단순 고지만으로 해결되지 않습니다. 현재 소스나 출시 구성이 변경되면 실제 출시 직전에 목록을 다시 생성해야 합니다."
+        result: "",
+        note: "이 페이지는 제3자 라이선스를 이해하기 쉽게 요약한 안내입니다. 요약과 라이선스 원문의 내용이 다른 경우 원문의 조건이 적용됩니다."
       }
     ]
   }
