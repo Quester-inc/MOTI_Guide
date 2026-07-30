@@ -180,7 +180,7 @@ const categories = [
             { src: "assets/14.%20attachment_setup_button.png", alt: "Devices 탭의 Attachment Setup 버튼", caption: "Task Panel의 Devices 탭에서 Attachment Setup을 눌러 부착 설정 Workbench를 엽니다." },
             { src: "assets/15.%20select_hand%26device.png", alt: "부착 설정의 손 방향과 장비 종류 선택 항목", caption: "Side에서 설정할 손을 선택하고 Device Type에서 실제로 부착한 Tracker, Controller 또는 Generic 장비를 선택합니다." }
           ]],
-          ["Preset 적용", "실제 부착 방식과 가장 가까운 Mount Preset을 선택합니다.", { src: "assets/16.%20select_preset.png", alt: "Mount Preset이 적용된 Attachment Workbench", caption: "실제 장착 방향과 가장 가까운 Mount Preset을 적용한 뒤 3D Preview에서 손과 장비의 기준 위치를 확인합니다." }],
+          ["Preset 적용", "3D Preview에서 트래커나 컨트롤러를 더블클릭해 장비를 집어 든 뒤, 실제 부착 방식과 가장 가까운 Mount Preset으로 옮겨 클릭해 부착합니다.", { src: "assets/16.%20select_preset.png", alt: "Mount Preset이 적용된 Attachment Workbench", caption: "트래커나 컨트롤러를 더블클릭하면 장비를 집어 든 배치 상태가 됩니다. 원하는 Mount Preset으로 옮겨 클릭해 부착한 뒤 손과 장비의 기준 위치를 확인합니다." }],
           ["미세 조정", "3D Preview를 보며 위치와 회전을 조정한 뒤 저장합니다.", { src: "assets/17.%20gizmo_control.png", alt: "Attachment Workbench의 회전 Gizmo", caption: "장비에 표시된 Gizmo의 축과 회전 링을 조작해 위치와 각도를 실제 부착 상태에 맞춘 뒤 결과를 저장합니다." }]
         ],
         result: "3D 손 모델과 실제 부착 장비의 기준 위치가 자연스럽게 일치합니다.",
@@ -330,15 +330,16 @@ const categories = [
         title: "Timeline Take 녹화",
         useCases: ["UC-016"],
         summary: "현재 트래킹 데이터를 Timeline Take로 녹화하고 종료해 검토 가능한 결과를 만듭니다.",
-        covers: ["녹화 전 트래킹 상태", "Record·Stop 조작", "녹화된 프레임과 Take 이름"],
+        covers: ["녹화 전 트래킹 상태", "Record·Stop 조작", "강제 종료된 녹화 자동 복구", "녹화된 프레임과 Take 이름"],
         prerequisites: ["트래킹 실행", "Take 저장 폴더 확인", "녹화할 동작 준비"],
         steps: [
           ["녹화 준비", "Timeline이 Live 상태이고 저장 위치에 접근 가능한지 확인합니다.", { src: "assets/39.%20timeline_live.png", alt: "Live 상태의 Timeline과 녹화 준비 화면", caption: "Live View 하단 Timeline의 시간이 0에서 대기하고 Record 버튼을 사용할 수 있는지 확인합니다. 필요하면 Paths 버튼에서 Take와 Export 저장 폴더를 먼저 점검합니다." }],
           ["Take 녹화", "Record를 실행한 뒤 필요한 동작을 수행합니다.", { src: "assets/40.%20timeline_record.png", alt: "Timeline Take 녹화가 진행 중인 화면", caption: "빨간 Record 버튼을 누른 뒤 프레임과 시간이 증가하는 동안 기록할 손 동작을 수행합니다. 녹화 중에는 빨간 Stop 버튼으로 기록을 종료할 수 있습니다." }],
-          ["녹화 종료", "Stop을 실행하고 Take 이름, 길이와 Frame 수를 확인합니다.", { src: "assets/41.%20timeline_check.png", alt: "녹화가 종료된 Timeline의 시간과 Frame 수", caption: "Stop을 누른 뒤 Timeline에 전체 시간과 마지막 Frame 수가 표시되는지 확인합니다. Return to Live를 누르기 전에 녹화 길이와 프레임이 예상한 범위인지 점검하세요." }]
+          ["녹화 종료", "Stop을 실행하고 Take 이름, 길이와 Frame 수를 확인합니다.", { src: "assets/41.%20timeline_check.png", alt: "녹화가 종료된 Timeline의 시간과 Frame 수", caption: "Stop을 누른 뒤 Timeline에 전체 시간과 마지막 Frame 수가 표시되는지 확인합니다. Return to Live를 누르기 전에 녹화 길이와 프레임이 예상한 범위인지 점검하세요." }],
+          ["강제 종료 후 복구", "녹화 중 앱이 강제 종료되어도 완료된 기록 구간은 임시 저장됩니다. MOTI Studio를 다시 실행하면 중단된 녹화가 자동으로 복구되어 Saved Takes 목록에 나타납니다.", { src: "assets/46.%20load_record.png", alt: "강제 종료 후 자동 복구된 Take가 Recovered 상태로 표시된 Saved Takes 목록", caption: "자동 복구된 녹화는 원래 Take 이름 뒤에 Recovered가 붙고 목록에도 Recovered 상태로 표시됩니다. Load를 눌러 복구된 길이와 Frame 수를 확인하세요." }]
         ],
-        result: "수행한 동작이 Timeline Take로 생성되어 재생과 저장을 진행할 수 있습니다.",
-        note: "녹화 중 장비 연결이 끊기거나 앱이 종료되면 Take가 예상보다 짧거나 불완전할 수 있습니다."
+        result: "수행한 동작이 Timeline Take로 생성되며, 녹화 중 강제 종료된 경우에도 재실행 시 완료된 기록 구간이 자동 복구됩니다.",
+        note: "강제 종료 직전에 아직 기록이 완료되지 않은 일부 프레임은 복구되지 않아 Take가 예상보다 짧을 수 있습니다. 복구된 Take는 길이와 Frame 수를 확인한 뒤 사용하세요."
       },
       {
         id: "playback",
@@ -364,8 +365,8 @@ const categories = [
         prerequisites: ["저장할 Capture 또는 기존 Take", "Take 폴더 쓰기 권한", "구분 가능한 Take 이름"],
         steps: [
           ["현재 Take 저장", "현재 Capture에 이름을 지정하고 Take 폴더에 저장합니다.", { src: "assets/45.%20save_record.png", alt: "Save Recording 창에서 Take 이름을 입력하는 화면", caption: "Timeline의 저장 버튼을 누르고 Save Recording 창에 구분 가능한 Take 이름을 입력한 뒤 Save를 선택합니다. 저장이 끝나면 Take 목록에서 새 항목을 확인할 수 있습니다." }],
-          ["목록에서 불러오기", "Take 목록을 갱신하고 검토할 항목을 불러옵니다.", { src: "assets/46.%20load_record.png", alt: "Timeline의 Take 목록에 저장된 녹화 항목이 표시된 화면", caption: "Timeline의 Take 목록 버튼을 열어 이름, Frame 수와 FPS를 확인한 뒤 검토할 항목을 선택합니다. 목록에 방금 저장한 Take가 보이지 않으면 새로고침 버튼을 누르세요." }],
-          ["목록 정리", "불필요한 항목은 context menu에서 삭제합니다. 기존에 저장된 Take의 이름은 목록에서 변경할 수 없습니다.", { src: "assets/47.%20delete_record.png", alt: "Timeline Take 목록에서 Delete 메뉴를 선택하는 화면", caption: "Take 목록에서 삭제할 항목의 context menu를 열고 Delete를 선택합니다. 삭제한 Take 파일은 화면에서 복원할 수 없으므로 이름과 Frame 수를 다시 확인한 뒤 진행하세요." }]
+          ["목록에서 불러오기", "Take 목록을 갱신하고 검토할 항목의 Load를 누릅니다. 강제 종료 후 자동 복구된 항목은 Recovered 상태로 구분됩니다.", { src: "assets/46.%20load_record.png", alt: "일반 Take와 Recovered Take가 함께 표시된 Saved Takes 목록", caption: "Saved Takes에서 이름, Frame 수와 FPS를 확인한 뒤 Load를 누릅니다. 자동 복구된 항목에는 Recovered가 표시됩니다. 목록에 방금 저장하거나 복구한 Take가 보이지 않으면 Refresh를 누르세요." }],
+          ["목록 정리", "불필요한 항목은 해당 Take의 Delete 버튼으로 삭제합니다. 기존에 저장된 Take의 이름은 목록에서 변경할 수 없습니다.", { src: "assets/47.%20delete_record.png", alt: "Saved Takes의 Take 항목에 표시된 Load와 Delete 버튼", caption: "삭제할 Take의 이름과 Frame 수를 확인한 뒤 Delete를 누릅니다. 삭제한 Take 파일은 화면에서 복원할 수 없으므로 대상을 다시 확인한 뒤 진행하세요." }]
         ],
         result: "저장된 Take를 목록에서 다시 불러오거나 불필요한 파일을 삭제할 수 있습니다.",
         note: "삭제한 Take는 화면에서 복원할 수 없으므로 Export나 백업 여부를 먼저 확인하세요."
