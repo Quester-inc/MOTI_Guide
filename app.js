@@ -297,8 +297,7 @@ const categories = [
         ],
         result: "선택한 한 손 또는 두 손의 움직임이 로봇 핸드에 시각화되고, 변환된 데이터가 저장된 Command UDP Endpoint로 전송됩니다.",
         packetFormatTitle: "데이터 패킷 형식",
-        packetFormatBody: `<strong><br>MQP1 요약</strong><br>MQP1은 기존 호환용 little-endian 바이너리 명령입니다. 구조는 <b>"MQP1" | sequence_id(uint32) | count(uint32) | side(float32) | qpos(float32 × N)</b>이며 CRC가 없습니다. count는 side까지 포함하므로 N+1이고 side는 left=0.0, right=1.0입니다. OmniHand의 독립 관절 10개를 보낼 때 count=11, 전체 크기는 56 bytes입니다.<br><br>
-<strong>MQP2의 용도와 범위</strong><br>MQP2는 MOTI Studio와 이 저장소의 <b>moti.teleoperation Isaac Sim Extension</b> 사이에서 사용하는 이름 기반 UDP 명령 프로토콜입니다. Isaac Sim 자체가 요구하는 표준 포맷은 아니며 ROS 2 메시지도 아닙니다. 한 UDP datagram이 한 손·한 로봇의 완전한 관절 목표 한 세트를 나타냅니다. 현재 기본 Extension은 한 인스턴스에서 하나의 OmniHand articulation과 한 side를 구동합니다.<br><br>
+        packetFormatBody: `<strong><br>기본 형식</strong><br>UDP 송신 데이터는 little-endian 바이너리 패킷이며,<br><b>"MQP1" | sequence_id | count | side | qpos[0] ... qpos[N-1]</b> 순서로 구성됩니다.<br><br><strong>필드 의미</strong><br>"MQP1"은 4바이트 헤더입니다.<br>sequence_id와 count는 uint32, side와 qpos는 float32입니다.<br>count는 side를 포함한 전체 float 개수이므로 qpos 개수 + 1 값을 사용합니다.<br>side는 <b>left=0.0, right=1.0</b>입니다.<br>qpos 순서는 선택한 로봇 핸드 모델의 <b>URDF</b>에서 <b>mimic이 아닌 revolute joint 순서</b>를 따릅니다.<br><br><strong>OmniHand 예시</strong><br>OmniHand는 qpos가 10개이므로 count는 11이고 총 패킷 크기는 56 bytes입니다.<br><br>q0 = L_thumb_roll_joint<br>q1 = L_thumb_abad_joint<br>q2 = L_thumb_mcp_joint<br><br>q3 = L_index_abad_joint<br>q4 = L_index_pip_joint<br><br>q5 = L_middle_pip_joint<br><br>q6 = L_ring_abad_joint<br>q7 = L_ring_pip_joint<br><br>q8 = L_pinky_abad_joint<br>q9 = L_pinky_pip_joint<br><br>왼손은 L_, 오른손은 R_ 접두사를 붙여 같은 순서를 사용합니다.<br><br><strong>MQP2</strong><br>MQP2는 관절 이름을 함께 보내는 Isaac Sim 연동용 UDP 형식입니다. Isaac Sim의 표준 포맷이나 ROS 2 메시지는 아닙니다.<br><br>
 <strong>MQP2 전체 구조</strong><br>모든 정수와 float은 <b>little-endian</b>입니다.<br><b>"MQP2" | sequence_id | timestamp_ns | side | robot_name_length | joint_count | robot_name | joint[0..N-1] | CRC32</b><br><br>
 <strong>고정 헤더: 20 bytes</strong><br>
 offset 0, size 4: magic ASCII <b>MQP2</b> (4D 51 50 32)<br>
@@ -307,9 +306,9 @@ offset 8, size 8: <b>timestamp_ns</b> uint64<br>
 offset 16, size 1: <b>side</b> uint8, left=0, right=1<br>
 offset 17, size 1: <b>robot_name_length</b> uint8<br>
 offset 18, size 2: <b>joint_count</b> uint16<br><br>
-헤더 다음에는 robot_name_length만큼 UTF-8 robot_name bytes가 이어집니다. 널 종료 문자는 포함하지 않습니다. 각 joint record는 <b>name_length(uint8) | joint_name UTF-8 bytes | position(float32)</b>입니다. position은 radian 단위의 절대 관절 위치 목표입니다. 마지막 4 bytes는 CRC32입니다.<br><br>
+<strong>가변 영역</strong><br>헤더 다음에는 robot_name_length만큼 UTF-8 robot_name bytes가 이어지며 널 종료 문자는 포함하지 않습니다.<br>각 joint record는 <b>name_length(uint8) | joint_name(UTF-8) | position(float32)</b> 순서입니다. position은 radian 단위의 절대 관절 위치 목표입니다.<br>마지막 4 bytes는 <b>CRC32(uint32)</b>입니다.<br><br>
 <strong>패킷 크기 계산</strong><br>robot_name byte 길이를 R, 각 joint_name byte 길이를 Jᵢ라고 하면 전체 datagram 크기는 <b>24 + R + Σ(5 + Jᵢ)</b> bytes입니다. 24는 고정 헤더 20 bytes와 마지막 CRC32 4 bytes를 합친 값입니다. 수신기는 joint_count만 믿고 읽지 말고 각 가변 길이 필드가 datagram 경계를 넘지 않는지 확인해야 합니다.<br><br>
-<strong>허용 범위와 필수 검증</strong><br>
+<strong>필드 범위</strong><br>
 전체 datagram: 최대 <b>1400 bytes</b><br>
 robot_name: UTF-8 기준 1~63 bytes<br>
 joint_count: 1~64<br>
@@ -317,32 +316,16 @@ joint_name: UTF-8 기준 1~127 bytes, 패킷 안에서 중복 금지<br>
 position: NaN·±Inf가 아닌 유한 float32<br>
 side: 0 또는 1만 허용<br>
 마지막 joint 뒤 CRC 앞에 여분 bytes가 있으면 거부<br><br>
-<strong>CRC32</strong><br>CRC는 magic의 첫 byte부터 마지막 joint position의 마지막 byte까지, 즉 마지막 CRC 필드 자체를 제외한 전체 payload에 계산합니다. 알고리즘은 zlib과 호환되는 <b>CRC-32/ISO-HDLC(IEEE)</b>이고 계산 결과 uint32를 little-endian으로 저장합니다. magic, 길이, UTF-8, 관절 값보다 먼저 크기와 CRC를 검사하면 손상된 길이 필드로 인한 잘못된 파싱을 피할 수 있습니다.<br><br>
-<strong>sequence_id와 timestamp_ns</strong><br>MOTI Studio는 송신 stream에서 sequence_id를 uint32로 증가시키며 wraparound를 허용합니다. 수신기는 <b>0 &lt; ((candidate-current) mod 2³²) &lt; 2³¹</b>일 때만 새 패킷으로 판단합니다. 같은 번호와 과거 번호는 폐기하고 건너뛴 번호는 packet loss 통계에 반영합니다. 기본 Isaac 수신기는 250 ms 동안 패킷이 없으면 다음 패킷에서 sequence 기준을 새로 시작할 수 있습니다.<br>MOTI Studio의 timestamp_ns는 Unix epoch 기준 system clock nanoseconds입니다. 현재 Isaac Extension은 제어 순서 판단에는 sequence_id와 실제 수신 시각을 사용하며 timestamp_ns를 시뮬레이션 시간으로 직접 적용하지 않습니다. 따라서 자체 송신기는 timestamp를 메타데이터로 일관되게 넣되, 패킷 순서는 반드시 sequence_id로 관리해야 합니다.<br><br>
+<strong>CRC32</strong><br>magic의 첫 byte부터 마지막 joint position까지, CRC 필드 자체를 제외한 모든 bytes에 <b>CRC-32/ISO-HDLC(IEEE)</b>를 계산합니다. 결과 uint32는 little-endian으로 저장합니다.<br><br>
+<strong>sequence와 timestamp</strong><br>sequence_id는 송신 순서 확인용 uint32이고 wraparound를 허용합니다. timestamp_ns는 Unix epoch 기준 nanoseconds입니다.<br><br>
 <strong>OmniHand MQP2 payload</strong><br>왼손은 robot_name=<b>omnihand_left</b>, side=0, 오른손은 robot_name=<b>omnihand_right</b>, side=1을 사용합니다. 현재 출력은 독립 관절 10개에 mimic 규칙으로 계산한 6개를 더한 다음 16개 이름을 전송합니다.<br><br>
 1 thumb_roll_joint<br>2 thumb_abad_joint<br>3 thumb_mcp_joint<br>4 thumb_pip_joint<br>5 thumb_dip_joint<br>
 6 index_abad_joint<br>7 index_pip_joint<br>8 index_dip_joint<br>
 9 middle_pip_joint<br>10 middle_dip_joint<br>
 11 ring_abad_joint<br>12 ring_pip_joint<br>13 ring_dip_joint<br>
 14 pinky_abad_joint<br>15 pinky_pip_joint<br>16 pinky_dip_joint<br><br>
-실제 이름에는 왼손 L_ 또는 오른손 R_ 접두사가 붙습니다. MQP2 수신기는 배열 순서만으로 DOF를 연결하지 않고 <b>joint_name과 articulation DOF name을 정확히 비교</b>해 인덱스를 만듭니다. 따라서 이름이 모두 정확하면 순서를 바꿀 수 있지만, 없는 이름·중복 이름·대소문자가 다른 이름은 사용할 수 없습니다. Isaac 적용 직전 각 position은 해당 DOF의 lower/upper limit 범위로 clamp되고 velocity target은 0으로 설정됩니다.<br><br>
-<strong>Isaac Sim 기본 설정</strong><br>
-Extension 검색 경로: integrations/isaac_sim/exts<br>
-bindAddress: <b>127.0.0.1</b><br>
-udpPort: <b>5000</b><br>
-articulationPrimPath: <b>/omnihand/Geometry/base_link</b><br>
-expectedRobot: <b>omnihand_left</b><br>
-side: <b>left</b><br>
-staleTimeoutMs: <b>250</b><br><br>
-Extension은 Timeline이 Play 상태일 때만 최신 명령을 articulation에 적용합니다. expectedRobot과 robot_name이 정확히 일치하지 않는 패킷은 거부합니다. configured side의 최신 패킷만 선택하며, 250 ms를 넘겨 새 패킷이 없으면 마지막 pose를 유지합니다. 현재 기본 구성은 단일 왼손 articulation용입니다. 좌우 두 articulation을 동시에 제어하려면 서로 독립된 포트·expectedRobot·side·Prim Path를 가진 수신 인스턴스 구성이 추가로 필요합니다.<br><br>
-<strong>수신 처리 권장 순서</strong><br>1. datagram 길이 24~1400 bytes 확인<br>2. 마지막 4 bytes와 payload CRC32 비교<br>3. magic, side, robot_name_length, joint_count 검증<br>4. UTF-8 robot_name과 모든 joint record를 경계 검사하며 파싱<br>5. 중복 joint name, 비유한 position, trailing bytes 거부<br>6. expectedRobot과 side 정책 확인<br>7. sequence_id가 최신인지 확인<br>8. joint_name으로 articulation DOF를 조회하고 limit clamp 후 적용<br><br>
-<strong>구현과 상호운용 시험 위치</strong><br>
-C++ 인코더: moti_ret/src/motiret_output.cpp<br>
-Python codec: integrations/isaac_sim/exts/moti.teleoperation/moti/teleoperation/protocol.py<br>
-UDP receiver: integrations/isaac_sim/exts/moti.teleoperation/moti/teleoperation/receiver.py<br>
-Isaac 적용부: integrations/isaac_sim/exts/moti.teleoperation/moti/teleoperation/extension.py<br>
-시험 송신기: integrations/isaac_sim/exts/moti.teleoperation/tools/send_test_motion.py<br>
-교차 언어 golden packet: unit_tests/Mqp2PacketTest.cpp 및 integrations/isaac_sim/exts/moti.teleoperation/tests/test_protocol.py`,
+실제 이름에는 왼손 L_ 또는 오른손 R_ 접두사가 붙습니다. 수신기는 배열 순서가 아니라 <b>joint_name과 articulation DOF name</b>을 정확히 비교해 관절을 연결합니다.<br><br>
+<strong>구현 위치</strong><br>C++ 인코더: moti_ret/src/motiret_output.cpp<br>Isaac Sim codec: integrations/isaac_sim/exts/moti.teleoperation/moti/teleoperation/protocol.py`,
         note: "현재 지원 범위는 OmniHand입니다. Isaac Sim 연동 시 Robot Command Output에서 MQP2 (Isaac Sim)를 선택하고 Endpoint를 적용한 뒤 Start Command UDP를 누릅니다. 기본 Command UDP Endpoint는 양손 모두 127.0.0.1:5000이며 Hand Tracking UDP 설정과는 별도로 저장됩니다."
       }
     ]
