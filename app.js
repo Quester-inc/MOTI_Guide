@@ -532,6 +532,15 @@ const categories = [
   }
 ];
 
+// Temporarily keep unfinished legal-reference pages out of the published guide.
+// The source content and packaged third-party notices remain intact.
+const temporarilyHiddenTopicIds = new Set(["third-party-software"]);
+categories.forEach((category) => {
+  category.topics = category.topics.filter(
+    (topic) => !temporarilyHiddenTopicIds.has(topic.id)
+  );
+});
+
 const topics = categories.flatMap((category) => category.topics.map((topic) => ({ ...topic, category })));
 const topicById = new Map(topics.map((topic) => [topic.id, topic]));
 const main = document.getElementById("main-content");
@@ -594,7 +603,7 @@ function renderHome() {
 
       <section aria-labelledby="all-guides-heading">
         <div class="section-heading">
-          <div><h2 id="all-guides-heading">전체 사용 가이드</h2><p>22개 문서를 8개 작업 영역으로 정리했습니다.</p></div>
+          <div><h2 id="all-guides-heading">전체 사용 가이드</h2><p>${topics.length}개 문서를 ${categories.length}개 작업 영역으로 정리했습니다.</p></div>
         </div>
         <div class="category-grid">
           ${categories.map((category) => `
