@@ -252,7 +252,8 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .uc-list:empty { display: none; }
 .uc-badge { padding: 4px 8px; border: 1px solid var(--blue-100); border-radius: 999px; color: var(--blue-700); background: var(--blue-50); font-family: "Cascadia Code", Consolas, monospace; font-size: 9px; font-weight: 700; }
 
-.doc-section { scroll-margin-top: calc(var(--header-height) + 24px); margin-top: 44px; }
+.doc-section { scroll-margin-top: calc(var(--header-height) + 24px); margin-top: 44px; overflow-wrap: anywhere; }
+.doc-section a[data-page], .hero-checklist a[data-page] { color: var(--blue-700); text-decoration: underline; text-decoration-color: var(--blue-200); text-underline-offset: 3px; }
 .doc-section:first-of-type { margin-top: 0; }
 .doc-section h2 { margin: 0 0 15px; color: var(--gray-900); font-size: 22px; line-height: 1.35; letter-spacing: -.025em; }
 .doc-section p { margin: 0 0 14px; color: var(--gray-600); }
@@ -280,14 +281,44 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .license-status { display: inline-flex; padding: 3px 7px; border: 1px solid var(--gray-200); border-radius: 999px; color: var(--gray-600); background: var(--gray-50); white-space: nowrap; font-size: 10px; font-weight: 700; }
 
 .steps { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; counter-reset: guide-step; }
+.step-group, .step-card { scroll-margin-top: calc(var(--header-height) + 24px); }
+.step-group + .step-group { margin-top: 32px; }
+.step-group > h3 { margin: 0 0 16px; color: var(--gray-800); font-size: 16px; }
 .step-card { position: relative; min-height: 92px; padding: 19px 20px 19px 62px; border: 1px solid var(--gray-200); border-radius: var(--radius-md); background: var(--white); counter-increment: guide-step; }
 .step-card::before { content: counter(guide-step); position: absolute; left: 18px; top: 19px; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; color: var(--blue-700); background: var(--blue-50); font-family: "Cascadia Code", Consolas, monospace; font-size: 10px; font-weight: 800; }
 .step-card strong { display: block; margin-bottom: 3px; color: var(--gray-800); font-size: 14px; }
 .step-card span { color: var(--gray-500); font-size: 13px; }
+.step-details { margin: 16px 0 0; }
+.step-details > div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; padding: 9px 0; border-top: 1px solid var(--gray-100); }
+.step-details dt { color: var(--gray-600); font-size: 12px; font-weight: 700; }
+.step-details dd { margin: 0; color: var(--gray-700); font-size: 13px; overflow-wrap: anywhere; }
 .step-images { display: grid; gap: 14px; margin-top: 16px; }
 .step-figure { width: min(100%, 520px); margin: 0; }
 .step-image { display: block; width: min(100%, 520px); height: auto; border: 1px solid var(--gray-200); border-radius: 10px; box-shadow: 0 10px 24px rgb(15 23 42 / 8%); }
 .step-image-compact { width: auto; max-width: 100%; }
+.step-figure-wide { width: 100%; }
+.step-figure-wide .step-image { width: 100%; }
+.step-image-link { display: block; border-radius: 10px; }
+.step-image-link:focus-visible { outline: 3px solid var(--blue-600); outline-offset: 4px; }
+.annotated-image { position: relative; display: block; }
+.image-annotation { display: none; position: absolute; outline: 2px solid var(--blue-500); outline-offset: 2px; border-radius: 3px; pointer-events: none; }
+.image-annotation.is-active { display: block; }
+[data-show-annotations="false"] .image-annotation { display: none; }
+.annotation-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.step-card .annotation-current { color: var(--blue-700); font-weight: 700; }
+.annotation-toggle { flex: 0 0 auto; min-height: 36px; padding: 5px 10px; border: 1px solid var(--gray-300); border-radius: var(--radius-sm); background: var(--white); color: var(--gray-600); font: inherit; font-size: 12px; cursor: pointer; }
+.annotation-toggle:hover { background: var(--gray-50); }
+.step-figure .annotation-hint { margin: 16px 0 8px; color: var(--gray-500); font-size: 12px; }
+.image-legend { margin: 0; padding: 0; display: grid; gap: 6px; list-style: none; }
+.image-legend-button { display: flex; align-items: flex-start; gap: 10px; width: 100%; padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: var(--radius-sm); background: var(--white); text-align: left; font: inherit; cursor: pointer; }
+.image-legend-button:hover { border-color: var(--blue-200); }
+.image-legend-button[aria-pressed="true"] { border-color: var(--blue-500); background: var(--blue-50); }
+.image-legend-button:focus-visible, .annotation-toggle:focus-visible { outline: 3px solid var(--blue-600); outline-offset: 3px; }
+.step-card .image-legend-number { display: grid; place-items: center; flex: 0 0 24px; width: 24px; height: 24px; border-radius: 50%; color: var(--blue-700); background: var(--blue-50); font-size: 12px; font-weight: 800; line-height: 1; }
+.image-legend-button[aria-pressed="true"] .image-legend-number { color: var(--white); background: var(--blue-600); }
+.image-legend-copy { display: block; min-width: 0; }
+.image-legend-copy strong { display: block; margin: 0 0 2px; color: var(--gray-800); font-size: 13px; }
+.image-legend-copy > span { color: var(--gray-600); font-size: 13px; }
 .step-figure figcaption { margin-top: 8px; color: var(--gray-500); font-size: 12px; line-height: 1.6; }
 
 .callout { display: flex; gap: 12px; padding: 16px 17px; border: 1px solid var(--blue-100); border-radius: var(--radius-md); background: var(--blue-50); }
@@ -299,10 +330,11 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .callout p { margin: 0; color: var(--gray-600); font-size: 12px; }
 .document-alert { align-items: flex-start; margin: 28px 0 44px; }
 
-.page-toc { position: sticky; top: calc(var(--header-height) + 32px); padding-left: 18px; border-left: 1px solid var(--gray-200); }
+.page-toc { position: sticky; top: calc(var(--header-height) + 32px); max-height: calc(100vh - var(--header-height) - 64px); overflow-y: auto; padding-left: 18px; border-left: 1px solid var(--gray-200); }
 .page-toc h2 { margin: 0 0 10px; color: var(--gray-400); font-size: 10px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .page-toc a { display: block; padding: 5px 0; color: var(--gray-400); font-size: 11px; line-height: 1.45; }
 .page-toc a:hover { color: var(--blue-700); }
+.page-toc .toc-step { padding-left: 10px; }
 
 .document-footer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 52px; padding-top: 24px; border-top: 1px solid var(--gray-200); }
 .document-footer a { min-height: 76px; padding: 13px 15px; border: 1px solid var(--gray-200); border-radius: var(--radius-md); color: var(--gray-400); font-size: 10px; transition: border-color .16s, background .16s; }
@@ -362,7 +394,10 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
   .category-card { padding: 20px; }
   .document-main h1 { font-size: 32px; }
   .document-lead { font-size: 15px; }
-  .step-card { padding-left: 56px; }
+  .step-card { padding: 18px 16px; }
+  .step-card::before { left: 16px; top: 18px; }
+  .step-card > strong { min-height: 28px; padding-left: 40px; }
+  .step-card > span { display: block; margin-top: 10px; }
   .license-notice summary { align-items: flex-start; flex-direction: column; gap: 4px; }
   .license-notice summary small { text-align: left; }
 }

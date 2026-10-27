@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MOTI Studio 설치, 장비 설정, 트래킹, 녹화와 데이터 출력을 안내하는 사용자 가이드">
+  <meta name="description" content="MOTI Studio의 설치와 계정 준비, 장비 연결과 보정, 트래킹, 녹화·CSV ZIP·UDP 활용과 증상별 문제 해결을 안내합니다.">
   <title>MOTI Studio 사용자 가이드</title>
   <link rel="icon" type="image/png" href="assets/quester_logo.png?v=20260716">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261023-guide-full">
 </head>
 <body>
   <a class="skip-link" href="#main-content">본문으로 바로가기</a>
@@ -26,8 +26,8 @@
       <kbd>Ctrl K</kbd>
     </label>
     <div class="topbar-actions">
-      <a class="topbar-link" href="index.html?page=diagnostics" data-page="diagnostics">문제 해결</a>
-      <span class="version-badge">Studio v1.0</span>
+      <a class="topbar-link" href="index.html?page=troubleshooting" data-page="troubleshooting">문제 해결</a>
+      <span class="version-badge">2026.10.26 기준</span>
     </div>
   </header>
 
@@ -42,7 +42,7 @@
       <nav id="sidebar-navigation"></nav>
       <div class="sidebar-footer">
         <span class="status-dot" aria-hidden="true"></span>
-        <span>22개 가이드 · 30개 Use Case</span>
+        <span id="guide-count"></span>
       </div>
     </aside>
 
@@ -53,6 +53,6 @@
 
   <div class="search-results" id="search-results" hidden></div>
 
-  <script src="app.js?v=20260721-document-layout"></script>
+  <script src="app.js?v=20261026-guide-cursor-clean"></script>
 </body>
 </html>
