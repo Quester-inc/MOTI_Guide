@@ -109,6 +109,38 @@
       "moti_gui/src/gui/scene/hand_render_style.cpp",
       "moti_gui/include/gui/code/glove_render_style.hpp",
       "moti_gui/src/gui/app/product_viewport_settings_storage.cpp"
+    ],
+    "error-compact-20261029": [
+      "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp",
+      "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp"
+    ],
+    "account-consent-20261029": [
+      "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp",
+      "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp",
+      "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp",
+      "moti_gui/src/gui/account/diagnostics_consent_client.cpp",
+      "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp",
+      "moti_gui/src/gui/auth/email_registration.cpp"
+    ],
+    "report-page-choice-20261029": [
+      "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp",
+      "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp"
+    ],
+    "report-width-20261030": [
+      "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp",
+      "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp"
+    ],
+    "capture-toggle-20261030": [
+      "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp",
+      "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp",
+      "moti_gui/src/gui/setup/error_report_state.cpp"
+    ],
+    "consent-manual-20261030": [
+      "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp",
+      "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp",
+      "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp",
+      "moti_gui/src/gui/account/diagnostics_consent_client.cpp",
+      "unit_tests/DiagnosticsConsentViewTest.cpp"
     ]
   },
   "source_sha256": {
@@ -510,60 +542,238 @@
     },
     {
       "file": "report-compose-ko.png",
-      "sha256": "01731f853c7eb923c2f838850d82a0753e862fb270a3f67c4b28a9bdc66019a5",
+      "src": "assets/current/report-compose-ko.png",
+      "sha256": "58b34c6a2e217b85e1ffea637d3a9d824fa00ab3b55c2acf70bb080ed7b98a26",
       "pixels": [
-        740,
-        620
+        1480,
+        1240
       ],
       "language": "ko",
-      "source_group": "error",
+      "captured_date": "2026-10-30",
+      "source_group": "report-width-20261030",
+      "capture_method_id": "native_imgui_cpu_2x_report_width_20261030",
       "render_entrypoint": "LegacyImguiErrorReportView::Render",
-      "state_ko": "라이브 뷰 관련 수동 문제 신고 빈 폼. 작성/전송 전입니다.",
-      "render_bounds": "native error report window bounds",
+      "render_bounds": {
+        "width": 740,
+        "height": 620
+      },
+      "capture_viewport": {
+        "width": 1000,
+        "height": 700
+      },
+      "output_scale": 2,
+      "state": "In-memory user-feedback form opened from LIVE_VIEW; expanded scene uses the actual combo interaction. No save or network request.",
+      "state_ko": "처음 열면 현재 화면이 선택됩니다. 다른 화면에서 발생한 문제라면 관련 화면을 바꾼 뒤 PC에 저장합니다.",
       "synthetic_state": true,
       "visually_reviewed": true,
       "personal_account_data": false,
       "real_hardware_measurement": false,
       "real_network_or_payment_operation": false,
-      "capture_method_id": "native_imgui_cpu_original"
+      "capture_original": ".cache/guide-report-width-20261030/report-compose-ko.png",
+      "raw_ppm": ".cache/guide-report-width-20261030/report-compose-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5e35fe57f3d9f5876c050e4bb238e09a8e1c7b7dc45a74e47b47585af2752536",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "68f145ecee52693c0d4cb7c2331d15ec934ffeb83d6247b67587c21e12ce2acc",
+        ".cache/guide-report-width-20261030/capture.cpp": "0a330905f5091e769e92f58f16385b98625c625a8effb6100ce7e2e677ff362e",
+        ".cache/guide-report-width-20261030/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-report-width-20261030/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a",
+        ".cache/guide-report-width-20261030/CMakeLists.txt": "ed12663139becda9d3d6249ea1ceee8e45c524f7ee0e2ebec9fec5a92d24b59c"
+      },
+      "annotations": [
+        {
+          "x": 3.243,
+          "y": 28.065,
+          "width": 91.486,
+          "height": 7.097,
+          "label": "제목",
+          "description": "문제를 짧게 요약합니다."
+        },
+        {
+          "x": 3.243,
+          "y": 45.806,
+          "width": 91.486,
+          "height": 17.742,
+          "label": "문제 설명",
+          "description": "발생 화면과 순서, 기대한 결과·실제 결과를 적습니다."
+        },
+        {
+          "x": 3.243,
+          "y": 74.194,
+          "width": 40.541,
+          "height": 7.097,
+          "label": "관련 화면 선택",
+          "description": "목록을 열어 문제가 발생한 화면을 선택합니다. 해당하는 항목이 없다면 기타를 선택합니다."
+        },
+        {
+          "x": 3.243,
+          "y": 83.226,
+          "width": 16.216,
+          "height": 7.097,
+          "label": "PC에 저장",
+          "description": "작성한 내용과 선택한 관련 화면을 이 PC에 저장합니다. 보내기는 별도입니다."
+        }
+      ]
     },
     {
       "file": "report-list-ko.png",
-      "sha256": "9ef204a8d1b3e10155a16011ad928bc05de47c1c92f83f518aa1c41f044bb3b3",
+      "src": "assets/current/report-list-ko.png",
+      "sha256": "6e48e59216e13a68e618ef81122f576a2e4a6e2704100e1df68ba094a985b745",
       "pixels": [
-        740,
-        620
+        1480,
+        1240
       ],
       "language": "ko",
-      "source_group": "error",
+      "captured_date": "2026-10-29",
+      "source_group": "account-consent-20261029",
+      "capture_method_id": "native_imgui_cpu_2x_account_consent_20261029",
       "render_entrypoint": "LegacyImguiErrorReportView::Render",
-      "state_ko": "예시 제목과 설명을 이 캡처 전용 로컬 저장소에 저장한 보고서1개. 표시 날짜는 캡처 실행 시 생성한 로컬 저장 시각입니다. 외부 전송하지 않았습니다.",
-      "render_bounds": "native error report window bounds",
+      "render_bounds": {
+        "width": 740.0,
+        "height": 620.0
+      },
+      "output_scale": 2,
+      "state": "Fixture report state; authenticated account authorized for reporting. No HTTP, upload, withdrawal, deletion or real dump collection.",
+      "state_ko": "미전송은 이 PC에만 저장된 상태입니다. 서버에 접수된 보고서는 접수 완료로 표시됩니다.",
       "synthetic_state": true,
       "visually_reviewed": true,
       "personal_account_data": false,
       "real_hardware_measurement": false,
       "real_network_or_payment_operation": false,
-      "capture_method_id": "native_imgui_cpu_original"
+      "capture_original": ".cache/guide-account-consent-20261029/report-list-ko.png",
+      "raw_ppm": ".cache/guide-account-consent-20261029/report-list-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
+      },
+      "annotations": [
+        {
+          "x": 12.568,
+          "y": 8.387,
+          "width": 12.432,
+          "height": 7.097,
+          "label": "저장된 보고서",
+          "description": "이 PC에 저장한 보고서 목록을 엽니다."
+        },
+        {
+          "x": 3.243,
+          "y": 24.839,
+          "width": 91.622,
+          "height": 10.968,
+          "label": "보고서 선택",
+          "description": "제목과 저장 시각을 확인하고 항목을 눌러 상세 내용을 엽니다."
+        },
+        {
+          "x": 85.946,
+          "y": 29.677,
+          "width": 8.649,
+          "height": 29.677,
+          "label": "전송 상태",
+          "description": "미전송과 접수 완료를 구분합니다. PC에 저장한 것만으로 서버에 접수되지는 않습니다."
+        }
+      ]
     },
     {
       "file": "report-settings-ko.png",
-      "sha256": "8b923e5956ee7b503ccaaae636645b233d15db65f18a0736259a5a963128583b",
+      "src": "assets/current/report-settings-ko.png",
+      "sha256": "c26f17115d8c24117cb6dcb5959addf8b348f2c3425d02a3245da28c11ff361b",
       "pixels": [
-        740,
-        620
+        1480,
+        1240
       ],
       "language": "ko",
-      "source_group": "error",
+      "captured_date": "2026-10-30",
+      "source_group": "consent-manual-20261030",
+      "capture_method_id": "native_imgui_cpu_2x_manual_consent_20261030",
       "render_entrypoint": "LegacyImguiErrorReportView::Render",
-      "state_ko": "전송 API/자동 종료 수집기가 없는 캡처 실행의 설정 화면. 오프라인 및 자동 종료 수집 불가 상태이며 수동 신고는 가능합니다.",
-      "render_bounds": "native error report window bounds",
+      "render_bounds": {
+        "width": 740.0,
+        "height": 620.0
+      },
+      "output_scale": 2,
+      "state": "In-memory available automatic crash-recording setting with precise app-crash wording. No recorder, preferences save or real network request.",
+      "state_ko": "이 PC에 자동 기록을 켜면 앱 오류로 종료될 때 기록합니다. 꺼도 기존 보고서와 직접 작성한 신고는 유지되며, 전송은 내용을 확인한 뒤 직접 실행합니다.",
       "synthetic_state": true,
       "visually_reviewed": true,
       "personal_account_data": false,
       "real_hardware_measurement": false,
       "real_network_or_payment_operation": false,
-      "capture_method_id": "native_imgui_cpu_original"
+      "capture_original": ".cache/guide-consent-manual-20261030/report-settings-ko.png",
+      "raw_ppm": ".cache/guide-consent-manual-20261030/report-settings-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "f35b57e8e57bb9e42b9cc9258d59e2dc14380c67c15557d873059a18c07dd523",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "68f145ecee52693c0d4cb7c2331d15ec934ffeb83d6247b67587c21e12ce2acc",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "97138246eb7c5341fe7b8287f630f7c119cfb97530b235ea770d5d7958abeea5",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "unit_tests/DiagnosticsConsentViewTest.cpp": "7ecec989c293b9594400972b0749e39eb39cc2b553da024d5f2675e294363dea",
+        ".cache/guide-consent-manual-20261030/capture.cpp": "f866709ecc592693d5ac2c2beb7e7b0c663f4bc91244812ec2feecfb7db8b430",
+        ".cache/guide-consent-manual-20261030/account-capture.cpp": "797746175dc5353dda096cb88316a8e667b9f6129845ff0bbb4053dd5594fbe0",
+        ".cache/guide-consent-manual-20261030/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-consent-manual-20261030/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a",
+        ".cache/guide-consent-manual-20261030/CMakeLists.txt": "f6724a2d3c8e2b48bc2976d38d52cd870f82060e93a12b36e8f5fcd489ad45fc"
+      },
+      "annotations": [
+        {
+          "x": 25.135,
+          "y": 8.387,
+          "width": 10.946,
+          "height": 7.097,
+          "label": "수집과 전송",
+          "description": "오류 기록 수집과 보고서 전송·보관 기준을 확인합니다."
+        },
+        {
+          "x": 3.243,
+          "y": 25.161,
+          "width": 3.784,
+          "height": 4.516,
+          "label": "이 PC에 자동 기록",
+          "description": "선택하면 앱 오류로 종료될 때 오류 정보를 이 PC에 기록하고, 해제하면 중지합니다. 아래 상태에서 켜짐·꺼짐·이번 실행에서 사용 불가를 확인합니다. 기존 보고서와 직접 작성한 신고는 유지됩니다."
+        },
+        {
+          "x": 3.243,
+          "y": 46.129,
+          "width": 91.622,
+          "height": 10.323,
+          "label": "전송과 PC 보관",
+          "description": "보고서별로 확인 후 직접 전송합니다. PC의 상세 오류 정보는 최대 7일·총 100 MiB 범위에서 보관합니다."
+        },
+        {
+          "x": 3.243,
+          "y": 60.323,
+          "width": 91.622,
+          "height": 4.516,
+          "label": "어떤 정보가 저장되나요?",
+          "description": "종료 기록과 직접 작성한 신고의 수집 항목을 펼쳐 확인합니다."
+        },
+        {
+          "x": 3.243,
+          "y": 68.71,
+          "width": 18.514,
+          "height": 7.097,
+          "label": "저장된 보고서 보기",
+          "description": "이 PC에 저장된 보고서 목록으로 이동합니다."
+        },
+        {
+          "x": 3.243,
+          "y": 79.677,
+          "width": 20.676,
+          "height": 7.097,
+          "label": "계정의 오류 보고 설정",
+          "description": "현재 계정의 수집·전송 동의를 확인하거나 변경합니다. 로그인 후 표시됩니다."
+        }
+      ],
+      "capture_viewport": {
+        "width": 1000,
+        "height": 700
+      }
     },
     {
       "file": "update-ko.png",
@@ -2262,194 +2472,251 @@
     {
       "file": "guide-report-detail-ko.png",
       "src": "assets/current/guide-report-detail-ko.png",
+      "sha256": "8f850a752c013c1be932b4781934a62952f5f31c81b68a78a1cf9b44dbec371d",
       "pixels": [
         1480,
         1240
       ],
-      "sha256": "07fec74ca7c12239412417be2791595a645eb302a497af6edc8282e5230ab943",
+      "language": "ko",
+      "captured_date": "2026-10-29",
+      "source_group": "account-consent-20261029",
+      "capture_method_id": "native_imgui_cpu_2x_account_consent_20261029",
+      "render_entrypoint": "LegacyImguiErrorReportView::Render",
       "render_bounds": {
-        "x": 130,
-        "y": 140,
-        "width": 740,
-        "height": 620
+        "width": 740.0,
+        "height": 620.0
+      },
+      "output_scale": 2,
+      "state": "Fixture report state; authenticated account authorized for reporting. No HTTP, upload, withdrawal, deletion or real dump collection.",
+      "state_ko": "저장한 내용을 다시 읽고 앱 정보를 확인한 뒤 내용 확인 후 보내기를 엽니다.",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "personal_account_data": false,
+      "real_hardware_measurement": false,
+      "real_network_or_payment_operation": false,
+      "capture_original": ".cache/guide-account-consent-20261029/guide-report-detail-ko.png",
+      "raw_ppm": ".cache/guide-account-consent-20261029/guide-report-detail-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
       },
       "annotations": [
         {
-          "x": 2.973,
-          "y": 21.935,
+          "x": 3.243,
+          "y": 19.355,
           "width": 16.216,
           "height": 7.097,
           "label": "목록으로",
           "description": "저장된 보고서 목록으로 돌아갑니다."
         },
         {
-          "x": 2.973,
-          "y": 32.258,
-          "width": 92.162,
-          "height": 27.581,
+          "x": 3.243,
+          "y": 30.323,
+          "width": 91.622,
+          "height": 21.935,
           "label": "저장된 내용",
-          "description": "제목·설명·관련 화면과 저장 범위를 확인합니다."
+          "description": "제목·저장 시각·상태·설명을 확인합니다."
         },
         {
-          "x": 2.973,
-          "y": 62.903,
-          "width": 16.216,
-          "height": 7.258,
-          "label": "확인 후 보내기",
-          "description": "전송할 정보와 안내문을 검토하는 단계로 이동합니다."
+          "x": 3.243,
+          "y": 55.484,
+          "width": 91.622,
+          "height": 4.516,
+          "label": "앱 정보 자세히",
+          "description": "관련 화면·앱 버전·빌드·운영체제 정보를 펼쳐 확인합니다."
         },
         {
-          "x": 21.622,
-          "y": 62.903,
-          "width": 15.541,
-          "height": 7.258,
+          "x": 3.243,
+          "y": 63.871,
+          "width": 19.054,
+          "height": 7.097,
+          "label": "내용 확인 후 보내기",
+          "description": "보낼 내용과 첨부를 확인하는 화면으로 이동합니다."
+        },
+        {
+          "x": 23.919,
+          "y": 63.871,
+          "width": 19.054,
+          "height": 7.097,
           "label": "PC에서 삭제",
-          "description": "이 PC의 사본을 삭제하는 확인을 엽니다. 서버 전송 철회와 다릅니다."
+          "description": "PC 사본을 삭제할지 확인합니다. 보낸 보고서 삭제 요청과 다른 동작입니다."
         }
-      ],
-      "state": "synthetic presentation-only report-detail",
-      "source_sha256": {
-        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "17c760c9d678e7a56567857ef10f3b96ddb1c7cde05f7ba3fd3c58a8f933a131",
-        "moti_gui/src/gui/account/legacy_imgui_account_view.cpp": "e38e37bbf2ee6a8c997ab81b8e97ce171e4a21b1ef5b82f098fc9019ae92c6e9",
-        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "1d6935daad8bf4ec40af5d93e7b6c062073918287e59c772cae9e20786422f18",
-        "moti_gui/src/gui/app/legacy_imgui_update_view.cpp": "c3d6115c6144c28f14758ae0369a872f025f550b59ac2f5a5f46274081dc9909",
-        "moti_gui/src/gui/code/ui_style.cpp": "ea199d78bb6ef9e1c6e2d1e3f945957cfa21ae3099f5557bfcc1dbf6ef18fba7",
-        "moti_gui/src/gui/billing/legacy_imgui_billing_view.cpp": "be9a8e96f0d0184f2ecd0af39a8694086632e36981567cb12a0a9b13984cf6a9"
-      },
-      "capture_method_id": "guide-full-20261023-auth",
-      "captured_date": "2026-10-23",
-      "synthetic_state": true,
-      "personal_account_data": false,
-      "real_hardware_measurement": false,
-      "real_network_or_payment_operation": false
+      ]
     },
     {
       "file": "guide-report-review-ko.png",
       "src": "assets/current/guide-report-review-ko.png",
+      "sha256": "8351871f90b17b40e8d90fe2cd67ee9c5c00365fd4515531b6c44471bcf9eca1",
       "pixels": [
         1480,
         1240
       ],
-      "sha256": "b8b5b0bc2273a80685984ad2f759e96b98cbfcf284c3c68a077f5b88f578e7dc",
+      "language": "ko",
+      "captured_date": "2026-10-29",
+      "source_group": "account-consent-20261029",
+      "capture_method_id": "native_imgui_cpu_2x_account_consent_20261029",
+      "render_entrypoint": "LegacyImguiErrorReportView::Render",
       "render_bounds": {
-        "x": 130,
-        "y": 140,
-        "width": 740,
-        "height": 620
+        "width": 740.0,
+        "height": 620.0
+      },
+      "output_scale": 2,
+      "state": "Fixture report state; authenticated account authorized for reporting. No HTTP, upload, withdrawal, deletion or real dump collection.",
+      "state_ko": "종료 보고서에 상세 오류 정보가 있는 경우입니다. 첨부는 기본 미선택이며, 기본 정보만 전송할 수도 있습니다.",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "personal_account_data": false,
+      "real_hardware_measurement": false,
+      "real_network_or_payment_operation": false,
+      "capture_original": ".cache/guide-account-consent-20261029/guide-report-review-ko.png",
+      "raw_ppm": ".cache/guide-account-consent-20261029/guide-report-review-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
       },
       "annotations": [
         {
-          "x": 2.973,
-          "y": 52.258,
-          "width": 92.162,
-          "height": 17.742,
-          "label": "전송 안내문",
-          "description": "실제 전송 때 서버에서 제공하는 안내문을 읽습니다. 이 캡처의 안내문은 가이드용 예시입니다."
+          "x": 3.243,
+          "y": 19.355,
+          "width": 16.216,
+          "height": 7.097,
+          "label": "보고서로",
+          "description": "전송하지 않고 보고서 상세로 돌아갑니다."
         },
         {
-          "x": 2.973,
-          "y": 71.613,
-          "width": 35.135,
-          "height": 4.677,
-          "label": "연령 확인",
-          "description": "만 14세 이상인지 직접 확인합니다."
+          "x": 3.243,
+          "y": 40.645,
+          "width": 91.622,
+          "height": 9.677,
+          "label": "종료 보고서의 전송 범위",
+          "description": "종료 시각·오류·앱 정보와 보고서 30일·상세 오류 정보 7일의 서버 보관 기간을 확인합니다."
         },
         {
-          "x": 2.973,
-          "y": 83.548,
-          "width": 78.378,
-          "height": 4.839,
-          "label": "보고서 전송 동의",
-          "description": "검토한 이 보고서의 전송에 직접 동의합니다."
+          "x": 3.243,
+          "y": 52.581,
+          "width": 91.622,
+          "height": 4.516,
+          "label": "보낼 정보 자세히",
+          "description": "전송할 오류·앱 정보를 펼쳐 확인합니다."
         },
         {
-          "x": 61.081,
-          "y": 90,
+          "x": 3.243,
+          "y": 64.839,
+          "width": 40.541,
+          "height": 8.71,
+          "label": "상세 오류 정보 첨부 (선택)",
+          "description": "기본 미선택입니다. 주의사항과 용량을 확인한 뒤 필요한 경우에만 선택합니다."
+        },
+        {
+          "x": 3.243,
+          "y": 75.484,
+          "width": 91.622,
+          "height": 3.871,
+          "label": "첨부 전 주의사항",
+          "description": "작업 내용이나 개인정보가 포함될 수 있습니다. 내용을 모두 미리 보거나 개인정보를 모두 지운 뒤 보낼 수는 없습니다."
+        },
+        {
+          "x": 60.811,
+          "y": 85.484,
           "width": 34.054,
-          "height": 7.419,
+          "height": 7.097,
           "label": "전송 또는 나중에",
-          "description": "조건을 충족하면 전송할 수 있습니다. 나중에는 전송하지 않고 검토를 닫습니다."
+          "description": "선택한 범위로 이 보고서 한 건을 전송하거나 전송하지 않고 돌아갑니다."
         }
-      ],
-      "state": "synthetic presentation-only report-review",
-      "source_sha256": {
-        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "17c760c9d678e7a56567857ef10f3b96ddb1c7cde05f7ba3fd3c58a8f933a131",
-        "moti_gui/src/gui/account/legacy_imgui_account_view.cpp": "e38e37bbf2ee6a8c997ab81b8e97ce171e4a21b1ef5b82f098fc9019ae92c6e9",
-        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "1d6935daad8bf4ec40af5d93e7b6c062073918287e59c772cae9e20786422f18",
-        "moti_gui/src/gui/app/legacy_imgui_update_view.cpp": "c3d6115c6144c28f14758ae0369a872f025f550b59ac2f5a5f46274081dc9909",
-        "moti_gui/src/gui/code/ui_style.cpp": "ea199d78bb6ef9e1c6e2d1e3f945957cfa21ae3099f5557bfcc1dbf6ef18fba7",
-        "moti_gui/src/gui/billing/legacy_imgui_billing_view.cpp": "be9a8e96f0d0184f2ecd0af39a8694086632e36981567cb12a0a9b13984cf6a9"
-      },
-      "capture_method_id": "guide-full-20261023-auth",
-      "captured_date": "2026-10-23",
-      "synthetic_state": true,
-      "personal_account_data": false,
-      "real_hardware_measurement": false,
-      "real_network_or_payment_operation": false
+      ]
     },
     {
       "file": "guide-report-delete-ko.png",
       "src": "assets/current/guide-report-delete-ko.png",
+      "sha256": "e4e74500111b3a02de90f3f35b22d23c26cfdc2ee76061ed43eee0eec9abf1c7",
       "pixels": [
         1480,
         1240
       ],
-      "sha256": "b3a61cf2083f37d3b88c35f5437ca36b284df13f654d14fd2a3ead3dd188bc9f",
+      "language": "ko",
+      "captured_date": "2026-10-29",
+      "source_group": "account-consent-20261029",
+      "capture_method_id": "native_imgui_cpu_2x_account_consent_20261029",
+      "render_entrypoint": "LegacyImguiErrorReportView::Render",
       "render_bounds": {
-        "x": 130,
-        "y": 140,
-        "width": 740,
-        "height": 620
+        "width": 740.0,
+        "height": 620.0
+      },
+      "output_scale": 2,
+      "state": "Fixture report state; authenticated account authorized for reporting. No HTTP, upload, withdrawal, deletion or real dump collection.",
+      "state_ko": "PC에서 삭제하면 이곳에서 접수 확인이나 보낸 보고서 삭제 요청을 할 수 없습니다. 필요한 확인을 먼저 마칩니다.",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "personal_account_data": false,
+      "real_hardware_measurement": false,
+      "real_network_or_payment_operation": false,
+      "capture_original": ".cache/guide-account-consent-20261029/guide-report-delete-ko.png",
+      "raw_ppm": ".cache/guide-account-consent-20261029/guide-report-delete-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
       },
       "annotations": [
         {
-          "x": 2.973,
-          "y": 32.258,
-          "width": 92.162,
-          "height": 16.129,
+          "x": 3.243,
+          "y": 30.323,
+          "width": 91.622,
+          "height": 21.935,
           "label": "삭제할 보고서",
-          "description": "대상 제목과 내용을 먼저 확인합니다."
+          "description": "삭제할 대상의 제목과 내용을 먼저 확인합니다."
         },
         {
-          "x": 2.973,
-          "y": 73.065,
-          "width": 92.162,
-          "height": 4.032,
+          "x": 3.243,
+          "y": 74.839,
+          "width": 91.622,
+          "height": 5.161,
           "label": "PC 삭제의 범위",
-          "description": "이 PC의 보고서와 확인 키를 지우며, 서버 자료는 삭제하지 않습니다."
+          "description": "PC 사본을 지우면 되돌릴 수 없습니다. 접수 확인과 보낸 보고서 삭제 요청이 필요하다면 먼저 진행합니다."
         },
         {
-          "x": 61.081,
-          "y": 77.742,
+          "x": 60.811,
+          "y": 81.935,
           "width": 16.216,
-          "height": 7.258,
+          "height": 7.097,
           "label": "취소",
-          "description": "PC 삭제를 취소하고 보고서를 보관합니다."
+          "description": "삭제하지 않고 PC에 보고서를 보관합니다."
         },
         {
-          "x": 78.919,
-          "y": 77.742,
+          "x": 78.649,
+          "y": 81.935,
           "width": 16.216,
-          "height": 7.258,
+          "height": 7.097,
           "label": "삭제",
-          "description": "이 PC의 사본 삭제를 확정합니다. 되돌릴 수 없습니다."
+          "description": "이 PC의 사본 삭제를 확정합니다."
         }
-      ],
-      "state": "synthetic presentation-only report-delete",
-      "source_sha256": {
-        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "17c760c9d678e7a56567857ef10f3b96ddb1c7cde05f7ba3fd3c58a8f933a131",
-        "moti_gui/src/gui/account/legacy_imgui_account_view.cpp": "e38e37bbf2ee6a8c997ab81b8e97ce171e4a21b1ef5b82f098fc9019ae92c6e9",
-        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "1d6935daad8bf4ec40af5d93e7b6c062073918287e59c772cae9e20786422f18",
-        "moti_gui/src/gui/app/legacy_imgui_update_view.cpp": "c3d6115c6144c28f14758ae0369a872f025f550b59ac2f5a5f46274081dc9909",
-        "moti_gui/src/gui/code/ui_style.cpp": "ea199d78bb6ef9e1c6e2d1e3f945957cfa21ae3099f5557bfcc1dbf6ef18fba7",
-        "moti_gui/src/gui/billing/legacy_imgui_billing_view.cpp": "be9a8e96f0d0184f2ecd0af39a8694086632e36981567cb12a0a9b13984cf6a9"
-      },
-      "capture_method_id": "guide-full-20261023-auth",
-      "captured_date": "2026-10-23",
-      "synthetic_state": true,
-      "personal_account_data": false,
-      "real_hardware_measurement": false,
-      "real_network_or_payment_operation": false
+      ]
     },
     {
       "file": "guide-binding-unbound-ko.png",
@@ -4146,51 +4413,69 @@
     {
       "file": "guide-signup-ready-ko.png",
       "src": "assets/current/guide-signup-ready-ko.png",
+      "sha256": "8b77e6d93a493a00e37cc6b770d97ddfb523b240a30437c6b69e99abd47c5efc",
       "pixels": [
         1280,
-        652
+        1656
       ],
-      "sha256": "28baa1fabf32818dbce1fa4ac8a13e24bc581c924e5ba3fab0c21fac181d858c",
+      "language": "ko",
+      "captured_date": "2026-10-29",
+      "source_group": "account-consent-20261029",
+      "capture_method_id": "native_imgui_cpu_2x_account_consent_20261029",
+      "render_entrypoint": "LegacyImguiAuthView::Render",
       "render_bounds": {
-        "x": 80,
-        "y": 694,
-        "width": 640,
-        "height": 326
+        "width": 640.0,
+        "height": 828.0
+      },
+      "output_scale": 2,
+      "state": "Fixture signup form; optional diagnostics consent unchecked. Ready scene uses local verification/ID replies only; no email/account creation.",
+      "state_ko": "필수 인증·입력·문서 확인을 마치면 오류 보고 동의를 선택하지 않아도 가입하기가 활성화됩니다.",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "personal_account_data": false,
+      "real_hardware_measurement": false,
+      "real_network_or_payment_operation": false,
+      "capture_original": ".cache/guide-account-consent-20261029/guide-signup-ready-ko.png",
+      "raw_ppm": ".cache/guide-account-consent-20261029/guide-signup-ready-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
       },
       "annotations": [
         {
-          "x": 2.5,
-          "y": 1.84,
-          "width": 92.656,
-          "height": 43.865,
-          "label": "문서 확인 상태",
-          "description": "화면에 표시된 초안 확인 항목을 읽고 직접 선택합니다."
+          "x": 3.125,
+          "y": 57.971,
+          "width": 91.563,
+          "height": 8.696,
+          "label": "가입 문서 확인 완료",
+          "description": "화면에 표시된 필수 확인을 마친 상태입니다."
         },
         {
-          "x": 2.5,
-          "y": 67.791,
-          "width": 95,
-          "height": 15.337,
+          "x": 3.125,
+          "y": 68.116,
+          "width": 91.563,
+          "height": 3.865,
+          "label": "선택 동의는 미선택",
+          "description": "오류 보고 수집·전송에 동의하지 않은 상태여도 가입할 수 있습니다."
+        },
+        {
+          "x": 3.125,
+          "y": 87.923,
+          "width": 93.75,
+          "height": 4.831,
           "label": "가입하기",
-          "description": "인증과 계정 입력을 마친 뒤 활성화된 버튼으로 가입을 요청합니다."
+          "description": "요청을 보낸 뒤 완료 안내를 기다립니다. 응답이 불확실하면 같은 가입 요청의 결과를 다시 확인합니다."
         }
-      ],
-      "state": "Synthetic guide presentation state; no account, mail, payment, report transport or application exit performed.",
-      "source_sha256": {
-        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "17c760c9d678e7a56567857ef10f3b96ddb1c7cde05f7ba3fd3c58a8f933a131",
-        "moti_gui/src/gui/account/legacy_imgui_account_view.cpp": "e38e37bbf2ee6a8c997ab81b8e97ce171e4a21b1ef5b82f098fc9019ae92c6e9",
-        "moti_gui/src/gui/billing/legacy_imgui_billing_view.cpp": "be9a8e96f0d0184f2ecd0af39a8694086632e36981567cb12a0a9b13984cf6a9",
-        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "1d6935daad8bf4ec40af5d93e7b6c062073918287e59c772cae9e20786422f18",
-        "moti_gui/src/gui/app/legacy_imgui_update_view.cpp": "c3d6115c6144c28f14758ae0369a872f025f550b59ac2f5a5f46274081dc9909",
-        "moti_gui/src/gui/code/ui_style.cpp": "ea199d78bb6ef9e1c6e2d1e3f945957cfa21ae3099f5557bfcc1dbf6ef18fba7",
-        "moti_gui/src/gui/app/legacy_imgui_window_chrome.cpp": "a3b7e985f51d2b66793caabf45609a2dbd181d5f006b84dcb0c4d64d41c3ed2a"
-      },
-      "capture_method_id": "guide-supplement-20261026-auth",
-      "captured_date": "2026-10-26",
-      "synthetic_state": true,
-      "personal_account_data": false,
-      "real_hardware_measurement": false,
-      "real_network_or_payment_operation": false
+      ]
     },
     {
       "file": "guide-registration-complete-ko.png",
@@ -4724,116 +5009,136 @@
     {
       "file": "guide-report-received-ko.png",
       "src": "assets/current/guide-report-received-ko.png",
-      "pixels": [
-        1480,
-        1016
-      ],
-      "sha256": "b8f097f45b3eb3ee3e3de0c9a79e42c123bc375ad04bba3a54446b3d400b3bc0",
-      "render_bounds": {
-        "x": 130,
-        "y": 140,
-        "width": 740,
-        "height": 508
-      },
-      "annotations": [
-        {
-          "x": 2.432,
-          "y": 75.591,
-          "width": 93.243,
-          "height": 11.024,
-          "label": "접수 안내와 번호",
-          "description": "서버 접수 완료와 접수 번호를 확인합니다. 문제 분석·수정 완료를 뜻하지 않습니다."
-        },
-        {
-          "x": 39.595,
-          "y": 86.22,
-          "width": 20.811,
-          "height": 10.236,
-          "label": "서버 전송 철회",
-          "description": "이미 접수한 보고서의 서버 전송 철회 확인을 엽니다."
-        },
-        {
-          "x": 21.081,
-          "y": 86.22,
-          "width": 17.297,
-          "height": 10.236,
-          "label": "PC에서 삭제",
-          "description": "로컬 사본 삭제와 서버 전송 철회는 서로 다른 작업입니다."
-        }
-      ],
-      "state": "Synthetic guide presentation state; no account, mail, payment, report transport or application exit performed.",
-      "source_sha256": {
-        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "17c760c9d678e7a56567857ef10f3b96ddb1c7cde05f7ba3fd3c58a8f933a131",
-        "moti_gui/src/gui/account/legacy_imgui_account_view.cpp": "e38e37bbf2ee6a8c997ab81b8e97ce171e4a21b1ef5b82f098fc9019ae92c6e9",
-        "moti_gui/src/gui/billing/legacy_imgui_billing_view.cpp": "be9a8e96f0d0184f2ecd0af39a8694086632e36981567cb12a0a9b13984cf6a9",
-        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "1d6935daad8bf4ec40af5d93e7b6c062073918287e59c772cae9e20786422f18",
-        "moti_gui/src/gui/app/legacy_imgui_update_view.cpp": "c3d6115c6144c28f14758ae0369a872f025f550b59ac2f5a5f46274081dc9909",
-        "moti_gui/src/gui/code/ui_style.cpp": "ea199d78bb6ef9e1c6e2d1e3f945957cfa21ae3099f5557bfcc1dbf6ef18fba7",
-        "moti_gui/src/gui/app/legacy_imgui_window_chrome.cpp": "a3b7e985f51d2b66793caabf45609a2dbd181d5f006b84dcb0c4d64d41c3ed2a"
-      },
-      "capture_method_id": "guide-supplement-20261026-auth",
-      "captured_date": "2026-10-26",
-      "synthetic_state": true,
-      "personal_account_data": false,
-      "real_hardware_measurement": false,
-      "real_network_or_payment_operation": false
-    },
-    {
-      "file": "guide-report-withdraw-ko.png",
-      "src": "assets/current/guide-report-withdraw-ko.png",
+      "sha256": "aa79a6118bc4316e96553dc8b6230788567c53ddcaf31203e8cdcd75590ba754",
       "pixels": [
         1480,
         1240
       ],
-      "sha256": "89523b8de6dbe4222bf912e82d1143750797cb710bf559f120ad2a0c5277f8eb",
+      "language": "ko",
+      "captured_date": "2026-10-29",
+      "source_group": "account-consent-20261029",
+      "capture_method_id": "native_imgui_cpu_2x_account_consent_20261029",
+      "render_entrypoint": "LegacyImguiErrorReportView::Render",
       "render_bounds": {
-        "x": 130,
-        "y": 140,
-        "width": 740,
-        "height": 620
+        "width": 740.0,
+        "height": 620.0
+      },
+      "output_scale": 2,
+      "state": "Fixture report state; authenticated account authorized for reporting. No HTTP, upload, withdrawal, deletion or real dump collection.",
+      "state_ko": "접수 완료 상태와 접수 번호를 확인합니다. 서버 접수가 문제 분석·수정 완료를 뜻하지는 않습니다.",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "personal_account_data": false,
+      "real_hardware_measurement": false,
+      "real_network_or_payment_operation": false,
+      "capture_original": ".cache/guide-account-consent-20261029/guide-report-received-ko.png",
+      "raw_ppm": ".cache/guide-account-consent-20261029/guide-report-received-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
       },
       "annotations": [
         {
-          "x": 2.432,
-          "y": 82.581,
-          "width": 93.243,
-          "height": 6.774,
-          "label": "철회 범위",
-          "description": "서버 내용 삭제와 첨부 삭제 요청, PC 사본 유지 안내를 읽습니다."
+          "x": 3.243,
+          "y": 63.548,
+          "width": 91.622,
+          "height": 7.742,
+          "label": "접수 안내와 번호",
+          "description": "접수 완료 안내와 접수 번호를 확인합니다. 문제 분석·수정 완료와 구분합니다."
         },
         {
-          "x": 60.541,
-          "y": 89.355,
-          "width": 17.297,
-          "height": 8.387,
-          "label": "취소",
-          "description": "서버 전송 철회를 요청하지 않고 돌아갑니다."
+          "x": 25.541,
+          "y": 72.903,
+          "width": 20.676,
+          "height": 7.097,
+          "label": "보낸 보고서 삭제 요청",
+          "description": "보낸 보고서와 첨부 자료를 삭제해 달라고 요청하는 확인 화면을 엽니다."
         },
         {
-          "x": 78.378,
-          "y": 89.355,
-          "width": 17.297,
-          "height": 8.387,
-          "label": "전송 철회 확인",
-          "description": "대상을 확인한 뒤 철회를 요청합니다. 결과가 확인될 때까지 PC 보고서를 유지합니다."
+          "x": 3.243,
+          "y": 72.903,
+          "width": 20.676,
+          "height": 7.097,
+          "label": "PC에서 삭제",
+          "description": "이 PC에 저장한 보고서를 삭제합니다. 이미 보낸 자료는 그대로 남습니다."
         }
+      ]
+    },
+    {
+      "file": "guide-report-withdraw-ko.png",
+      "src": "assets/current/guide-report-withdraw-ko.png",
+      "sha256": "780c86df248387d51268fd4160167b679a9903d99323dbccd4e49b33137f03e1",
+      "pixels": [
+        1480,
+        1240
       ],
-      "state": "Synthetic guide presentation state; no account, mail, payment, report transport or application exit performed.",
-      "source_sha256": {
-        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "17c760c9d678e7a56567857ef10f3b96ddb1c7cde05f7ba3fd3c58a8f933a131",
-        "moti_gui/src/gui/account/legacy_imgui_account_view.cpp": "e38e37bbf2ee6a8c997ab81b8e97ce171e4a21b1ef5b82f098fc9019ae92c6e9",
-        "moti_gui/src/gui/billing/legacy_imgui_billing_view.cpp": "be9a8e96f0d0184f2ecd0af39a8694086632e36981567cb12a0a9b13984cf6a9",
-        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "1d6935daad8bf4ec40af5d93e7b6c062073918287e59c772cae9e20786422f18",
-        "moti_gui/src/gui/app/legacy_imgui_update_view.cpp": "c3d6115c6144c28f14758ae0369a872f025f550b59ac2f5a5f46274081dc9909",
-        "moti_gui/src/gui/code/ui_style.cpp": "ea199d78bb6ef9e1c6e2d1e3f945957cfa21ae3099f5557bfcc1dbf6ef18fba7",
-        "moti_gui/src/gui/app/legacy_imgui_window_chrome.cpp": "a3b7e985f51d2b66793caabf45609a2dbd181d5f006b84dcb0c4d64d41c3ed2a"
+      "language": "ko",
+      "captured_date": "2026-10-29",
+      "source_group": "account-consent-20261029",
+      "capture_method_id": "native_imgui_cpu_2x_account_consent_20261029",
+      "render_entrypoint": "LegacyImguiErrorReportView::Render",
+      "render_bounds": {
+        "width": 740.0,
+        "height": 620.0
       },
-      "capture_method_id": "guide-supplement-20261026-auth",
-      "captured_date": "2026-10-26",
+      "output_scale": 2,
+      "state": "Fixture report state; authenticated account authorized for reporting. No HTTP, upload, withdrawal, deletion or real dump collection.",
+      "state_ko": "삭제 요청은 보낸 보고서와 첨부 자료에 적용됩니다. PC의 사본은 남습니다.",
       "synthetic_state": true,
+      "visually_reviewed": true,
       "personal_account_data": false,
       "real_hardware_measurement": false,
-      "real_network_or_payment_operation": false
+      "real_network_or_payment_operation": false,
+      "capture_original": ".cache/guide-account-consent-20261029/guide-report-withdraw-ko.png",
+      "raw_ppm": ".cache/guide-account-consent-20261029/guide-report-withdraw-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
+      },
+      "annotations": [
+        {
+          "x": 3.243,
+          "y": 84.194,
+          "width": 91.622,
+          "height": 3.871,
+          "label": "삭제 요청 범위",
+          "description": "보낸 보고서와 첨부 자료를 삭제하도록 요청합니다. PC 사본은 남습니다."
+        },
+        {
+          "x": 60.811,
+          "y": 89.032,
+          "width": 16.216,
+          "height": 7.097,
+          "label": "취소",
+          "description": "삭제를 요청하지 않고 보고서로 돌아갑니다."
+        },
+        {
+          "x": 78.649,
+          "y": 89.032,
+          "width": 16.216,
+          "height": 7.097,
+          "label": "삭제 요청",
+          "description": "삭제를 요청합니다. 완료를 확인할 때까지 PC의 보고서를 보관합니다."
+        }
+      ]
     },
     {
       "file": "guide-supp-binding-menu-ko.png",
@@ -6593,81 +6898,75 @@
     {
       "file": "guide-age14-signup-ko.png",
       "src": "assets/current/guide-age14-signup-ko.png",
+      "sha256": "686769aec8e2be5b2b3a4d851997152c076023db30d39439953b512b14154726",
       "pixels": [
-        640,
-        828
+        1280,
+        1656
       ],
-      "sha256": "0f36d2f156caf21cf4eb4be286dcf1d4dbf5a111cfeee9e7607d0e2dd62d8262",
       "language": "ko",
-      "captured_date": "2026-10-27",
-      "source_group": "age14-ui-20261027",
-      "capture_method_id": "guide-age14-20261027-native-imgui-cpu",
+      "captured_date": "2026-10-29",
+      "source_group": "account-consent-20261029",
+      "capture_method_id": "native_imgui_cpu_2x_account_consent_20261029",
       "render_entrypoint": "LegacyImguiAuthView::Render",
       "render_bounds": {
-        "x": 80,
-        "y": 56,
-        "width": 640,
-        "height": 828
+        "width": 640.0,
+        "height": 828.0
       },
-      "output_scale": 1,
-      "state_ko": "문서 비필수·초안 확인 모드의 가입 초기 상태입니다. 만 14세 이상 확인은 미선택이며 이메일 인증과 아이디 중복 확인 전입니다. 보호자 승인 입력란과 만 14세 미만 선택은 없습니다.",
-      "source_sha256": {
-        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "5d483e5881381f60ce528b3f118e4ae88508b0e0c70875b29fc28d551954fece",
-        "moti_gui/include/gui/auth/legacy_imgui_auth_view.hpp": "69e8f05d0ba25e96a042368245e8f5cfa431e53738aa352c4e1204bd5bf9e726",
-        "moti_gui/src/gui/auth/auth_flow_contract.cpp": "3014846f4fb6e4e8328cb6ee3b2229c5ea1ff99ad0545675a28d01c673b678bd",
-        "moti_gui/src/gui/auth/email_registration.cpp": "0da72cddc78caf37887065ddb6698ab79bd0d92bae3023be939c84da5abf5ac0",
-        "moti_gui/src/gui/auth/account_recovery.cpp": "02f1e9ca19fffed92ee38e9533207e0332ca2fc7688e823e0755a089c20ef82c",
-        "moti_gui/src/gui/auth/local_login_client.cpp": "cad34e80d83fb35af9b77c0d3100e75766e93c4e8fee631945816eb8ea5263a6",
-        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "1138ea0cefdf2c4c37e814ce147abb953b0b49f1c62f4b76f6a63084d31644ed",
-        "moti_gui/src/gui/setup/error_report_state.cpp": "1b01e1b0cd5dd9dfdff53af5f3cf25a7890a1b4dc7ed05e02de1212f7971633b",
-        "moti_gui/src/gui/code/ui_style.cpp": "ea199d78bb6ef9e1c6e2d1e3f945957cfa21ae3099f5557bfcc1dbf6ef18fba7",
-        "moti_gui/include/gui/code/account_ui_action.hpp": "723ce8c0245773b588334feec6f32201150ebeb41e6796a2c5becf6e2a00c440",
-        "moti_gui/include/gui/code/account_ui_style.hpp": "8f845a74ed11c609c200c41cc81c052884a20a6dc5f138784f87da55eedfbe0a"
-      },
+      "output_scale": 2,
+      "state": "Fixture signup form; optional diagnostics consent unchecked. Ready scene uses local verification/ID replies only; no email/account creation.",
+      "state_ko": "만 14세 이상 확인 후 이메일 인증을 진행합니다. 아래 문서·선택 동의 영역은 폼을 내려 확인합니다.",
       "synthetic_state": true,
       "visually_reviewed": true,
       "personal_account_data": false,
       "real_hardware_measurement": false,
       "real_network_or_payment_operation": false,
-      "capture_original": ".cache/guide-age14-20261027/captures/guide-age14-signup-ko.png",
-      "raw_ppm": ".cache/guide-age14-20261027/captures/guide-age14-signup-ko.ppm",
-      "raw_ppm_sha256": "2df5f4d2b1d08e77636fe61ade65441ea68a926893bc314412a0ce5661d28340",
-      "capture_executable": ".cache/guide-age14-20261027/native-auth/build/Release/LoginHelpVisual.exe",
-      "capture_executable_sha256": "8bcb7dbc76dc429a48ee43ef0124342530880be60f823a2c196d0a69547cb36c",
-      "capture_log": ".cache/guide-age14-20261027/signup-capture.log",
-      "build_log": ".cache/guide-age14-20261027/signup-build.log",
+      "capture_original": ".cache/guide-account-consent-20261029/guide-age14-signup-ko.png",
+      "raw_ppm": ".cache/guide-account-consent-20261029/guide-age14-signup-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
+      },
       "annotations": [
         {
-          "x": 2.5,
-          "y": 15.459,
-          "width": 92.812,
-          "height": 10.386,
+          "x": 3.125,
+          "y": 18.841,
+          "width": 91.563,
+          "height": 6.28,
           "label": "만 14세 이상 확인",
-          "description": "만 14세 이상인지 확인한 뒤 체크박스를 선택합니다."
+          "description": "이용 조건에 해당하면 직접 확인합니다. 처음에는 선택되지 않습니다."
         },
         {
-          "x": 2.5,
-          "y": 30.193,
-          "width": 92.812,
-          "height": 8.575,
+          "x": 3.125,
+          "y": 31.159,
+          "width": 91.563,
+          "height": 7.005,
           "label": "이메일과 인증번호 받기",
-          "description": "받을 수 있는 이메일을 입력한 뒤 인증번호를 요청합니다."
+          "description": "받을 수 있는 이메일을 입력하고 인증번호를 요청합니다."
         },
         {
-          "x": 2.5,
-          "y": 46.256,
-          "width": 92.812,
-          "height": 12.56,
+          "x": 3.125,
+          "y": 46.86,
+          "width": 91.563,
+          "height": 10.87,
           "label": "아이디 중복 확인",
-          "description": "로그인 아이디를 입력하고 중복 여부를 확인합니다."
+          "description": "로그인할 아이디를 입력하고 중복 여부를 확인합니다."
         },
         {
-          "x": 2.5,
-          "y": 87.44,
-          "width": 95,
-          "height": 5.918,
+          "x": 3.125,
+          "y": 87.923,
+          "width": 93.75,
+          "height": 4.831,
           "label": "가입하기",
-          "description": "이메일 인증과 계정 입력, 아래 문서 확인을 마친 뒤 가입을 요청합니다."
+          "description": "필수 입력·인증·문서 확인을 완료하면 가입을 요청할 수 있습니다."
         }
       ]
     },
@@ -6836,81 +7135,83 @@
     {
       "file": "guide-age14-report-review-ko.png",
       "src": "assets/current/guide-age14-report-review-ko.png",
+      "sha256": "ce127981abc3154d2ab429cb2e7ff6a2e95d18cc3934987120f68ac0646ad7c1",
       "pixels": [
         1480,
         1240
       ],
-      "sha256": "fb95d0629d4f2ff62835aa02637683141c5e24503a1ebf546cdc6e2b4bfa706d",
       "language": "ko",
-      "captured_date": "2026-10-27",
-      "source_group": "age14-ui-20261027",
-      "capture_method_id": "guide-age14-20261027-native-imgui-cpu",
+      "captured_date": "2026-10-29",
+      "source_group": "account-consent-20261029",
+      "capture_method_id": "native_imgui_cpu_2x_account_consent_20261029",
       "render_entrypoint": "LegacyImguiErrorReportView::Render",
       "render_bounds": {
-        "x": 130,
-        "y": 140,
-        "width": 740,
-        "height": 620
+        "width": 740.0,
+        "height": 620.0
       },
       "output_scale": 2,
-      "state_ko": "예시 저장 보고서의 전송 검토 상태입니다. 만 14세 이상 확인과 보고서 전송 동의는 미선택입니다. 만 14세 미만 안내문은 제거되었으며 안내문은 가이드용 예시입니다. 실제 저장·전송·서버 정책 조회는 하지 않았습니다.",
-      "source_sha256": {
-        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "5d483e5881381f60ce528b3f118e4ae88508b0e0c70875b29fc28d551954fece",
-        "moti_gui/include/gui/auth/legacy_imgui_auth_view.hpp": "69e8f05d0ba25e96a042368245e8f5cfa431e53738aa352c4e1204bd5bf9e726",
-        "moti_gui/src/gui/auth/auth_flow_contract.cpp": "3014846f4fb6e4e8328cb6ee3b2229c5ea1ff99ad0545675a28d01c673b678bd",
-        "moti_gui/src/gui/auth/email_registration.cpp": "0da72cddc78caf37887065ddb6698ab79bd0d92bae3023be939c84da5abf5ac0",
-        "moti_gui/src/gui/auth/account_recovery.cpp": "02f1e9ca19fffed92ee38e9533207e0332ca2fc7688e823e0755a089c20ef82c",
-        "moti_gui/src/gui/auth/local_login_client.cpp": "cad34e80d83fb35af9b77c0d3100e75766e93c4e8fee631945816eb8ea5263a6",
-        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "1138ea0cefdf2c4c37e814ce147abb953b0b49f1c62f4b76f6a63084d31644ed",
-        "moti_gui/src/gui/setup/error_report_state.cpp": "1b01e1b0cd5dd9dfdff53af5f3cf25a7890a1b4dc7ed05e02de1212f7971633b",
-        "moti_gui/src/gui/code/ui_style.cpp": "ea199d78bb6ef9e1c6e2d1e3f945957cfa21ae3099f5557bfcc1dbf6ef18fba7",
-        "moti_gui/include/gui/code/account_ui_action.hpp": "723ce8c0245773b588334feec6f32201150ebeb41e6796a2c5becf6e2a00c440",
-        "moti_gui/include/gui/code/account_ui_style.hpp": "8f845a74ed11c609c200c41cc81c052884a20a6dc5f138784f87da55eedfbe0a"
-      },
+      "state": "Fixture report state; authenticated account authorized for reporting. No HTTP, upload, withdrawal, deletion or real dump collection.",
+      "state_ko": "보낼 내용을 확인한 뒤 이 보고서 전송을 누릅니다.",
       "synthetic_state": true,
       "visually_reviewed": true,
       "personal_account_data": false,
       "real_hardware_measurement": false,
       "real_network_or_payment_operation": false,
-      "capture_original": ".cache/guide-age14-20261027/auth/captures/guide-age14-report-review-ko.png",
-      "raw_ppm": ".cache/guide-age14-20261027/auth/captures/guide-age14-report-review-ko.ppm",
-      "raw_ppm_sha256": "ce32a4569b8af8b867fd541444a281347e0fcf7c09c26c314fca0de293286e67",
-      "capture_executable": ".cache/guide-age14-20261027/auth/native/build/Release/GuideErrorCapture.exe",
-      "capture_executable_sha256": "3b29a3694f00845b6fd227722a99c89f434bb236fac277f9e29cc585aba6df9e",
-      "capture_log": ".cache/guide-age14-20261027/auth/error-capture.log",
-      "build_log": ".cache/guide-age14-20261027/auth/error-build.log",
+      "capture_original": ".cache/guide-account-consent-20261029/guide-age14-report-review-ko.png",
+      "raw_ppm": ".cache/guide-account-consent-20261029/guide-age14-report-review-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
+      },
       "annotations": [
         {
-          "x": 2.703,
-          "y": 58.065,
-          "width": 92.635,
-          "height": 18.468,
-          "label": "전송 안내문",
-          "description": "실제 전송 때 서버에서 제공하는 안내문을 읽습니다. 이 캡처의 안내문은 가이드용 예시입니다."
+          "x": 3.243,
+          "y": 19.355,
+          "width": 16.216,
+          "height": 7.097,
+          "label": "보고서로",
+          "description": "전송하지 않고 저장된 보고서 상세로 돌아갑니다."
         },
         {
-          "x": 2.703,
-          "y": 77.339,
-          "width": 36.486,
-          "height": 5.323,
-          "label": "만 14세 이상 확인",
-          "description": "만 14세 이상인지 직접 확인합니다."
+          "x": 3.243,
+          "y": 40.645,
+          "width": 91.622,
+          "height": 9.677,
+          "label": "보낼 내용과 보관 기간",
+          "description": "작성한 내용·관련 화면 이름·앱 정보와 접수 완료일부터 30일의 서버 보관 기간을 확인합니다."
         },
         {
-          "x": 2.703,
-          "y": 83.629,
-          "width": 79.054,
-          "height": 5.161,
-          "label": "보고서 전송 동의",
-          "description": "검토한 이 보고서의 전송에 직접 동의합니다."
+          "x": 3.243,
+          "y": 52.581,
+          "width": 91.622,
+          "height": 4.516,
+          "label": "보낼 정보 자세히",
+          "description": "실제로 보낼 내용과 앱 정보를 펼쳐 확인합니다."
         },
         {
-          "x": 60.878,
-          "y": 89.839,
-          "width": 34.595,
-          "height": 7.661,
-          "label": "전송 또는 나중에",
-          "description": "조건을 충족하면 전송할 수 있습니다. 나중에는 전송하지 않고 검토를 닫습니다."
+          "x": 60.811,
+          "y": 64.839,
+          "width": 16.216,
+          "height": 7.097,
+          "label": "이 보고서 전송",
+          "description": "확인한 보고서 한 건을 보냅니다."
+        },
+        {
+          "x": 78.649,
+          "y": 64.839,
+          "width": 16.216,
+          "height": 7.097,
+          "label": "나중에",
+          "description": "전송하지 않고 보고서 상세로 돌아갑니다."
         }
       ]
     },
@@ -6966,6 +7267,221 @@
       "pose_geometry_modified": false,
       "frame_count": 1,
       "selected_frame": 0
+    },
+    {
+      "file": "guide-account-report-consent-ko.png",
+      "src": "assets/current/guide-account-report-consent-ko.png",
+      "sha256": "5cabd89e75a27cd0db7a163f92dd32a8904e4e4c01756159af9bdf0df5ad66f0",
+      "pixels": [
+        1240,
+        1240
+      ],
+      "language": "ko",
+      "captured_date": "2026-10-30",
+      "source_group": "consent-manual-20261030",
+      "capture_method_id": "native_imgui_cpu_2x_manual_consent_20261030",
+      "render_entrypoint": "LegacyImguiDiagnosticsConsentView::Render",
+      "render_bounds": {
+        "width": 620.0,
+        "height": 620.0
+      },
+      "output_scale": 2,
+      "state": "Manually opened account settings after a DECLINED fixture reply. Account load alone leaves the window closed; no choice save or real network request.",
+      "state_ko": "계정의 오류 보고 설정을 직접 연 예시입니다. 현재 저장된 선택을 확인한 뒤 동의 여부를 바꾸고 저장할 수 있습니다.",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "personal_account_data": false,
+      "real_hardware_measurement": false,
+      "real_network_or_payment_operation": false,
+      "capture_original": ".cache/guide-consent-manual-20261030/guide-account-report-consent-ko.png",
+      "raw_ppm": ".cache/guide-consent-manual-20261030/guide-account-report-consent-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "f35b57e8e57bb9e42b9cc9258d59e2dc14380c67c15557d873059a18c07dd523",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "68f145ecee52693c0d4cb7c2331d15ec934ffeb83d6247b67587c21e12ce2acc",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "97138246eb7c5341fe7b8287f630f7c119cfb97530b235ea770d5d7958abeea5",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "unit_tests/DiagnosticsConsentViewTest.cpp": "7ecec989c293b9594400972b0749e39eb39cc2b553da024d5f2675e294363dea",
+        ".cache/guide-consent-manual-20261030/capture.cpp": "f866709ecc592693d5ac2c2beb7e7b0c663f4bc91244812ec2feecfb7db8b430",
+        ".cache/guide-consent-manual-20261030/account-capture.cpp": "797746175dc5353dda096cb88316a8e667b9f6129845ff0bbb4053dd5594fbe0",
+        ".cache/guide-consent-manual-20261030/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-consent-manual-20261030/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a",
+        ".cache/guide-consent-manual-20261030/CMakeLists.txt": "f6724a2d3c8e2b48bc2976d38d52cd870f82060e93a12b36e8f5fcd489ad45fc"
+      },
+      "annotations": [
+        {
+          "x": 3.871,
+          "y": 8.387,
+          "width": 92.258,
+          "height": 8.71,
+          "label": "선택 안내와 현재 상태",
+          "description": "계정에 저장된 현재 선택을 확인합니다. 이 예시는 동의하지 않음이며, 동의는 선택 사항입니다."
+        },
+        {
+          "x": 3.871,
+          "y": 18.71,
+          "width": 92.258,
+          "height": 5.161,
+          "label": "수집·전송 동의 (선택)",
+          "description": "동의하려면 직접 선택합니다. 선택하지 않고 저장하면 동의하지 않음으로 기록됩니다."
+        },
+        {
+          "x": 3.871,
+          "y": 29.032,
+          "width": 92.258,
+          "height": 4.516,
+          "label": "수집·전송 안내 전문",
+          "description": "서버에서 제공하는 현재 안내문을 펼쳐 읽습니다. 열람만으로 동의하지 않습니다."
+        },
+        {
+          "x": 3.871,
+          "y": 88.387,
+          "width": 19.355,
+          "height": 7.097,
+          "label": "나중에",
+          "description": "변경을 저장하지 않고 설정을 닫습니다. 앱을 계속 사용할 수 있습니다."
+        },
+        {
+          "x": 25.161,
+          "y": 88.387,
+          "width": 19.355,
+          "height": 7.097,
+          "label": "선택 저장",
+          "description": "현재 선택을 계정에 저장합니다. 기본 동의는 보고서를 보낼 때마다 반복하지 않습니다."
+        }
+      ]
+    },
+    {
+      "file": "guide-registration-consent-ko.png",
+      "src": "assets/current/guide-registration-consent-ko.png",
+      "sha256": "ed3161dd1b716ae32fd947991135bb2542ab789083b2445c04c0e61a7d369334",
+      "pixels": [
+        1280,
+        1656
+      ],
+      "language": "ko",
+      "captured_date": "2026-10-29",
+      "source_group": "account-consent-20261029",
+      "capture_method_id": "native_imgui_cpu_2x_account_consent_20261029",
+      "render_entrypoint": "LegacyImguiAuthView::Render",
+      "render_bounds": {
+        "width": 640.0,
+        "height": 828.0
+      },
+      "output_scale": 2,
+      "state": "Fixture signup form; optional diagnostics consent unchecked. Ready scene uses local verification/ID replies only; no email/account creation.",
+      "state_ko": "가입 화면 아래쪽의 선택 동의 항목입니다. 오류 보고 수집·전송에 동의하지 않아도 가입할 수 있습니다.",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "personal_account_data": false,
+      "real_hardware_measurement": false,
+      "real_network_or_payment_operation": false,
+      "capture_original": ".cache/guide-account-consent-20261029/guide-registration-consent-ko.png",
+      "raw_ppm": ".cache/guide-account-consent-20261029/guide-registration-consent-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
+      },
+      "annotations": [
+        {
+          "x": 3.125,
+          "y": 53.14,
+          "width": 91.563,
+          "height": 8.696,
+          "label": "가입 문서 확인",
+          "description": "화면에 표시된 이용약관·개인정보 처리방침을 읽고 필수 확인을 진행합니다."
+        },
+        {
+          "x": 3.125,
+          "y": 63.285,
+          "width": 91.563,
+          "height": 3.865,
+          "label": "오류 보고 수집·전송 동의 (선택)",
+          "description": "기본 미선택입니다. 동의하지 않아도 가입과 일반 앱 사용이 가능합니다."
+        },
+        {
+          "x": 3.125,
+          "y": 69.082,
+          "width": 18.75,
+          "height": 3.623,
+          "label": "수집·전송 안내 보기",
+          "description": "현재 안내문 전문을 앱 안에서 읽습니다. 열람만으로 동의되지 않습니다."
+        },
+        {
+          "x": 3.125,
+          "y": 87.923,
+          "width": 93.75,
+          "height": 4.831,
+          "label": "가입하기",
+          "description": "필수 입력을 완료한 뒤 가입을 요청합니다. 선택 동의는 가입의 필수 조건이 아닙니다."
+        }
+      ]
+    },
+    {
+      "file": "guide-report-page-choice-ko.png",
+      "src": "assets/current/guide-report-page-choice-ko.png",
+      "sha256": "cf29762dc5d93f9b4b567f717268bd0a26c5ac3ef30b73941a9a1aa493068e72",
+      "pixels": [
+        1480,
+        1240
+      ],
+      "language": "ko",
+      "captured_date": "2026-10-30",
+      "source_group": "report-width-20261030",
+      "capture_method_id": "native_imgui_cpu_2x_report_width_20261030",
+      "render_entrypoint": "LegacyImguiErrorReportView::Render",
+      "render_bounds": {
+        "width": 740,
+        "height": 620
+      },
+      "capture_viewport": {
+        "width": 1000,
+        "height": 700
+      },
+      "output_scale": 2,
+      "state": "In-memory user-feedback form opened from LIVE_VIEW; expanded scene uses the actual combo interaction. No save or network request.",
+      "state_ko": "목록에서 문제가 발생한 화면을 고릅니다. 보이지 않는 항목은 목록을 스크롤해 찾을 수 있습니다.",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "personal_account_data": false,
+      "real_hardware_measurement": false,
+      "real_network_or_payment_operation": false,
+      "capture_original": ".cache/guide-report-width-20261030/guide-report-page-choice-ko.png",
+      "raw_ppm": ".cache/guide-report-width-20261030/guide-report-page-choice-ko.ppm",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5e35fe57f3d9f5876c050e4bb238e09a8e1c7b7dc45a74e47b47585af2752536",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "68f145ecee52693c0d4cb7c2331d15ec934ffeb83d6247b67587c21e12ce2acc",
+        ".cache/guide-report-width-20261030/capture.cpp": "0a330905f5091e769e92f58f16385b98625c625a8effb6100ce7e2e677ff362e",
+        ".cache/guide-report-width-20261030/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-report-width-20261030/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a",
+        ".cache/guide-report-width-20261030/CMakeLists.txt": "ed12663139becda9d3d6249ea1ceee8e45c524f7ee0e2ebec9fec5a92d24b59c"
+      },
+      "annotations": [
+        {
+          "x": 3.243,
+          "y": 74.194,
+          "width": 40.541,
+          "height": 7.097,
+          "label": "관련 화면 목록 열기",
+          "description": "선택된 화면 이름이나 오른쪽 화살표를 누르면 목록이 열립니다."
+        },
+        {
+          "x": 3.243,
+          "y": 32.258,
+          "width": 40.541,
+          "height": 41.935,
+          "label": "문제가 발생한 화면 고르기",
+          "description": "손 메트릭·라이브 뷰·설정 등 해당 화면을 선택합니다. 모르는 경우에는 기타를 선택합니다."
+        }
+      ]
     }
   ],
   "capture_method": "Mixed capture set. Each asset declares capture_method_id. Original native CPU UI fixtures, additional native CPU data panels, and unedited actual Windows app-window captures have separate provenance and limits below.",
@@ -7249,6 +7765,142 @@
       "description": "Original Windows app-window JPEG capture of the unchanged bundled idle pose, shown as upright anatomical bone skeletons in Hand Metrics. Camera and zoom were adjusted in the app; pixels were copied unchanged.",
       "provenance": ".cache/guide-idle-hand-20261027/run-provenance.json",
       "source_bytes_unchanged": true
+    },
+    "native_imgui_cpu_2x_compact_20261029": {
+      "captured_date": "2026-10-29",
+      "description": "Actual modified native ImGui draw data CPU-rasterized at 2 physical pixels per logical pixel, 2x-density font atlas; window-only render. No bitmap enlargement, pointer, GPU/OS screenshot, actual server request or account data.",
+      "font": "Malgun Gothic; ImFontConfig.RasterizerDensity=2.0; font CurrentRasterizerDensity=1.0; source layout metrics unchanged",
+      "fixture": "In-memory sample reports and example-only notice; receipt and confirmation states are fixtures; all age/report/dump selections start unchecked. No under-14/guardian path.",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "d4d7818d1ab80f1ead085f8dc1697586691f2add8244e7074babe979b9a92777",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "2afc1d6ddd0a70ce3f7abe5571fca8b301cfa9247ed0a2df2c644c8b0dd3c10b",
+        ".cache/guide-error-compact-20261029/capture.cpp": "0f83f0cce4382e0a6936d7743dd56d82a879bfcd240667cf26f0627646e5ce0b"
+      },
+      "imgui_failures": 0,
+      "provenance": ".cache/guide-error-compact-20261029/provenance.json",
+      "capture_log": ".cache/guide-error-compact-20261029/capture.log",
+      "annotation_method": "Actual native widget rectangles and visually checked content groups; percentages relative to the 740x620 logical window. Captions and numbered explanations remain outside the image.",
+      "scope_limits": [
+        "CPU-rendered product UI examples, not OS/GPU or Linux capture validation.",
+        "No actual user reports, account data, server policy fetch, upload, withdrawal or deletion."
+      ]
+    },
+    "native_imgui_cpu_2x_account_consent_20261029": {
+      "captured_date": "2026-10-29",
+      "description": "Actual Windows native ImGui widget draw data, cropped to the rendered window, CPU rasterized at 2x with a 2x font atlas and saved losslessly as PNG.",
+      "font": "Malgun Gothic + FontAwesome 6 Solid, 2x rasterizer density",
+      "fixture": "Explicit in-memory signup/account/report presentation states; no real account, credentials, email, report body or network mutation.",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5abee7c3ec159e6992fbbaab04cb948583e38780f2face6d3751a34cc9ac5cf9",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "14789086d1d6f7890161e6edd16b397eabafffd465726e54fc595084bc8492af",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "f90d358656d87622adc1b9c5ccdcfc3ae1bff678411a755a9fba2481af2b99f0",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "fbcc96c909cc6ba8ae9f58695d2ece1d5a445e25de0df12e237a690fe9037731",
+        "moti_gui/src/gui/auth/email_registration.cpp": "72f8e269ff0cd4f4ace8bed67e6a76585b1337784f0256ba25bb29675a547581",
+        ".cache/guide-account-consent-20261029/capture.cpp": "8fecb70908df4cdb54491b44816abc7765305408de08eb88403c23cd217d3bec",
+        ".cache/guide-account-consent-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-account-consent-20261029/account-capture.cpp": "7ea964fbb81fef5fb346a807fe67141b1b841b4d9f77b35ab19f034d022981f3",
+        ".cache/guide-account-consent-20261029/registration-capture.cpp": "c75aa88fd3495234f2d22910315a36411e5913ee0f519853ed95350688c4467a",
+        ".cache/guide-account-consent-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a"
+      },
+      "provenance": ".cache/guide-account-consent-20261029/provenance.json",
+      "annotation_method": "Native widget rectangles and visually checked content groups. Percentage borders; all labels and explanations stay below the image.",
+      "scope_limits": [
+        "Native UI examples rendered on Windows; not an OS/GPU screenshot or Linux capture validation.",
+        "No real signup, email verification, account consent change, upload, withdrawal or deletion was executed."
+      ]
+    },
+    "native_imgui_cpu_2x_report_page_choice_20261029": {
+      "captured_date": "2026-10-29",
+      "description": "Actual native Windows ImGui draw data rendered with a 2x font atlas and cropped to the 740x620 window; the opened combo remains fully inside the captured window.",
+      "font": "Malgun Gothic + FontAwesome 6 Solid, 2x rasterizer density",
+      "fixture": "In-memory feedback form; no local save, real account, report transmission or hardware operation.",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "0973c69a187d8224b32cfe2c72d827dbb70840642bd2fc8fcff5853e1fb42b55",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "68f145ecee52693c0d4cb7c2331d15ec934ffeb83d6247b67587c21e12ce2acc",
+        ".cache/guide-report-page-choice-20261029/capture.cpp": "ce233a040cf25d165f6d36151ffef993e9cbabcd666ba60a76bf88e7582b3ddb",
+        ".cache/guide-report-page-choice-20261029/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-report-page-choice-20261029/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a",
+        ".cache/guide-report-page-choice-20261029/CMakeLists.txt": "ed12663139becda9d3d6249ea1ceee8e45c524f7ee0e2ebec9fec5a92d24b59c"
+      },
+      "capture_executable_sha256": "be0e9e7ad8f954063b40853bb571304b3df2ea097affbf77595c7de6fe391863",
+      "provenance": ".cache/guide-report-page-choice-20261029/provenance.json",
+      "annotation_method": "Native input/combo/button rectangles and the actual popup bounds. All explanations remain below the image.",
+      "scope_limits": [
+        "Windows native widget presentation only, not OS/GPU screenshot or Linux validation.",
+        "No server operation or report save was performed."
+      ]
+    },
+    "native_imgui_cpu_2x_report_width_20261030": {
+      "captured_date": "2026-10-30",
+      "description": "Actual native Windows ImGui draw data rendered with a 2x font atlas; related-screen field and popup use the mockup 300-unit width limit.",
+      "font": "Malgun Gothic + FontAwesome 6 Solid, 2x rasterizer density",
+      "fixture": "In-memory feedback form; no save, account, report transmission or hardware operation.",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "5e35fe57f3d9f5876c050e4bb238e09a8e1c7b7dc45a74e47b47585af2752536",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "68f145ecee52693c0d4cb7c2331d15ec934ffeb83d6247b67587c21e12ce2acc",
+        ".cache/guide-report-width-20261030/capture.cpp": "0a330905f5091e769e92f58f16385b98625c625a8effb6100ce7e2e677ff362e",
+        ".cache/guide-report-width-20261030/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-report-width-20261030/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a",
+        ".cache/guide-report-width-20261030/CMakeLists.txt": "ed12663139becda9d3d6249ea1ceee8e45c524f7ee0e2ebec9fec5a92d24b59c"
+      },
+      "capture_executable_sha256": "79903a20aacb2be3ed5a079bc8611337ab8eab5d698a1496e7a15a0a976c3ddd",
+      "provenance": ".cache/guide-report-width-20261030/provenance.json",
+      "annotation_method": "Native input/combo/button rectangles and popup bounds. Only affected dropdown annotation widths changed.",
+      "scope_limits": [
+        "Windows native widget presentation only, not OS/GPU screenshots or Linux visual validation.",
+        "No server operation or report save."
+      ]
+    },
+    "native_imgui_cpu_2x_capture_toggle_20261030": {
+      "captured_date": "2026-10-30",
+      "description": "Actual native Windows ImGui collection-settings draw data rendered with a 2x font atlas, cropped to the 740x620 window.",
+      "font": "Malgun Gothic + FontAwesome 6 Solid, 2x rasterizer density",
+      "fixture": "In-memory recording availability/preference and account-settings callback. No actual recorder, credentials, save or network operation.",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "26bef9eac42f251cdfaddc6a743cbb6693c95d578060a123d6aac9ed1ea22cfb",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "68f145ecee52693c0d4cb7c2331d15ec934ffeb83d6247b67587c21e12ce2acc",
+        "moti_gui/src/gui/setup/error_report_state.cpp": "5358b4e9ae8ad1b3ab57729d28cb9d03fcb443f24016153a9d2d339bbe7bba71",
+        ".cache/guide-capture-toggle-20261030/capture.cpp": "f866709ecc592693d5ac2c2beb7e7b0c663f4bc91244812ec2feecfb7db8b430",
+        ".cache/guide-capture-toggle-20261030/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-capture-toggle-20261030/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a",
+        ".cache/guide-capture-toggle-20261030/CMakeLists.txt": "ed12663139becda9d3d6249ea1ceee8e45c524f7ee0e2ebec9fec5a92d24b59c"
+      },
+      "capture_executable_sha256": "9aa8a815ea7b61bcf283fc84fb8a947bfcfe9a3db2cf9b5fe5adc08817e6690f",
+      "provenance": ".cache/guide-capture-toggle-20261030/provenance.json",
+      "annotation_method": "Actual tab, checkbox, table, disclosure and button rectangles.",
+      "scope_limits": [
+        "Native CPU render, not OS/GPU screenshots or Linux visual validation.",
+        "No crash generation, preference persistence or transmission."
+      ]
+    },
+    "native_imgui_cpu_2x_manual_consent_20261030": {
+      "captured_date": "2026-10-30",
+      "description": "Actual native Windows ImGui manual account-consent settings and precise app-crash-recording copy, rendered with a 2x font atlas.",
+      "font": "Malgun Gothic + FontAwesome 6 Solid, 2x rasterizer density",
+      "fixture": "In-memory DECLINED consent reply and local capture-ready preference. Manual Open is explicit. No real account, consent save, crash generation, server change or transmission.",
+      "source_sha256": {
+        "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "f35b57e8e57bb9e42b9cc9258d59e2dc14380c67c15557d873059a18c07dd523",
+        "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "68f145ecee52693c0d4cb7c2331d15ec934ffeb83d6247b67587c21e12ce2acc",
+        "moti_gui/src/gui/account/legacy_imgui_diagnostics_consent_view.cpp": "97138246eb7c5341fe7b8287f630f7c119cfb97530b235ea770d5d7958abeea5",
+        "moti_gui/src/gui/account/diagnostics_consent_client.cpp": "30a694860adf8f4ad0d172759466408118569addb58ac3faaf3c4fe691146798",
+        "unit_tests/DiagnosticsConsentViewTest.cpp": "7ecec989c293b9594400972b0749e39eb39cc2b553da024d5f2675e294363dea",
+        ".cache/guide-consent-manual-20261030/capture.cpp": "f866709ecc592693d5ac2c2beb7e7b0c663f4bc91244812ec2feecfb7db8b430",
+        ".cache/guide-consent-manual-20261030/account-capture.cpp": "797746175dc5353dda096cb88316a8e667b9f6129845ff0bbb4053dd5594fbe0",
+        ".cache/guide-consent-manual-20261030/capture-harness.hpp": "c440a332c4a7278454620e0bf6d8207be2fc399a2a9e5f3a5034c0b9b26509bd",
+        ".cache/guide-consent-manual-20261030/raster.hpp": "29f78261546bdc19b40b314759264a7142c0ef6982c31dfdaf124ab22d6f444a",
+        ".cache/guide-consent-manual-20261030/CMakeLists.txt": "f6724a2d3c8e2b48bc2976d38d52cd870f82060e93a12b36e8f5fcd489ad45fc"
+      },
+      "capture_executable_sha256": {
+        "GuideAccountConsentCapture.exe": "85a3fa896e3ae9a8104b0b2b2fd0d5875f5db339df1bebc859f4b99555cd8018",
+        "GuideReportPageChoiceCapture.exe": "c7b9287eb84c65913b6ce1bcc7d9f2483c585ee820c306bb7f120a3ea011f1c2"
+      },
+      "provenance": ".cache/guide-consent-manual-20261030/provenance.json",
+      "annotation_method": "Existing native bounds retained after confirming actual tab, checkbox, disclosure and button rectangles.",
+      "scope_limits": [
+        "CPU native render, not OS/GPU screenshots or Linux visual validation.",
+        "No deployment or database change was performed."
+      ]
     }
   },
   "data_capture_provenance": {
@@ -7263,7 +7915,7 @@
       "Product source, original fixtures and current manifest were not edited. Old assets were retained."
     ]
   },
-  "last_updated_date": "2026-10-27",
+  "last_updated_date": "2026-10-30",
   "pc_session_capture_provenance": {
     "baseline_revision": "1b1b09457468754cad693c7aaa0947c40a494f96",
     "working_tree": "Includes current uncommitted PC-management implementation and visual polish",
@@ -7808,7 +8460,7 @@
         "left_mount_preset_index": 1,
         "left_position_x_m": 0.03,
         "left_rotation_y_degrees": 45,
-        "float_tolerance": 1e-7
+        "float_tolerance": 1e-07
       },
       "notice": "Green attachment saved notice and return to prior Hand Metrics page are visible in attachment-saved-ko.png; the notice is the existing transient approximately 5-second product message.",
       "scope": "Isolated local preview settings only; not a real tracker binding or physical calibration."
@@ -7919,5 +8571,1084 @@
     "visible_device_state": "USB dongle connected; zero gloves; hand metrics displays the loaded static TAKE.",
     "visually_reviewed": true,
     "limitations": "Static idle pose illustration, not real tracking, calibration or motion playback validation. The existing source status labels still say tracking for loaded TAKE poses."
+  },
+  "error_report_compact_20261029_provenance": {
+    "replaced_files": [
+      "report-settings-ko.png",
+      "report-compose-ko.png",
+      "report-list-ko.png",
+      "guide-report-detail-ko.png",
+      "guide-report-review-ko.png",
+      "guide-report-received-ko.png",
+      "guide-report-withdraw-ko.png",
+      "guide-report-delete-ko.png",
+      "guide-age14-report-review-ko.png"
+    ],
+    "previous_assets": [
+      {
+        "file": "report-compose-ko.png",
+        "sha256": "01731f853c7eb923c2f838850d82a0753e862fb270a3f67c4b28a9bdc66019a5",
+        "capture_method_id": "native_imgui_cpu_original",
+        "pixels": [
+          740,
+          620
+        ]
+      },
+      {
+        "file": "report-list-ko.png",
+        "sha256": "9ef204a8d1b3e10155a16011ad928bc05de47c1c92f83f518aa1c41f044bb3b3",
+        "capture_method_id": "native_imgui_cpu_original",
+        "pixels": [
+          740,
+          620
+        ]
+      },
+      {
+        "file": "report-settings-ko.png",
+        "sha256": "8b923e5956ee7b503ccaaae636645b233d15db65f18a0736259a5a963128583b",
+        "capture_method_id": "native_imgui_cpu_original",
+        "pixels": [
+          740,
+          620
+        ]
+      },
+      {
+        "file": "guide-report-detail-ko.png",
+        "sha256": "07fec74ca7c12239412417be2791595a645eb302a497af6edc8282e5230ab943",
+        "capture_method_id": "guide-full-20261023-auth",
+        "pixels": [
+          1480,
+          1240
+        ]
+      },
+      {
+        "file": "guide-report-review-ko.png",
+        "sha256": "b8b5b0bc2273a80685984ad2f759e96b98cbfcf284c3c68a077f5b88f578e7dc",
+        "capture_method_id": "guide-full-20261023-auth",
+        "pixels": [
+          1480,
+          1240
+        ]
+      },
+      {
+        "file": "guide-report-delete-ko.png",
+        "sha256": "b3a61cf2083f37d3b88c35f5437ca36b284df13f654d14fd2a3ead3dd188bc9f",
+        "capture_method_id": "guide-full-20261023-auth",
+        "pixels": [
+          1480,
+          1240
+        ]
+      },
+      {
+        "file": "guide-report-received-ko.png",
+        "sha256": "b8f097f45b3eb3ee3e3de0c9a79e42c123bc375ad04bba3a54446b3d400b3bc0",
+        "capture_method_id": "guide-supplement-20261026-auth",
+        "pixels": [
+          1480,
+          1016
+        ]
+      },
+      {
+        "file": "guide-report-withdraw-ko.png",
+        "sha256": "89523b8de6dbe4222bf912e82d1143750797cb710bf559f120ad2a0c5277f8eb",
+        "capture_method_id": "guide-supplement-20261026-auth",
+        "pixels": [
+          1480,
+          1240
+        ]
+      },
+      {
+        "file": "guide-age14-report-review-ko.png",
+        "sha256": "fb95d0629d4f2ff62835aa02637683141c5e24503a1ebf546cdc6e2b4bfa706d",
+        "capture_method_id": "guide-age14-20261027-native-imgui-cpu",
+        "pixels": [
+          1480,
+          1240
+        ]
+      }
+    ],
+    "previous_originals": ".cache/guide-error-compact-20261029/previous/",
+    "guide_pages": [
+      "diagnostics",
+      "troubleshooting"
+    ],
+    "image_placements": 10,
+    "verification": ".cache/guide-error-compact-qa-20261029/browser.json",
+    "native_view_source_unchanged_during_guide_refresh": true
+  },
+  "account_consent_20261029_provenance": {
+    "files": [
+      "report-compose-ko.png",
+      "report-list-ko.png",
+      "guide-report-detail-ko.png",
+      "guide-age14-report-review-ko.png",
+      "guide-report-review-ko.png",
+      "guide-report-received-ko.png",
+      "guide-report-withdraw-ko.png",
+      "guide-report-delete-ko.png",
+      "report-settings-ko.png",
+      "guide-account-report-consent-ko.png",
+      "guide-age14-signup-ko.png",
+      "guide-registration-consent-ko.png",
+      "guide-signup-ready-ko.png"
+    ],
+    "replaced_files": [
+      "report-compose-ko.png",
+      "report-list-ko.png",
+      "guide-report-detail-ko.png",
+      "guide-age14-report-review-ko.png",
+      "guide-report-review-ko.png",
+      "guide-report-received-ko.png",
+      "guide-report-withdraw-ko.png",
+      "guide-report-delete-ko.png",
+      "report-settings-ko.png",
+      "guide-age14-signup-ko.png",
+      "guide-signup-ready-ko.png"
+    ],
+    "added_files": [
+      "guide-account-report-consent-ko.png",
+      "guide-registration-consent-ko.png"
+    ],
+    "previous_originals": ".cache/guide-account-consent-20261029/previous/",
+    "guide_pages": [
+      "registration",
+      "diagnostics",
+      "troubleshooting"
+    ],
+    "verification": ".cache/guide-account-consent-20261029/browser.json",
+    "previous_assets": {
+      "report-compose-ko.png": {
+        "file": "report-compose-ko.png",
+        "src": "assets/current/report-compose-ko.png",
+        "sha256": "2d48a884fe756be3986a9ca3c23daf06f7cd2d83765dc6aa57429549c9db1162",
+        "pixels": [
+          1480,
+          1240
+        ],
+        "language": "ko",
+        "captured_date": "2026-10-29",
+        "source_group": "error-compact-20261029",
+        "capture_method_id": "native_imgui_cpu_2x_compact_20261029",
+        "render_entrypoint": "LegacyImguiErrorReportView::Render",
+        "render_bounds": {
+          "units": "logical_viewport_pixels",
+          "x": 313,
+          "y": 140,
+          "width": 740,
+          "height": 620
+        },
+        "output_scale": 2,
+        "scroll": {
+          "units": "logical_pixels",
+          "y": 0.0,
+          "max_y": 0.0
+        },
+        "state": "manual feedback draft, sample text; unsaved",
+        "state_ko": "제품 UI 예시 · 입력한 내용은 PC에 먼저 저장합니다. 서버 전송은 저장 후 검토 단계에서 선택합니다.",
+        "synthetic_state": true,
+        "visually_reviewed": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false,
+        "capture_original": ".cache/guide-error-compact-20261029/report-compose-ko.png",
+        "raw_ppm": ".cache/guide-error-compact-20261029/report-compose-ko.ppm",
+        "source_sha256": {
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "d4d7818d1ab80f1ead085f8dc1697586691f2add8244e7074babe979b9a92777",
+          "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "2afc1d6ddd0a70ce3f7abe5571fca8b301cfa9247ed0a2df2c644c8b0dd3c10b",
+          ".cache/guide-error-compact-20261029/capture.cpp": "0f83f0cce4382e0a6936d7743dd56d82a879bfcd240667cf26f0627646e5ce0b"
+        },
+        "annotations": [
+          {
+            "x": 3.243,
+            "y": 28.065,
+            "width": 91.486,
+            "height": 7.097,
+            "label": "제목",
+            "description": "문제를 짧게 요약합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 45.806,
+            "width": 91.486,
+            "height": 24.516,
+            "label": "문제 설명",
+            "description": "발생 화면과 순서, 기대한 결과·실제 결과를 적습니다."
+          },
+          {
+            "x": 3.243,
+            "y": 76.452,
+            "width": 77.027,
+            "height": 7.097,
+            "label": "기록할 정보 확인",
+            "description": "개인정보를 적지 않았는지 확인하고 관련 화면을 읽습니다."
+          },
+          {
+            "x": 3.243,
+            "y": 85.161,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "PC에 저장",
+            "description": "내용을 이 PC에 보관하고 상세 화면으로 이동합니다. 서버 전송은 별도입니다."
+          }
+        ]
+      },
+      "report-list-ko.png": {
+        "file": "report-list-ko.png",
+        "src": "assets/current/report-list-ko.png",
+        "sha256": "3e6744bb78698e1074aefaebadf5783d2d3ad9ec5c695a1ed64963d2e40a5ae6",
+        "pixels": [
+          1480,
+          1240
+        ],
+        "language": "ko",
+        "captured_date": "2026-10-29",
+        "source_group": "error-compact-20261029",
+        "capture_method_id": "native_imgui_cpu_2x_compact_20261029",
+        "render_entrypoint": "LegacyImguiErrorReportView::Render",
+        "render_bounds": {
+          "units": "logical_viewport_pixels",
+          "x": 313,
+          "y": 140,
+          "width": 740,
+          "height": 620
+        },
+        "output_scale": 2,
+        "scroll": {
+          "units": "logical_pixels",
+          "y": 0.0,
+          "max_y": 0.0
+        },
+        "state": "three local fixture reports; two unsent and one received",
+        "state_ko": "제품 UI 예시 · 직접 작성한 신고와 종료 기록을 한 목록에서 확인합니다. 제목·시각·접수 상태는 예시입니다.",
+        "synthetic_state": true,
+        "visually_reviewed": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false,
+        "capture_original": ".cache/guide-error-compact-20261029/report-list-ko.png",
+        "raw_ppm": ".cache/guide-error-compact-20261029/report-list-ko.ppm",
+        "source_sha256": {
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "d4d7818d1ab80f1ead085f8dc1697586691f2add8244e7074babe979b9a92777",
+          "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "2afc1d6ddd0a70ce3f7abe5571fca8b301cfa9247ed0a2df2c644c8b0dd3c10b",
+          ".cache/guide-error-compact-20261029/capture.cpp": "0f83f0cce4382e0a6936d7743dd56d82a879bfcd240667cf26f0627646e5ce0b"
+        },
+        "annotations": [
+          {
+            "x": 12.568,
+            "y": 8.387,
+            "width": 12.432,
+            "height": 7.097,
+            "label": "저장된 보고서",
+            "description": "이 PC에 저장한 보고서 목록을 엽니다."
+          },
+          {
+            "x": 3.243,
+            "y": 24.839,
+            "width": 91.622,
+            "height": 10.968,
+            "label": "보고서 선택",
+            "description": "제목과 저장 시각을 확인하고 항목을 눌러 상세 내용을 엽니다."
+          },
+          {
+            "x": 85.946,
+            "y": 29.677,
+            "width": 8.649,
+            "height": 29.677,
+            "label": "전송 상태",
+            "description": "미전송과 접수 완료를 구분합니다. PC에 저장한 것만으로 서버에 접수되지는 않습니다."
+          }
+        ]
+      },
+      "guide-report-detail-ko.png": {
+        "file": "guide-report-detail-ko.png",
+        "src": "assets/current/guide-report-detail-ko.png",
+        "sha256": "ecb10f1a9a1954e8e014ce235b9d0656018653d9537a92c9278c09d44f59a5a2",
+        "pixels": [
+          1480,
+          1240
+        ],
+        "language": "ko",
+        "captured_date": "2026-10-29",
+        "source_group": "error-compact-20261029",
+        "capture_method_id": "native_imgui_cpu_2x_compact_20261029",
+        "render_entrypoint": "LegacyImguiErrorReportView::Render",
+        "render_bounds": {
+          "units": "logical_viewport_pixels",
+          "x": 313,
+          "y": 140,
+          "width": 740,
+          "height": 620
+        },
+        "output_scale": 2,
+        "scroll": {
+          "units": "logical_pixels",
+          "y": 0.0,
+          "max_y": 0.0
+        },
+        "state": "manual report unsent detail",
+        "state_ko": "제품 UI 예시 · 미전송 보고서의 상세 화면입니다. 내용과 앱 정보를 확인한 뒤 전송 검토를 엽니다.",
+        "synthetic_state": true,
+        "visually_reviewed": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false,
+        "capture_original": ".cache/guide-error-compact-20261029/guide-report-detail-ko.png",
+        "raw_ppm": ".cache/guide-error-compact-20261029/guide-report-detail-ko.ppm",
+        "source_sha256": {
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "d4d7818d1ab80f1ead085f8dc1697586691f2add8244e7074babe979b9a92777",
+          "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "2afc1d6ddd0a70ce3f7abe5571fca8b301cfa9247ed0a2df2c644c8b0dd3c10b",
+          ".cache/guide-error-compact-20261029/capture.cpp": "0f83f0cce4382e0a6936d7743dd56d82a879bfcd240667cf26f0627646e5ce0b"
+        },
+        "annotations": [
+          {
+            "x": 3.243,
+            "y": 19.355,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "목록으로",
+            "description": "저장된 보고서 목록으로 돌아갑니다."
+          },
+          {
+            "x": 3.243,
+            "y": 30.323,
+            "width": 91.622,
+            "height": 21.935,
+            "label": "저장된 내용",
+            "description": "제목·저장 시각·상태·설명을 확인합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 55.484,
+            "width": 91.622,
+            "height": 4.516,
+            "label": "앱 정보 자세히",
+            "description": "관련 화면·앱 버전·빌드·운영체제 정보를 펼쳐 확인합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 63.871,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "전송 검토",
+            "description": "전송할 내용과 안내문을 확인하는 화면으로 이동합니다."
+          },
+          {
+            "x": 21.081,
+            "y": 63.871,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "PC에서 삭제",
+            "description": "PC 사본을 삭제할지 확인합니다. 서버 전송 철회와 다른 동작입니다."
+          }
+        ]
+      },
+      "guide-age14-report-review-ko.png": {
+        "file": "guide-age14-report-review-ko.png",
+        "src": "assets/current/guide-age14-report-review-ko.png",
+        "sha256": "ff9571a9a1483363e7df09f7498f7534317bda6e9795eda866436df23b5cd405",
+        "pixels": [
+          1480,
+          1240
+        ],
+        "language": "ko",
+        "captured_date": "2026-10-29",
+        "source_group": "error-compact-20261029",
+        "capture_method_id": "native_imgui_cpu_2x_compact_20261029",
+        "render_entrypoint": "LegacyImguiErrorReportView::Render",
+        "render_bounds": {
+          "units": "logical_viewport_pixels",
+          "x": 313,
+          "y": 140,
+          "width": 740,
+          "height": 620
+        },
+        "output_scale": 2,
+        "scroll": {
+          "units": "logical_pixels",
+          "y": 78.0,
+          "max_y": 78.0
+        },
+        "state": "manual report review scrolled to bottom; age and consent unchecked; send disabled",
+        "state_ko": "제품 UI 예시 · 전송 검토에서 아래로 내려 확인하는 화면입니다. 두 확인란은 미선택이며 전송 버튼은 아직 비활성 상태입니다.",
+        "synthetic_state": true,
+        "visually_reviewed": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false,
+        "capture_original": ".cache/guide-error-compact-20261029/guide-age14-report-review-ko.png",
+        "raw_ppm": ".cache/guide-error-compact-20261029/guide-age14-report-review-ko.ppm",
+        "source_sha256": {
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "d4d7818d1ab80f1ead085f8dc1697586691f2add8244e7074babe979b9a92777",
+          "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "2afc1d6ddd0a70ce3f7abe5571fca8b301cfa9247ed0a2df2c644c8b0dd3c10b",
+          ".cache/guide-error-compact-20261029/capture.cpp": "0f83f0cce4382e0a6936d7743dd56d82a879bfcd240667cf26f0627646e5ce0b"
+        },
+        "annotations": [
+          {
+            "x": 3.243,
+            "y": 28.387,
+            "width": 91.622,
+            "height": 13.548,
+            "label": "보낼 내용과 보관 기간",
+            "description": "작성한 내용·화면·앱 정보의 전송 범위와 계정 연결 여부, 서버 보관 기간을 확인합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 45.161,
+            "width": 91.622,
+            "height": 4.516,
+            "label": "보낼 정보 자세히",
+            "description": "실제로 보낼 내용과 앱 정보를 펼쳐 읽습니다."
+          },
+          {
+            "x": 3.243,
+            "y": 53.548,
+            "width": 91.622,
+            "height": 4.516,
+            "label": "수집·이용 안내 전문",
+            "description": "서버에서 제공하는 안내문을 펼쳐 읽습니다."
+          },
+          {
+            "x": 3.243,
+            "y": 61.935,
+            "width": 22.973,
+            "height": 4.516,
+            "label": "만 14세 이상 확인",
+            "description": "본인의 연령 조건을 직접 확인합니다. 처음에는 선택되어 있지 않습니다."
+          },
+          {
+            "x": 3.243,
+            "y": 68.387,
+            "width": 64.189,
+            "height": 4.516,
+            "label": "보고서 전송 동의",
+            "description": "수집·이용 안내를 읽은 뒤 해당 보고서 전송에 직접 동의합니다."
+          },
+          {
+            "x": 60.811,
+            "y": 89.032,
+            "width": 34.054,
+            "height": 7.097,
+            "label": "전송 또는 나중에",
+            "description": "두 확인 항목을 선택하면 전송할 수 있습니다. 나중에는 전송 없이 상세로 돌아갑니다."
+          }
+        ]
+      },
+      "guide-report-review-ko.png": {
+        "file": "guide-report-review-ko.png",
+        "src": "assets/current/guide-report-review-ko.png",
+        "sha256": "f33a589233aa155e8b155482af35f3e3d2d2f568b959612cba98b941b0b796d9",
+        "pixels": [
+          1480,
+          1240
+        ],
+        "language": "ko",
+        "captured_date": "2026-10-29",
+        "source_group": "error-compact-20261029",
+        "capture_method_id": "native_imgui_cpu_2x_compact_20261029",
+        "render_entrypoint": "LegacyImguiErrorReportView::Render",
+        "render_bounds": {
+          "units": "logical_viewport_pixels",
+          "x": 313,
+          "y": 140,
+          "width": 740,
+          "height": 620
+        },
+        "output_scale": 2,
+        "scroll": {
+          "units": "logical_pixels",
+          "y": 0.0,
+          "max_y": 206.0
+        },
+        "state": "crash report send review, top; optional dump unchecked",
+        "state_ko": "제품 UI 예시 · 종료 보고서에 덤프가 있는 경우입니다. 첨부는 선택 사항이며, 아래로 내려 연령 확인·전송 동의를 진행합니다.",
+        "synthetic_state": true,
+        "visually_reviewed": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false,
+        "capture_original": ".cache/guide-error-compact-20261029/guide-report-review-ko.png",
+        "raw_ppm": ".cache/guide-error-compact-20261029/guide-report-review-ko.ppm",
+        "source_sha256": {
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "d4d7818d1ab80f1ead085f8dc1697586691f2add8244e7074babe979b9a92777",
+          "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "2afc1d6ddd0a70ce3f7abe5571fca8b301cfa9247ed0a2df2c644c8b0dd3c10b",
+          ".cache/guide-error-compact-20261029/capture.cpp": "0f83f0cce4382e0a6936d7743dd56d82a879bfcd240667cf26f0627646e5ce0b"
+        },
+        "annotations": [
+          {
+            "x": 3.243,
+            "y": 19.355,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "보고서로",
+            "description": "전송하지 않고 보고서 상세로 돌아갑니다."
+          },
+          {
+            "x": 3.243,
+            "y": 40.645,
+            "width": 91.622,
+            "height": 14.194,
+            "label": "종료 보고서의 전송 범위",
+            "description": "종료 시각·오류·앱 정보와 보고서·덤프의 보관 기간을 확인합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 57.742,
+            "width": 91.622,
+            "height": 4.516,
+            "label": "보낼 정보 자세히",
+            "description": "전송할 오류·앱 정보를 펼쳐 확인합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 70,
+            "width": 36.486,
+            "height": 8.387,
+            "label": "메모리 덤프 첨부 (선택)",
+            "description": "분석에 필요한 경우 주의사항과 용량을 확인하고 선택합니다. 선택하지 않아도 기본 정보는 보낼 수 있습니다."
+          },
+          {
+            "x": 3.243,
+            "y": 80.323,
+            "width": 91.622,
+            "height": 3.871,
+            "label": "첨부 전 주의사항",
+            "description": "입력값·경로·개인정보·인증 토큰이 포함될 수 있고 완전한 제거는 불가능하다는 안내를 확인합니다."
+          }
+        ]
+      },
+      "guide-report-received-ko.png": {
+        "file": "guide-report-received-ko.png",
+        "src": "assets/current/guide-report-received-ko.png",
+        "sha256": "bcf263cbd7771bb12aad7804e6e39289ee30f8d252ab7d1f9cb88852cccc131d",
+        "pixels": [
+          1480,
+          1240
+        ],
+        "language": "ko",
+        "captured_date": "2026-10-29",
+        "source_group": "error-compact-20261029",
+        "capture_method_id": "native_imgui_cpu_2x_compact_20261029",
+        "render_entrypoint": "LegacyImguiErrorReportView::Render",
+        "render_bounds": {
+          "units": "logical_viewport_pixels",
+          "x": 313,
+          "y": 140,
+          "width": 740,
+          "height": 620
+        },
+        "output_scale": 2,
+        "scroll": {
+          "units": "logical_pixels",
+          "y": 0.0,
+          "max_y": 0.0
+        },
+        "state": "same manual report with fixture server receipt; no actual submission",
+        "state_ko": "제품 UI 예시 · 접수 번호와 접수 완료 상태는 예시 데이터입니다. 서버 접수가 문제 분석·수정 완료를 뜻하지는 않습니다.",
+        "synthetic_state": true,
+        "visually_reviewed": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false,
+        "capture_original": ".cache/guide-error-compact-20261029/guide-report-received-ko.png",
+        "raw_ppm": ".cache/guide-error-compact-20261029/guide-report-received-ko.ppm",
+        "source_sha256": {
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "d4d7818d1ab80f1ead085f8dc1697586691f2add8244e7074babe979b9a92777",
+          "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "2afc1d6ddd0a70ce3f7abe5571fca8b301cfa9247ed0a2df2c644c8b0dd3c10b",
+          ".cache/guide-error-compact-20261029/capture.cpp": "0f83f0cce4382e0a6936d7743dd56d82a879bfcd240667cf26f0627646e5ce0b"
+        },
+        "annotations": [
+          {
+            "x": 3.243,
+            "y": 63.548,
+            "width": 91.622,
+            "height": 7.742,
+            "label": "접수 안내와 번호",
+            "description": "접수 완료 안내와 접수 번호를 확인합니다. 문제 분석·수정 완료와 구분합니다."
+          },
+          {
+            "x": 21.081,
+            "y": 72.903,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "서버 전송 철회",
+            "description": "접수한 보고서의 서버 자료 삭제를 요청하는 확인 단계로 이동합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 72.903,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "PC에서 삭제",
+            "description": "이 PC의 사본과 확인 키만 삭제하는 단계로 이동합니다. 서버 전송은 철회되지 않습니다."
+          }
+        ]
+      },
+      "guide-report-withdraw-ko.png": {
+        "file": "guide-report-withdraw-ko.png",
+        "src": "assets/current/guide-report-withdraw-ko.png",
+        "sha256": "a3e0cd5375abd26b6e879ae50010e1ad61a1f8b800479a85427b77aad0f59714",
+        "pixels": [
+          1480,
+          1240
+        ],
+        "language": "ko",
+        "captured_date": "2026-10-29",
+        "source_group": "error-compact-20261029",
+        "capture_method_id": "native_imgui_cpu_2x_compact_20261029",
+        "render_entrypoint": "LegacyImguiErrorReportView::Render",
+        "render_bounds": {
+          "units": "logical_viewport_pixels",
+          "x": 313,
+          "y": 140,
+          "width": 740,
+          "height": 620
+        },
+        "output_scale": 2,
+        "scroll": {
+          "units": "logical_pixels",
+          "y": 8.0,
+          "max_y": 8.0
+        },
+        "state": "server withdrawal confirmation; request not invoked",
+        "state_ko": "제품 UI 예시 · 서버 전송 철회의 확인 화면입니다. 실제 철회·삭제 요청은 실행하지 않았습니다.",
+        "synthetic_state": true,
+        "visually_reviewed": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false,
+        "capture_original": ".cache/guide-error-compact-20261029/guide-report-withdraw-ko.png",
+        "raw_ppm": ".cache/guide-error-compact-20261029/guide-report-withdraw-ko.ppm",
+        "source_sha256": {
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "d4d7818d1ab80f1ead085f8dc1697586691f2add8244e7074babe979b9a92777",
+          "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "2afc1d6ddd0a70ce3f7abe5571fca8b301cfa9247ed0a2df2c644c8b0dd3c10b",
+          ".cache/guide-error-compact-20261029/capture.cpp": "0f83f0cce4382e0a6936d7743dd56d82a879bfcd240667cf26f0627646e5ce0b"
+        },
+        "annotations": [
+          {
+            "x": 3.243,
+            "y": 84.194,
+            "width": 91.622,
+            "height": 3.871,
+            "label": "철회 범위",
+            "description": "서버 보고서와 첨부의 삭제를 요청하며 PC 사본은 유지한다는 안내를 읽습니다."
+          },
+          {
+            "x": 60.811,
+            "y": 89.032,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "취소",
+            "description": "철회를 요청하지 않고 보고서로 돌아갑니다."
+          },
+          {
+            "x": 78.649,
+            "y": 89.032,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "전송 철회 확인",
+            "description": "서버 자료 삭제를 요청합니다. 결과가 확인될 때까지 PC 보고서를 보관합니다."
+          }
+        ]
+      },
+      "guide-report-delete-ko.png": {
+        "file": "guide-report-delete-ko.png",
+        "src": "assets/current/guide-report-delete-ko.png",
+        "sha256": "a52d9bdddb87b6191a89806cb96baba2206987f27b948c2b95232ea74c543b1b",
+        "pixels": [
+          1480,
+          1240
+        ],
+        "language": "ko",
+        "captured_date": "2026-10-29",
+        "source_group": "error-compact-20261029",
+        "capture_method_id": "native_imgui_cpu_2x_compact_20261029",
+        "render_entrypoint": "LegacyImguiErrorReportView::Render",
+        "render_bounds": {
+          "units": "logical_viewport_pixels",
+          "x": 313,
+          "y": 140,
+          "width": 740,
+          "height": 620
+        },
+        "output_scale": 2,
+        "scroll": {
+          "units": "logical_pixels",
+          "y": 0.0,
+          "max_y": 0.0
+        },
+        "state": "local deletion confirmation; deletion not invoked",
+        "state_ko": "제품 UI 예시 · PC 사본 삭제의 확인 화면입니다. 서버에 접수된 자료는 이 동작으로 삭제되지 않습니다.",
+        "synthetic_state": true,
+        "visually_reviewed": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false,
+        "capture_original": ".cache/guide-error-compact-20261029/guide-report-delete-ko.png",
+        "raw_ppm": ".cache/guide-error-compact-20261029/guide-report-delete-ko.ppm",
+        "source_sha256": {
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "d4d7818d1ab80f1ead085f8dc1697586691f2add8244e7074babe979b9a92777",
+          "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "2afc1d6ddd0a70ce3f7abe5571fca8b301cfa9247ed0a2df2c644c8b0dd3c10b",
+          ".cache/guide-error-compact-20261029/capture.cpp": "0f83f0cce4382e0a6936d7743dd56d82a879bfcd240667cf26f0627646e5ce0b"
+        },
+        "annotations": [
+          {
+            "x": 3.243,
+            "y": 30.323,
+            "width": 91.622,
+            "height": 21.935,
+            "label": "삭제할 보고서",
+            "description": "삭제할 대상의 제목과 내용을 먼저 확인합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 74.516,
+            "width": 91.622,
+            "height": 3.871,
+            "label": "PC 삭제의 범위",
+            "description": "PC의 보고서와 확인 키를 지우며 되돌릴 수 없습니다. 서버 전송 철회가 필요하다면 먼저 철회를 완료합니다."
+          },
+          {
+            "x": 60.811,
+            "y": 79.355,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "취소",
+            "description": "삭제하지 않고 PC에 보고서를 보관합니다."
+          },
+          {
+            "x": 78.649,
+            "y": 79.355,
+            "width": 16.216,
+            "height": 7.097,
+            "label": "삭제",
+            "description": "이 PC의 사본 삭제를 확정합니다."
+          }
+        ]
+      },
+      "report-settings-ko.png": {
+        "file": "report-settings-ko.png",
+        "src": "assets/current/report-settings-ko.png",
+        "sha256": "4898797dd804b7b8835d2889af8023140ca97be6a6767767dbc647bad196eff9",
+        "pixels": [
+          1480,
+          1240
+        ],
+        "language": "ko",
+        "captured_date": "2026-10-29",
+        "source_group": "error-compact-20261029",
+        "capture_method_id": "native_imgui_cpu_2x_compact_20261029",
+        "render_entrypoint": "LegacyImguiErrorReportView::Render",
+        "render_bounds": {
+          "units": "logical_viewport_pixels",
+          "x": 313,
+          "y": 140,
+          "width": 740,
+          "height": 620
+        },
+        "output_scale": 2,
+        "scroll": {
+          "units": "logical_pixels",
+          "y": 0.0,
+          "max_y": 0.0
+        },
+        "state": "collection available; manual per-report sending",
+        "state_ko": "제품 UI 예시 · 종료 기록 수집이 사용 중인 상태입니다. 사용 가능 여부는 실행 환경에 따라 다르며 저장한 보고서는 직접 검토해 전송합니다.",
+        "synthetic_state": true,
+        "visually_reviewed": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false,
+        "capture_original": ".cache/guide-error-compact-20261029/report-settings-ko.png",
+        "raw_ppm": ".cache/guide-error-compact-20261029/report-settings-ko.ppm",
+        "source_sha256": {
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "d4d7818d1ab80f1ead085f8dc1697586691f2add8244e7074babe979b9a92777",
+          "moti_gui/include/gui/app/legacy_imgui_error_report_view.hpp": "2afc1d6ddd0a70ce3f7abe5571fca8b301cfa9247ed0a2df2c644c8b0dd3c10b",
+          ".cache/guide-error-compact-20261029/capture.cpp": "0f83f0cce4382e0a6936d7743dd56d82a879bfcd240667cf26f0627646e5ce0b"
+        },
+        "annotations": [
+          {
+            "x": 25.135,
+            "y": 8.387,
+            "width": 10.811,
+            "height": 7.097,
+            "label": "수집과 전송",
+            "description": "오류 기록 수집과 보고서 전송·보관 기준을 확인합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 20,
+            "width": 91.622,
+            "height": 12.258,
+            "label": "종료 기록 수집 상태",
+            "description": "사용 중이면 예기치 않은 종료를 PC에 기록할 수 있습니다. 사용 불가로 표시돼도 문제 신고는 직접 작성할 수 있습니다."
+          },
+          {
+            "x": 3.243,
+            "y": 40.645,
+            "width": 91.622,
+            "height": 9.032,
+            "label": "전송과 PC 보관",
+            "description": "보고서별로 확인 후 직접 전송합니다. PC의 덤프는 최대 7일·총 100 MiB 범위에서 보관합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 53.871,
+            "width": 91.622,
+            "height": 4.516,
+            "label": "어떤 정보가 저장되나요?",
+            "description": "종료 기록과 직접 작성한 신고의 수집 항목을 펼쳐 확인합니다."
+          },
+          {
+            "x": 3.243,
+            "y": 62.258,
+            "width": 18.514,
+            "height": 7.097,
+            "label": "저장된 보고서 보기",
+            "description": "이 PC에 저장된 보고서 목록으로 이동합니다."
+          }
+        ]
+      },
+      "guide-age14-signup-ko.png": {
+        "file": "guide-age14-signup-ko.png",
+        "src": "assets/current/guide-age14-signup-ko.png",
+        "pixels": [
+          640,
+          828
+        ],
+        "sha256": "0f36d2f156caf21cf4eb4be286dcf1d4dbf5a111cfeee9e7607d0e2dd62d8262",
+        "language": "ko",
+        "captured_date": "2026-10-27",
+        "source_group": "age14-ui-20261027",
+        "capture_method_id": "guide-age14-20261027-native-imgui-cpu",
+        "render_entrypoint": "LegacyImguiAuthView::Render",
+        "render_bounds": {
+          "x": 80,
+          "y": 56,
+          "width": 640,
+          "height": 828
+        },
+        "output_scale": 1,
+        "state_ko": "문서 비필수·초안 확인 모드의 가입 초기 상태입니다. 만 14세 이상 확인은 미선택이며 이메일 인증과 아이디 중복 확인 전입니다. 보호자 승인 입력란과 만 14세 미만 선택은 없습니다.",
+        "source_sha256": {
+          "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "5d483e5881381f60ce528b3f118e4ae88508b0e0c70875b29fc28d551954fece",
+          "moti_gui/include/gui/auth/legacy_imgui_auth_view.hpp": "69e8f05d0ba25e96a042368245e8f5cfa431e53738aa352c4e1204bd5bf9e726",
+          "moti_gui/src/gui/auth/auth_flow_contract.cpp": "3014846f4fb6e4e8328cb6ee3b2229c5ea1ff99ad0545675a28d01c673b678bd",
+          "moti_gui/src/gui/auth/email_registration.cpp": "0da72cddc78caf37887065ddb6698ab79bd0d92bae3023be939c84da5abf5ac0",
+          "moti_gui/src/gui/auth/account_recovery.cpp": "02f1e9ca19fffed92ee38e9533207e0332ca2fc7688e823e0755a089c20ef82c",
+          "moti_gui/src/gui/auth/local_login_client.cpp": "cad34e80d83fb35af9b77c0d3100e75766e93c4e8fee631945816eb8ea5263a6",
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "1138ea0cefdf2c4c37e814ce147abb953b0b49f1c62f4b76f6a63084d31644ed",
+          "moti_gui/src/gui/setup/error_report_state.cpp": "1b01e1b0cd5dd9dfdff53af5f3cf25a7890a1b4dc7ed05e02de1212f7971633b",
+          "moti_gui/src/gui/code/ui_style.cpp": "ea199d78bb6ef9e1c6e2d1e3f945957cfa21ae3099f5557bfcc1dbf6ef18fba7",
+          "moti_gui/include/gui/code/account_ui_action.hpp": "723ce8c0245773b588334feec6f32201150ebeb41e6796a2c5becf6e2a00c440",
+          "moti_gui/include/gui/code/account_ui_style.hpp": "8f845a74ed11c609c200c41cc81c052884a20a6dc5f138784f87da55eedfbe0a"
+        },
+        "synthetic_state": true,
+        "visually_reviewed": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false,
+        "capture_original": ".cache/guide-age14-20261027/captures/guide-age14-signup-ko.png",
+        "raw_ppm": ".cache/guide-age14-20261027/captures/guide-age14-signup-ko.ppm",
+        "raw_ppm_sha256": "2df5f4d2b1d08e77636fe61ade65441ea68a926893bc314412a0ce5661d28340",
+        "capture_executable": ".cache/guide-age14-20261027/native-auth/build/Release/LoginHelpVisual.exe",
+        "capture_executable_sha256": "8bcb7dbc76dc429a48ee43ef0124342530880be60f823a2c196d0a69547cb36c",
+        "capture_log": ".cache/guide-age14-20261027/signup-capture.log",
+        "build_log": ".cache/guide-age14-20261027/signup-build.log",
+        "annotations": [
+          {
+            "x": 2.5,
+            "y": 15.459,
+            "width": 92.812,
+            "height": 10.386,
+            "label": "만 14세 이상 확인",
+            "description": "만 14세 이상인지 확인한 뒤 체크박스를 선택합니다."
+          },
+          {
+            "x": 2.5,
+            "y": 30.193,
+            "width": 92.812,
+            "height": 8.575,
+            "label": "이메일과 인증번호 받기",
+            "description": "받을 수 있는 이메일을 입력한 뒤 인증번호를 요청합니다."
+          },
+          {
+            "x": 2.5,
+            "y": 46.256,
+            "width": 92.812,
+            "height": 12.56,
+            "label": "아이디 중복 확인",
+            "description": "로그인 아이디를 입력하고 중복 여부를 확인합니다."
+          },
+          {
+            "x": 2.5,
+            "y": 87.44,
+            "width": 95,
+            "height": 5.918,
+            "label": "가입하기",
+            "description": "이메일 인증과 계정 입력, 아래 문서 확인을 마친 뒤 가입을 요청합니다."
+          }
+        ]
+      },
+      "guide-signup-ready-ko.png": {
+        "file": "guide-signup-ready-ko.png",
+        "src": "assets/current/guide-signup-ready-ko.png",
+        "pixels": [
+          1280,
+          652
+        ],
+        "sha256": "28baa1fabf32818dbce1fa4ac8a13e24bc581c924e5ba3fab0c21fac181d858c",
+        "render_bounds": {
+          "x": 80,
+          "y": 694,
+          "width": 640,
+          "height": 326
+        },
+        "annotations": [
+          {
+            "x": 2.5,
+            "y": 1.84,
+            "width": 92.656,
+            "height": 43.865,
+            "label": "문서 확인 상태",
+            "description": "화면에 표시된 초안 확인 항목을 읽고 직접 선택합니다."
+          },
+          {
+            "x": 2.5,
+            "y": 67.791,
+            "width": 95,
+            "height": 15.337,
+            "label": "가입하기",
+            "description": "인증과 계정 입력을 마친 뒤 활성화된 버튼으로 가입을 요청합니다."
+          }
+        ],
+        "state": "Synthetic guide presentation state; no account, mail, payment, report transport or application exit performed.",
+        "source_sha256": {
+          "moti_gui/src/gui/auth/legacy_imgui_auth_view.cpp": "17c760c9d678e7a56567857ef10f3b96ddb1c7cde05f7ba3fd3c58a8f933a131",
+          "moti_gui/src/gui/account/legacy_imgui_account_view.cpp": "e38e37bbf2ee6a8c997ab81b8e97ce171e4a21b1ef5b82f098fc9019ae92c6e9",
+          "moti_gui/src/gui/billing/legacy_imgui_billing_view.cpp": "be9a8e96f0d0184f2ecd0af39a8694086632e36981567cb12a0a9b13984cf6a9",
+          "moti_gui/src/gui/app/legacy_imgui_error_report_view.cpp": "1d6935daad8bf4ec40af5d93e7b6c062073918287e59c772cae9e20786422f18",
+          "moti_gui/src/gui/app/legacy_imgui_update_view.cpp": "c3d6115c6144c28f14758ae0369a872f025f550b59ac2f5a5f46274081dc9909",
+          "moti_gui/src/gui/code/ui_style.cpp": "ea199d78bb6ef9e1c6e2d1e3f945957cfa21ae3099f5557bfcc1dbf6ef18fba7",
+          "moti_gui/src/gui/app/legacy_imgui_window_chrome.cpp": "a3b7e985f51d2b66793caabf45609a2dbd181d5f006b84dcb0c4d64d41c3ed2a"
+        },
+        "capture_method_id": "guide-supplement-20261026-auth",
+        "captured_date": "2026-10-26",
+        "synthetic_state": true,
+        "personal_account_data": false,
+        "real_hardware_measurement": false,
+        "real_network_or_payment_operation": false
+      }
+    }
+  },
+  "plain_language_20261029_provenance": {
+    "files": [
+      "report-compose-ko.png",
+      "report-list-ko.png",
+      "guide-report-detail-ko.png",
+      "guide-age14-report-review-ko.png",
+      "guide-report-review-ko.png",
+      "guide-report-received-ko.png",
+      "guide-report-withdraw-ko.png",
+      "guide-report-delete-ko.png",
+      "report-settings-ko.png",
+      "guide-account-report-consent-ko.png",
+      "guide-age14-signup-ko.png",
+      "guide-registration-consent-ko.png",
+      "guide-signup-ready-ko.png"
+    ],
+    "scope": "Plain-language report actions and optional attachment wording; removed repeated annotation hint while retaining selection behavior.",
+    "previous_originals": ".cache/guide-account-consent-20261029/easywords-before/",
+    "previous_image_sha256": {
+      "report-compose-ko.png": "73fab065e2ebe734b4e2642c254bb3ee8508cd78a1360b682eed1f474355e1d7",
+      "report-list-ko.png": "6e48e59216e13a68e618ef81122f576a2e4a6e2704100e1df68ba094a985b745",
+      "guide-report-detail-ko.png": "f4ceb3fc48b3377486d02bac31c015d287d915297decbe95fcb4bbc7f272abc2",
+      "guide-age14-report-review-ko.png": "5cd03ef0f740304ec58f6cc2880843c42edc7ba1d65d7da371fbb22591f3598c",
+      "guide-report-review-ko.png": "fb69fb22059995421f0aad8b23946fbb542f8fd6ef19879935d60e4d42dd0960",
+      "guide-report-received-ko.png": "6f5a1d1dae3efc9b7832ca1de7717ec6cf151bc2a6cbce809e62c08826fb7701",
+      "guide-report-withdraw-ko.png": "d6e323d8162acd89a895a2e8bff9baac255e3d86519c6147ac2263852750ede6",
+      "guide-report-delete-ko.png": "41dbee2fe8d76b3f1ad5d7950883ddd214df49f33ef1174cc4c5eb2a9d7d1347",
+      "report-settings-ko.png": "4f27870229279fcc8b876c6a6aaf99e35df4e9a6403602b27bd6773ac27b5867",
+      "guide-account-report-consent-ko.png": "f5b20385b2b84cad0154848f1ae631d2731dec678703b5731df438b3827c4b85",
+      "guide-age14-signup-ko.png": "686769aec8e2be5b2b3a4d851997152c076023db30d39439953b512b14154726",
+      "guide-registration-consent-ko.png": "583ba47e611f39d3110195bdbcac2a0be6f4a18d2579869abfdaf5418ea6c2cf",
+      "guide-signup-ready-ko.png": "34c8b8822dd8289ccc46f566d268be3a04bfe1ad37bad47f2148d5b03a7c6954"
+    },
+    "guide_pages": [
+      "registration",
+      "diagnostics",
+      "troubleshooting"
+    ],
+    "verification": ".cache/guide-account-consent-20261029/browser.json"
+  },
+  "report_page_choice_20261029_provenance": {
+    "files": [
+      "report-compose-ko.png",
+      "guide-report-page-choice-ko.png"
+    ],
+    "replaced_files": [
+      "report-compose-ko.png"
+    ],
+    "added_files": [
+      "guide-report-page-choice-ko.png"
+    ],
+    "previous_original": ".cache/guide-report-page-choice-20261029/before-report-compose-ko.png",
+    "guide_pages": [
+      "diagnostics",
+      "troubleshooting"
+    ],
+    "verification": ".cache/guide-report-page-choice-20261029/browser.json"
+  },
+  "report_width_20261030_provenance": {
+    "files": [
+      "report-compose-ko.png",
+      "guide-report-page-choice-ko.png"
+    ],
+    "replaced_files": [
+      "report-compose-ko.png",
+      "guide-report-page-choice-ko.png"
+    ],
+    "added_files": [],
+    "previous_originals": [
+      ".cache/guide-report-width-20261030/before-report-compose-ko.png",
+      ".cache/guide-report-width-20261030/before-guide-report-page-choice-ko.png"
+    ],
+    "guide_pages": [
+      "diagnostics",
+      "troubleshooting"
+    ],
+    "verification": ".cache/guide-report-width-20261030/browser.json"
+  },
+  "capture_toggle_20261030_provenance": {
+    "files": [
+      "report-settings-ko.png"
+    ],
+    "replaced_files": [
+      "report-settings-ko.png"
+    ],
+    "added_files": [],
+    "previous_original": ".cache/guide-capture-toggle-20261030/before-report-settings-ko.png",
+    "guide_pages": [
+      "diagnostics"
+    ],
+    "verification": ".cache/guide-capture-toggle-20261030/browser.json"
+  },
+  "manual_consent_20261030_provenance": {
+    "files": [
+      "guide-account-report-consent-ko.png",
+      "report-settings-ko.png"
+    ],
+    "replaced_files": [
+      "guide-account-report-consent-ko.png",
+      "report-settings-ko.png"
+    ],
+    "added_files": [],
+    "previous_originals": [
+      ".cache/guide-consent-manual-20261030/before-guide-account-report-consent-ko.png",
+      ".cache/guide-consent-manual-20261030/before-report-settings-ko.png"
+    ],
+    "guide_pages": [
+      "diagnostics"
+    ],
+    "verification": ".cache/guide-consent-manual-20261030/browser.json"
   }
 }

@@ -308,8 +308,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-lineca
 .step-card .annotation-current { color: var(--blue-700); font-weight: 700; }
 .annotation-toggle { flex: 0 0 auto; min-height: 36px; padding: 5px 10px; border: 1px solid var(--gray-300); border-radius: var(--radius-sm); background: var(--white); color: var(--gray-600); font: inherit; font-size: 12px; cursor: pointer; }
 .annotation-toggle:hover { background: var(--gray-50); }
-.step-figure .annotation-hint { margin: 16px 0 8px; color: var(--gray-500); font-size: 12px; }
-.image-legend { margin: 0; padding: 0; display: grid; gap: 6px; list-style: none; }
+.image-legend { margin: 16px 0 0; padding: 0; display: grid; gap: 6px; list-style: none; }
 .image-legend-button { display: flex; align-items: flex-start; gap: 10px; width: 100%; padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: var(--radius-sm); background: var(--white); text-align: left; font: inherit; cursor: pointer; }
 .image-legend-button:hover { border-color: var(--blue-200); }
 .image-legend-button[aria-pressed="true"] { border-color: var(--blue-500); background: var(--blue-50); }
