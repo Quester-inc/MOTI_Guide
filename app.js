@@ -17,9 +17,7 @@ const icon = (name, className = "") => `<svg class="${className}" aria-hidden="t
 
 const licenseTerms = {
   MIT: `Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`,
-  BSD2: `Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`,
   BSD3: `Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.`,
-  ZLIB: `This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.\n\nPermission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:\n\n1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.\n2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.\n3. This notice may not be removed or altered from any source distribution.`,
   BSL: `Boost Software License - Version 1.0 - August 17th, 2003\n\nPermission is hereby granted, free of charge, to any person or organization obtaining a copy of the software and accompanying documentation covered by this license (the "Software") to use, reproduce, display, distribute, execute, and transmit the Software, and to prepare derivative works of the Software, and to permit third-parties to whom the Software is furnished to do so, all subject to the following:\n\nThe copyright notices in the Software and this entire statement, including the above license grant, this restriction and the following disclaimer, must be included in all copies of the Software, in whole or in part, and all derivative works of the Software, unless such copies or derivative works are solely in the form of machine-executable object code generated by a source language processor.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.`
 };
 
@@ -495,81 +493,97 @@ side: 0 또는 1만 허용<br>
         noteTitle: "적용 기준",
         noteLabel: "문서 우선순위",
         covers: ["MOTI Studio의 저작권과 소유권", "허용된 사용 범위와 제한되는 행위", "제3자 소프트웨어 고지와 라이선스 문의"],
-        prerequisites: ["MOTI Studio와 함께 제공된 계약서, 주문서 또는 사용권 증서 확인", "설치 패키지의 LICENSE 및 THIRD-PARTY-LICENSE 문서 확인"],
+        prerequisites: ["MOTI Studio와 함께 제공된 계약서, 주문서 또는 사용권 증서 확인", "설치본과 함께 제공된 LICENSE와 구성요소별 고지 확인"],
         steps: [
           ["소유권", "MOTI Studio와 이에 포함된 주식회사 퀘스터의 소프트웨어, 문서, 디자인 및 기타 자료는 주식회사 퀘스터의 독점 자산입니다. 저작권과 기타 지식재산권은 주식회사 퀘스터 또는 정당한 권리자에게 귀속됩니다."],
           ["허용된 사용", "사용자는 주식회사 퀘스터가 제공한 서면 계약서, 주문서 또는 사용권 증서에 명시된 목적과 범위 안에서만 MOTI Studio를 사용할 수 있습니다. 해당 문서에서 정한 사용자, 장치, 사업장 및 사용 기간 등의 조건이 적용됩니다."],
           ["사용 제한", "주식회사 퀘스터의 사전 서면 동의 없이 MOTI Studio를 복제, 수정, 판매, 대여, 배포, 재사용권 설정하거나 제3자에게 제공할 수 없습니다. 다만 이 제한은 제3자 라이선스가 별도로 부여하는 권리를 축소하지 않으며, BodyParts3D 손 뼈 메쉬에는 적용되지 않습니다. 사용권 인증이나 기술적 보호조치를 회피하거나 소스 코드를 알아내기 위한 역설계, 디컴파일 및 역어셈블도 제한됩니다."],
           ["법령상 허용되는 이용", "관련 법령에서 특정 이용을 명시적으로 허용하고 계약으로 제한할 수 없는 경우에는 해당 법령이 정한 범위가 우선합니다."],
-          ["제3자 소프트웨어 및 콘텐츠", "MOTI Studio에 포함된 제3자 소프트웨어와 콘텐츠에는 각 권리자가 정한 별도의 라이선스가 적용됩니다. BodyParts3D 손 뼈 메쉬는 CC BY-SA 2.1 Japan에 따라 상업적으로 이용할 수 있고, 사용자는 해당 라이선스가 허용하는 범위에서 메쉬를 복제·공유·변경할 수 있습니다. 공유할 때에는 저작자 표시, 라이선스 링크, 변경 사항 표시 및 동일조건변경허락 의무를 준수해야 합니다. 자세한 조건은 설치 패키지의 THIRD-PARTY-LICENSE 문서를 확인하십시오."]
+          ["제3자 소프트웨어 및 콘텐츠", "MOTI Studio에 포함된 제3자 소프트웨어와 콘텐츠에는 각 권리자가 정한 별도의 라이선스가 적용됩니다. BodyParts3D 손 뼈 메쉬는 CC BY-SA 2.1 Japan에 따라 상업적으로 이용할 수 있고, 사용자는 해당 라이선스가 허용하는 범위에서 메쉬를 복제·공유·변경할 수 있습니다. 공유할 때에는 저작자 표시, 라이선스 링크, 변경 사항 표시 및 동일조건변경허락 의무를 준수해야 합니다. 구성요소별 용도와 고지 위치는 <a href='index.html?page=third-party-software' data-page='third-party-software'>오픈소스와 외부 SDK 라이선스</a>에서 확인하세요."]
         ],
-        result: "MOTI Studio는 사용권 문서에 명시된 범위에서 이용하고, LICENSE와 THIRD-PARTY-LICENSE 문서를 제품과 함께 보관해야 합니다.",
+        result: "MOTI Studio는 사용권 문서에 명시된 범위에서 이용하고, 제품과 함께 제공된 라이선스 문서와 구성요소별 고지를 보관하세요.",
         note: "이 페이지는 라이선스 조건의 요약입니다. 별도의 계약서, 주문서, 사용권 증서 또는 설치 패키지에 포함된 라이선스 문서와 내용이 다른 경우 해당 문서의 조건이 우선합니다. 문의: redruka1@quester.kr"
       },
       {
         id: "third-party-software",
-        title: "제3자 소프트웨어",
+        title: "오픈소스와 외부 SDK 라이선스",
         useCases: [],
-        summary: "MOTI Studio에 포함된 제3자 소프트웨어와 콘텐츠의 저작권 및 라이선스 정보를 안내합니다.",
+        summary: "2026년 11월 26일 기준, MOTI Studio의 화면·녹화·장비 연동에 쓰이는 주요 구성요소입니다. 항목을 펼치면 용도와 라이선스 원문을 확인할 수 있습니다. 설치 폴더에서 고지를 찾으려면 <a href='#steps'>내 설치본에서 확인하기</a>를 보세요.",
         hideOverview: true,
         hidePrerequisites: true,
         hideResult: true,
-        stepsTitle: "사용자 안내",
-        noteTitle: "라이선스 안내",
-        noteLabel: "원문 확인",
-        covers: ["제3자 소프트웨어와 콘텐츠의 저작권 및 라이선스", "사용자가 별도로 확인해야 하는 경우", "라이선스 원문 확인 방법"],
+        stepsTitle: "내 설치본에서 확인하기",
+        noteTitle: "3D 모델을 다시 사용할 때",
+        noteLabel: "모델별 권리 확인",
+        searchKeywords: ["제3자 소프트웨어", "오픈 소스", "라이센스", "EULA", "저작권"],
+        covers: [],
         prerequisites: [],
-        licenseNotices: [
-          { name: "OpenVR", version: "2.15.6 및 Harfang 번들 1.16.8", copyright: "Copyright (c) 2015, Valve Corporation. All rights reserved.", license: "BSD 3-Clause License", term: "BSD3", source: "https://github.com/ValveSoftware/openvr/blob/master/LICENSE" },
-          { name: "Eigen", version: "3.4.0", copyright: "Copyright © Eigen contributors", license: "Mozilla Public License 2.0 중심. 이 배포에서 사용하는 MPL 대상 원본 소스는 링크에서 제공됩니다.", source: "https://gitlab.com/libeigen/eigen/-/tree/3.4.0" },
-          { name: "spdlog", version: "1.17.0", copyright: "Copyright (c) 2016-present, Gabi Melman and spdlog contributors.", license: "MIT License", term: "MIT", source: "https://github.com/gabime/spdlog/blob/v1.x/LICENSE" },
-          { name: "fmt", version: "12.1.0", copyright: "Copyright (c) 2012-present, Victor Zverovich and fmt contributors.", license: "MIT License", term: "MIT", source: "https://github.com/fmtlib/fmt/blob/12.1.0/LICENSE" },
-          { name: "toml11", version: "3.7.0", copyright: "Copyright (c) 2017, Toru Niina.", license: "MIT License", term: "MIT", source: "https://github.com/ToruNiina/toml11/blob/v3.7.0/LICENSE" },
-          { name: "Boost", version: "1.82.0", copyright: "Copyright notices are retained in the individual Boost source files.", license: "Boost Software License 1.0", term: "BSL", source: "https://www.boost.org/LICENSE_1_0.txt" },
-          { name: "BodyParts3D / Anatomography hand bone meshes", version: "FMA ID 기반 STL · 저장소 최초 기록 493a721d", copyright: "BodyParts3D, Copyright © 2008 Life Science Integrated Database Center.", license: "Creative Commons Attribution-ShareAlike 2.1 Japan. 비영리 제한이 없어 상업 이용이 허용됩니다. 이 메쉬는 MOTI Studio의 독점 사용 제한에서 제외됩니다. MOTI Studio는 선택된 메쉬를 런타임에 재배치·회전·스케일링하며 저장된 STL을 덮어쓰지 않습니다. 정확한 원본 릴리스와 변환 이력은 확인 중이므로 현재 배포본은 파생 메쉬로 보수적으로 취급합니다.", source: "https://lifesciencedb.jp/bp3d/info_en/license/index.html" },
-          { name: "bgfx / bx / bimg", version: "Harfang 3.2.7 고정 커밋", copyright: "Copyright 2010-2022, Branimir Karadzic.", license: "BSD 2-Clause License", term: "BSD2", source: "https://github.com/harfang3d/harfang3d/tree/v3.2.7/extern/bgfx" },
-          { name: "GLFW", version: "3.3.7", copyright: "Copyright (c) 2002-2006 Marcus Geelnard; Copyright (c) 2006-2019 Camilla Löwy.", license: "zlib License", term: "ZLIB", source: "https://github.com/glfw/glfw/blob/3.3.7/LICENSE.md" },
-          { name: "Lua", version: "5.4.4", copyright: "Copyright (C) 1994-2022 Lua.org, PUC-Rio.", license: "MIT License", term: "MIT", source: "https://www.lua.org/license.html" },
-          { name: "Dear ImGui", version: "1.87", copyright: "Copyright (c) 2014-2022, Omar Cornut.", license: "MIT License", term: "MIT", source: "https://github.com/ocornut/imgui/blob/v1.87/LICENSE.txt" },
-          { name: "Bullet Physics", version: "Harfang 3.2.7 번들", copyright: "Copyright (c) 2003-2014, Erwin Coumans and Bullet contributors.", license: "zlib License", term: "ZLIB", source: "https://github.com/bulletphysics/bullet3/blob/master/LICENSE.txt" },
-          { name: "Recast Navigation / Detour", version: "commit 57610fa", copyright: "Copyright (c) 2009, Mikko Mononen.", license: "zlib License", term: "ZLIB", source: "https://github.com/recastnavigation/recastnavigation/blob/main/License.txt" },
-          { name: "meshoptimizer", version: "0.17", copyright: "Copyright (c) 2016-2021, Arseny Kapoulkine.", license: "MIT License", term: "MIT", source: "https://github.com/zeux/meshoptimizer/blob/v0.17/LICENSE.md" },
-          { name: "stb_image / stb_image_write / stb_truetype / stb_vorbis", version: "2.27 / 1.16 / 1.26 / 1.22", copyright: "Copyright (c) 2017, Sean Barrett and stb contributors.", license: "MIT License 또는 Public Domain 중 MIT License 선택", term: "MIT", source: "https://github.com/nothings/stb/blob/master/LICENSE" },
-          { name: "miniz", version: "2.2.0", copyright: "Copyright 2013-2014 RAD Game Tools and Valve Software; Copyright 2010-2014 Rich Geldreich and Tenacious Software LLC.", license: "MIT License", term: "MIT", source: "https://github.com/richgel999/miniz/blob/2.2.0/LICENSE" },
-          { name: "MikkTSpace", version: "1.0", copyright: "Copyright (C) 2011, Morten S. Mikkelsen.", license: "zlib License", term: "ZLIB", source: "https://github.com/mmikk/MikkTSpace" },
-          { name: "NVTT / BC6H / BC7", version: "Harfang bimg 고정 커밋", copyright: "Copyright (c) 2007, NVIDIA Corporation; portions Copyright 2011-2022, Branimir Karadzic.", license: "MIT License / Apache License 2.0 / BSD 2-Clause License", source: "https://github.com/bkaradzic/bimg/tree/663f724186e26caf46494e389ed82409106205fb/3rdparty/nvtt" },
-          { name: "ASTC Codec", version: "Harfang bimg 고정 커밋", copyright: "Copyright notices are retained in the Google ASTC codec source.", license: "Apache License 2.0", source: "https://github.com/bkaradzic/bimg/tree/663f724186e26caf46494e389ed82409106205fb/3rdparty/astc-codec" },
-          { name: "ETC1", version: "Harfang bimg 고정 커밋", copyright: "Copyright notices are retained in the Android ETC1 source.", license: "Apache License 2.0", source: "https://github.com/bkaradzic/bimg/tree/663f724186e26caf46494e389ed82409106205fb/3rdparty/etc1" },
-          { name: "ETC2Comp", version: "Harfang bimg 고정 커밋", copyright: "Copyright (c) 2013, Bartosz Taudul.", license: "BSD 3-Clause License", term: "BSD3", source: "https://github.com/bkaradzic/bimg/blob/663f724186e26caf46494e389ed82409106205fb/3rdparty/etc2/LICENSE.txt" },
-          { name: "edtaa3", version: "Harfang bimg 고정 커밋", copyright: "Copyright (C) 2011, Stefan Gustavson.", license: "MIT License", term: "MIT", source: "https://github.com/bkaradzic/bimg/blob/663f724186e26caf46494e389ed82409106205fb/3rdparty/edtaa3/LICENSE.md" },
-          { name: "IQA", version: "Harfang bimg 고정 커밋", copyright: "Copyright (c) 2011, Tom Distler.", license: "BSD 3-Clause License", term: "BSD3", source: "https://github.com/bkaradzic/bimg/blob/663f724186e26caf46494e389ed82409106205fb/3rdparty/iqa/LICENSE" },
-          { name: "libsquish", version: "Harfang bimg 고정 커밋", copyright: "Copyright (c) 2006, Simon Brown.", license: "MIT License", term: "MIT", source: "https://github.com/bkaradzic/bimg/blob/663f724186e26caf46494e389ed82409106205fb/3rdparty/libsquish/LICENSE" },
-          { name: "PVRTC decompressor", version: "Harfang bimg 고정 커밋", copyright: "Copyright © 2014, Jeffrey Lim. All Rights Reserved.", license: "BSD 3-Clause License", term: "BSD3", source: "https://github.com/bkaradzic/bimg/blob/663f724186e26caf46494e389ed82409106205fb/3rdparty/pvrtc/LICENSE.TXT" },
-          { name: "OpenXR Loader", version: "commit c16a18c", copyright: "Copyright notices are retained by The Khronos Group Inc. and contributors.", license: "Apache License 2.0", source: "https://github.com/KhronosGroup/OpenXR-SDK/blob/c16a18c99740ea5dd251e3af117e0e5aea4ceaa9/LICENSE" }
+        licenseGroups: [
+          {
+            id: "libraries", title: "앱과 데이터 처리",
+            notices: [
+              { name: "Filament 1.71.5", license: "Apache-2.0", detail: "손과 장비를 그리는 3D 렌더러입니다. Filament 자체의 원문은 <code>licenses/filament/LICENSE.txt</code>에 있습니다. 함께 사용하는 외부 라이브러리에는 각각의 고지가 적용됩니다.", source: "https://github.com/google/filament/blob/v1.71.5/LICENSE" },
+              { name: "Filament의 렌더링 라이브러리", license: "구성요소별 조건", detail: "Filament 빌드는 Draco·Abseil(Apache-2.0), meshoptimizer(MIT), stb, SMOL-V, Zstandard(zstd) 등을 함께 사용합니다. 모델을 읽거나 압축 데이터를 처리하는 데 쓰이며, 각 구성요소의 원문은 같은 Filament 릴리스의 third_party 폴더에 있습니다.", source: "https://github.com/google/filament/tree/v1.71.5/third_party" },
+              { name: "Dear ImGui 1.92.5", license: "MIT", detail: "Filament에 포함된 Dear ImGui로 작업 패널과 대화상자를 표시합니다. 설치본의 <code>licenses/imgui/LICENSE.txt</code>에서 원문을 볼 수 있습니다. © 2014–2025 Omar Cornut.", source: "https://github.com/google/filament/blob/v1.71.5/third_party/imgui/LICENSE.txt", term: "MIT" },
+              { name: "Eigen 3.4.0", license: "주로 MPL-2.0", detail: "손 자세 계산에 쓰이는 행렬·벡터 라이브러리입니다. 개별 파일의 라이선스가 다를 수 있습니다. 소스를 수정하거나 배포할 때는 사용한 파일의 고지와 MPL 적용 소스의 제공 조건을 확인하세요.", source: "https://gitlab.com/libeigen/eigen/-/blob/3.4.0/COPYING.README" },
+              { name: "Boost", license: "BSL-1.0", detail: "장치 통신 등에 Boost의 C++ 라이브러리를 사용합니다. 저작권 표시는 각 소스 파일에 있습니다.", source: "https://www.boost.org/LICENSE_1_0.txt", term: "BSL" },
+              { name: "toml11 3.7.0", license: "MIT", detail: "TOML 설정 파일을 읽습니다. © 2017 Toru Niina.", source: "https://github.com/ToruNiina/toml11/blob/v3.7.0/LICENSE", term: "MIT" },
+              { name: "spdlog 1.17.0 · fmt 12.1.0", license: "MIT", detail: "로그 기록에는 spdlog, 로그 메시지 서식에는 함께 제공되는 fmt를 사용합니다. spdlog는 Gabi Melman과 기여자, fmt는 Victor Zverovich와 기여자가 개발했습니다. <a href='https://github.com/fmtlib/fmt/blob/12.1.0/LICENSE'>fmt 원문</a>", source: "https://github.com/gabime/spdlog/blob/v1.17.0/LICENSE" },
+              { name: "nlohmann/json", license: "MIT", detail: "계정 응답 등 공통 JSON 처리에는 3.12.0을, RAW 기록 코드에는 3.11.3을 사용합니다. 공통 헤더의 원문은 <code>licenses/nlohmann_json/LICENSE.txt</code>에 있습니다. 저작권자 Niels Lohmann.", source: "https://json.nlohmann.me/home/license/", term: "MIT" },
+              { name: "Crashpad", license: "Apache-2.0 및 개별 고지", detail: "앱 오류 정보를 수집하는 구성요소입니다. <code>licenses/crashpad/LICENSE</code>와 함께 mini_chromium, zlib, MPack, getopt의 고지가 제공됩니다. Linux 구성에는 LSS 고지도 있습니다.", source: "https://github.com/getsentry/crashpad/blob/000e3ad7a51c89e49bc00eca9846aa0485cccc96/LICENSE" },
+              { name: "zlib · OpenSSL", license: "zlib · OpenSSL 버전별 조건", detail: "RAW 기록의 압축과 무결성 확인에 사용합니다. OpenSSL 3.x에는 Apache-2.0이 적용됩니다. <a href='https://www.openssl-library.org/source/license/'>OpenSSL 버전별 라이선스</a>", source: "https://zlib.net/zlib_license.html" },
+              { name: "SciPy 유래 수치 계산 코드", license: "BSD-3-Clause", detail: "네이티브 손 자세 복원에 SciPy의 최소제곱 계산에서 유래한 코드가 쓰입니다. 해당 설치본의 <code>documents/SCIPY-LICENSE</code>에 저작권자와 원문이 있습니다.", source: "https://github.com/scipy/scipy/blob/main/LICENSE.txt" },
+              { name: "Linux 시스템 라이브러리", license: "구성요소별 조건", detail: "Linux에서는 HTTPS 통신에 libcurl(curl 라이선스), 자격 증명 저장에 libsecret, RAW 파일의 휴지통 이동에 GLib/GIO(각각 LGPL-2.1 이상)를 사용합니다. 창과 이미지 처리에는 X11과 libpng가 쓰입니다. 설치된 버전의 저작권과 라이선스는 Ubuntu의 <code>/usr/share/doc/패키지명/copyright</code>에서 확인하세요.", source: "https://curl.se/docs/copyright.html" }
+            ]
+          },
+          {
+            id: "sdks", title: "장비·플랫폼 연동",
+            notices: [
+              { name: "OptiTrack NatNet SDK", license: "OptiTrack NatNet SDK and Plugins EULA", detail: "OptiTrack 연동을 지원하는 Windows 구성에서 Motive의 강체 추적 데이터를 받습니다. <code>NatNetLib.dll</code>과 SDK의 사용·재배포에는 NaturalPoint의 약관이 적용됩니다. 배포할 파일과 허용 조건은 공식 페이지의 ‘NatNet SDK and Plugins EULA’에서 확인하세요. 설치본에 따라 <code>documents/License_OptiTrack_Plugin.pdf</code>도 제공됩니다.", source: "https://www.optitrack.com/about/legal/eula" },
+              { name: "Valve OpenVR", license: "BSD-3-Clause", detail: "OpenVR 트래커 지원 구성에서 장치 자세를 받습니다. Windows용 SDK 헤더는 2.15.6이며 런타임 파일은 <code>openvr_api.dll</code>입니다. SteamVR은 별도로 설치하는 프로그램입니다. © Valve Corporation.", source: "https://github.com/ValveSoftware/openvr/blob/master/LICENSE", term: "BSD3" },
+              { name: "Intel RealSense SDK 2.0", license: "Apache-2.0", detail: "RealSense 카메라 영상과 깊이 데이터를 받습니다. 이 기능을 포함한 Windows 구성은 librealsense 2.56.5의 <code>realsense2.dll</code>을 사용합니다.", source: "https://github.com/realsenseai/librealsense/blob/v2.56.5/LICENSE" },
+              { name: "Luxonis OAK · DepthAI 3.8.0", license: "코어 MIT · 구성요소별 조건", detail: "OAK 카메라 연동에는 DepthAI 코어와 USB 통신용 libusb(LGPL-2.1 이상)가 쓰입니다. 함께 쓰이는 <code>dynamic_calibration.dll</code>과 장치 펌웨어에는 Luxonis의 별도 조건이 적용됩니다. <a href='https://github.com/luxonis/depthai-core/tree/v3.8.0/notices'>보정 라이브러리와 펌웨어 고지</a>", source: "https://github.com/luxonis/depthai-core/blob/v3.8.0/LICENSE" },
+              { name: "Orbbec Astra · OpenNI2", license: "OpenNI 헤더 Apache-2.0 · 드라이버 별도", detail: "Astra 지원 구성은 OpenNI2 런타임과 장치 드라이버를 사용합니다. Windows 설치본에서는 <code>OpenNI2.dll</code>과 <code>OpenNI2/Drivers/</code>를 확인할 수 있습니다. Orbbec 드라이버를 다른 제품에 포함하려면 해당 드라이버에 적용되는 공급 조건을 확인하세요.", source: "https://www.orbbec.com/developers/openni-sdk/" },
+              { name: "Stereolabs ZED SDK · NVIDIA CUDA", license: "Stereolabs 및 NVIDIA 약관", detail: "ZED 카메라 구성은 전용 플러그인과 호환되는 ZED SDK·CUDA 환경을 사용합니다. 설치본에 따라 일부 런타임 DLL이 포함되며, 장치 사용에는 호환 드라이버가 필요합니다. GPU 비전 구성을 사용하는 경우 TensorRT에도 별도 조건이 적용됩니다. <a href='https://docs.nvidia.com/cuda/eula/index.html'>CUDA 약관</a> · <a href='https://docs.nvidia.com/deeplearning/tensorrt/latest/reference/sla.html'>TensorRT 약관</a>", source: "https://www.stereolabs.com/SoftwareandServicesLicenseAgreement" },
+              { name: "OpenCV · FFmpeg", license: "OpenCV 4.13.0 Apache-2.0 · FFmpeg 별도", detail: "카메라 영상 처리에 쓰입니다. Windows의 Etron 카메라 연동은 Media Foundation과 OpenCV를 사용합니다. FFmpeg 비디오 플러그인을 포함한 OpenCV 구성에서는 해당 플러그인에 공급본의 LGPL-2.1 이상 조건이 적용됩니다. <a href='https://ffmpeg.org/legal.html'>FFmpeg 라이선스 안내</a>", source: "https://github.com/opencv/opencv/blob/4.13.0/LICENSE" },
+              { name: "Open3D · oneTBB", license: "MIT · Apache-2.0", detail: "3D 디버그 시각화를 포함한 Windows 구성에 Open3D 0.19.0과 병렬 처리용 TBB 런타임이 포함될 수 있습니다. <a href='https://github.com/uxlfoundation/oneTBB/blob/master/LICENSE.txt'>oneTBB 원문</a>", source: "https://github.com/isl-org/Open3D/blob/v0.19.0/LICENSE" },
+              { name: "Microsoft Edge WebView2", license: "SDK BSD-3-Clause · Runtime 별도 약관", detail: "Windows 앱 안에서 소셜 로그인과 결제 화면을 열 때 사용합니다. SDK 1.0.3537.50의 고지는 <code>licenses/webview2/LICENSE.txt</code>와 <code>NOTICE.txt</code>에 있습니다. PC에서 사용하는 Edge WebView2 Runtime에는 별도의 배포 조건이 적용됩니다. <a href='https://learn.microsoft.com/microsoft-edge/webview2/concepts/distribution'>Runtime 배포 안내</a>", source: "https://www.nuget.org/packages/Microsoft.Web.WebView2/1.0.3537.50" },
+              { name: "토스페이먼츠 JavaScript SDK v2", license: "온라인 결제 서비스 약관", detail: "리타게팅 모델 주문의 결제 화면이 열리면 웹페이지가 토스페이먼츠에서 SDK를 불러옵니다. 결제 서비스 이용에는 결제창에 안내된 조건이 적용됩니다. <a href='https://pages.tosspayments.com/terms/user/'>전자금융거래 기본약관</a>", source: "https://docs.tosspayments.com/sdk/v2/js/environment" },
+              { name: "Microsoft Visual C++ 런타임", license: "Microsoft 재배포 조건", detail: "Windows에서 Studio를 실행하는 데 필요한 MSVC 런타임 DLL이 설치본에 포함될 수 있습니다. 다른 프로그램과 함께 배포할 때는 Microsoft가 지정한 재배포 대상과 조건을 확인하세요.", source: "https://learn.microsoft.com/en-us/cpp/windows/redistributing-visual-cpp-files" }
+            ]
+          },
+          {
+            id: "assets", title: "글꼴과 3D 모델",
+            notices: [
+              { name: "Noto Sans KR", license: "SIL Open Font License 1.1 (OFL-1.1)", detail: "Windows와 Linux 화면에 사용하는 한글 글꼴입니다. Sans2.004의 Regular와 같은 릴리스의 가변 글꼴에서 생성한 Medium·SemiBold를 사용합니다. 원문과 출처 기록은 NotoSansKR-LICENSE.txt와 NotoSansKR-PROVENANCE.md입니다. © 2014–2021 Adobe.", source: "https://github.com/notofonts/noto-cjk/blob/Sans2.004/LICENSE" },
+              { name: "Font Awesome 6 Free Solid", license: "SIL Open Font License 1.1 (OFL-1.1)", detail: "화면 아이콘을 그리는 TTF 글꼴(6.7.2)에 적용되는 조건입니다. Font Awesome은 글꼴, SVG 아이콘, 코드의 라이선스를 각각 명시합니다.", source: "https://github.com/FortAwesome/Font-Awesome/blob/6.7.2/LICENSE.txt" },
+              { name: "BodyParts3D / Anatomography 손 뼈 모델", license: "CC BY-SA 2.1 Japan", detail: "BodyParts3D, © 2008 Life Science Integrated Database Center. 상업적 이용이 가능한 손 뼈 모델입니다. Studio는 이 메시를 손 자세에 맞춰 배치·회전·확대하고, 배포하는 메시를 파생 자료로 취급합니다. 공유할 때는 저작자·라이선스·변경 사항을 표시하고, 수정본을 배포할 때도 같은 조건을 적용하세요. <a href='https://creativecommons.org/licenses/by-sa/2.1/jp/legalcode'>라이선스 원문</a>", source: "https://lifesciencedb.jp/bp3d/info_en/license/index.html" },
+              { name: "Godot XR Tools 손 모델", license: "CC0 1.0 Universal", detail: "손 메트릭의 피부 표현과 보정 동작 예시에 Miodrag Sejic(DigitalN8m4r3)의 손 모델을 사용합니다. 해당 리소스 폴더의 <code>hand_open_cc0/LICENSE.md</code>와 <code>calibration_motion/LICENSE.md</code>에서 원문을 볼 수 있습니다.", source: "https://github.com/GodotVR/godot-xr-tools/tree/6fc5361db295c12b5e51ee5b9fee09751a4458e7/addons/godot-xr-tools/hands" },
+              { name: "Quest 컨트롤러 · Base Station 1.0 · Quest 3 모델", license: "CC BY 4.0", detail: "좌우 Quest 컨트롤러는 declan02530, Base Station 1.0은 mrowr1, Quest 3는 Elin(ElinHohler)의 작품입니다. 각 모델의 원본 링크는 <code>LIVE_ASSETS_NOTICE.md</code>에 있습니다. 모델을 공유할 때는 저작자·출처·라이선스와 변경 여부를 표시하세요.", source: "https://creativecommons.org/licenses/by/4.0/" }
+            ]
+          }
         ],
         steps: [
-          ["일반적인 사용", "MOTI Studio를 설치하고 사용하는 경우에는 제3자 소프트웨어와 관련해 별도로 설정하거나 진행할 작업이 없습니다."],
-          ["콘텐츠 재사용", "MOTI Studio에 포함된 BodyParts3D 손 뼈 메쉬를 복사·수정·공유하는 경우에는 저작자와 라이선스를 표시하고, 변경 사항을 밝히며, 변경한 자료에도 같은 라이선스를 적용해야 합니다."],
-          ["세부 조건 확인", "구성요소별 항목을 펼치면 저작권자와 적용 라이선스를 확인할 수 있습니다. 정확한 조건이 필요한 경우 각 항목의 원문 링크를 확인하십시오."]
+          ["설치 폴더에서 원문 찾기", "설치 폴더의 <code>licenses/</code>에서 구성요소별 고지를 확인하세요. <code>documents/</code> 폴더를 제공하는 설치본에는 <code>THIRD-PARTY-LICENSE</code>와 <code>SCIPY-LICENSE</code>도 있습니다. 3D 자산의 고지는 <code>bin/resources/moti_gui/ui_assets/</code> 아래에 있으며, 손 뼈 모델의 출처 기록은 <code>hand_mesh/PROVENANCE.md</code>입니다."],
+          ["내 장비에 적용되는 SDK 확인", "SDK 포함 여부는 설치본과 운영체제에 따라 달라집니다. 기본 Linux 구성에서는 위 카메라·OpenVR·NatNet 연동이 꺼져 있습니다. 설치본에 <code>share/moti/filament-product-runtime.json</code>이 있으면 파일 목록에서 해당 런타임 이름을 찾을 수 있습니다."]
         ],
         result: "",
-        note: "이 페이지는 제3자 라이선스를 이해하기 쉽게 요약한 안내입니다. 요약과 라이선스 원문의 내용이 다른 경우 원문의 조건이 적용됩니다."
+        note: "위 CC 라이선스는 각 항목에 명시된 모델에 적용됩니다. 제조사가 제공한 로봇 손 URDF·외형 메시나 VIVE 트래커 모델을 재배포하려면 해당 파일에 대한 제조사의 허락 범위를 확인하세요. 리타게팅 모델 구매에 따른 Studio 사용 권한은 <a href=\"index.html?page=software-license\" data-page=\"software-license\">소프트웨어 라이선스</a>와 구매 문서에서 확인할 수 있습니다."
       }
     ]
   }
 ];
 
-// Temporarily keep unfinished legal-reference pages out of the published guide.
-// The source content and packaged third-party notices remain intact.
-const temporarilyHiddenTopicIds = new Set(["third-party-software"]);
-categories.forEach((category) => {
-  category.topics = category.topics.filter(
-    (topic) => !temporarilyHiddenTopicIds.has(topic.id)
-  );
-});
-
 const topics = categories.flatMap((category) => category.topics.map((topic) => ({ ...topic, category })));
 const topicById = new Map(topics.map((topic) => [topic.id, topic]));
+const searchEntries = topics.map((topic) => {
+  const content = document.createElement("template");
+  const notices = (topic.licenseGroups || []).flatMap((group) =>
+    group.notices.flatMap((notice) => [group.title, notice.name, notice.license, notice.detail]));
+  content.innerHTML = [topic.title, topic.summary, topic.category.title, ...topic.useCases,
+    ...(topic.searchKeywords || []), ...notices].join(" ");
+  return { topic, text: content.content.textContent.toLowerCase() };
+});
 const main = document.getElementById("main-content");
 const sidebarNavigation = document.getElementById("sidebar-navigation");
 const searchInput = document.getElementById("guide-search");
@@ -646,6 +660,22 @@ function renderHome() {
   updateActiveNavigation(null);
 }
 
+function renderLicenseGroup(group) {
+  return `
+    <section class="doc-section" id="${group.id}">
+      <h2>${group.title}</h2>
+      <div class="license-notices">${group.notices.map((notice) => `
+        <details class="license-notice">
+          <summary><span>${notice.name}</span><small>${notice.license}</small></summary>
+          <div class="license-notice-body">
+            <p>${notice.detail}</p>
+            ${notice.term ? `<pre class="license-terms">${licenseTerms[notice.term]}</pre>` : ""}
+            <a href="${notice.source}" target="_blank" rel="noopener noreferrer">${notice.name} 공식 자료 ↗</a>
+          </div>
+        </details>`).join("")}</div>
+    </section>`;
+}
+
 function renderDocument(topic) {
   const index = topics.findIndex((item) => item.id === topic.id);
   const previous = topics[index - 1];
@@ -667,7 +697,7 @@ function renderDocument(topic) {
 
           ${topic.hideOverview ? "" : `<section class="doc-section" id="overview"><h2>이 페이지에서 다룰 내용</h2><ul class="content-list">${topic.covers.map((item) => `<li>${item}</li>`).join("")}</ul></section>`}
           ${topic.licenseComponents ? `<section class="doc-section" id="components"><h2>구성요소별 라이선스</h2><div class="license-table-wrap"><table class="license-table"><thead><tr><th>구성요소</th><th>확인 버전</th><th>출시 패키지</th><th>라이선스</th><th>배포 전 조치</th><th>상태</th></tr></thead><tbody>${topic.licenseComponents.map((component) => `<tr><td>${component.source ? `<a href="${component.source}" target="_blank" rel="noopener noreferrer">${component.name}</a>` : component.name}</td><td>${component.version}</td><td>${component.release}</td><td>${component.license}</td><td>${component.action}</td><td><span class="license-status">${component.status}</span></td></tr>`).join("")}</tbody></table></div></section>` : ""}
-          ${topic.licenseNotices ? `<section class="doc-section" id="notices"><h2>제3자 저작권 및 라이선스 고지</h2><p>다음 고지는 MOTI Studio 출시 구성에 포함된 것으로 확인된 허용적 라이선스 및 고지·소스 제공 대상 구성요소에 적용됩니다. 각 항목을 열면 저작권자, 적용 라이선스와 원문을 확인할 수 있습니다.</p><div class="license-notices">${topic.licenseNotices.map((notice) => `<details class="license-notice"><summary><span>${notice.name}</span><small>${notice.version} · ${notice.license}</small></summary><div class="license-notice-body"><p>${notice.copyright}</p><p><strong>적용 라이선스:</strong> ${notice.license}</p>${notice.term ? `<pre class="license-terms">${licenseTerms[notice.term]}</pre>` : `<p>이 항목은 라이선스 전체 조문 또는 복수 라이선스가 적용되므로 아래 원문과 원본 소스가 이 고지의 일부를 구성합니다.</p>`}<a href="${notice.source}" target="_blank" rel="noopener noreferrer">라이선스 원문 및 원본 소스 보기 ↗</a></div></details>`).join("")}</div></section>` : ""}
+          ${(topic.licenseGroups || []).map(renderLicenseGroup).join("")}
           ${topic.hidePrerequisites ? "" : `<section class="doc-section" id="prepare"><h2>${topic.prepareTitle || "사전 준비"}</h2><ul class="content-list">${topic.prerequisites.map((item) => `<li>${item}</li>`).join("")}</ul></section>`}
           <section class="doc-section" id="steps"><h2>${topic.stepsTitle || "사용 방법"}</h2><ol class="steps">${topic.steps.map((step) => {
             const stepImages = Array.isArray(step[2]) ? step[2] : step[2] ? [step[2]] : [];
@@ -684,7 +714,7 @@ function renderDocument(topic) {
         </article>
         <aside class="page-toc" aria-label="이 페이지의 목차">
           <h2>이 페이지에서</h2>
-          ${topic.hideOverview ? "" : `<a href="#overview">다룰 내용</a>`}${topic.licenseComponents ? `<a href="#components">구성요소별 라이선스</a>` : ""}${topic.licenseNotices ? `<a href="#notices">저작권 및 라이선스 고지</a>` : ""}${topic.hidePrerequisites ? "" : `<a href="#prepare">${topic.prepareTitle || "사전 준비"}</a>`}<a href="#steps">${topic.stepsTitle || "사용 방법"}</a>${topic.hideResult ? "" : `<a href="#result">${topic.resultTitle || "정상 결과"}</a>`}${topic.packetFormatTitle ? `<a href="#packet-format">데이터 패킷 형식</a>` : ""}<a href="#note">${topic.noteTitle || "주의사항"}</a>
+          ${topic.hideOverview ? "" : `<a href="#overview">다룰 내용</a>`}${topic.licenseComponents ? `<a href="#components">구성요소별 라이선스</a>` : ""}${(topic.licenseGroups || []).map((group) => `<a href="#${group.id}">${group.title}</a>`).join("")}${topic.hidePrerequisites ? "" : `<a href="#prepare">${topic.prepareTitle || "사전 준비"}</a>`}<a href="#steps">${topic.stepsTitle || "사용 방법"}</a>${topic.hideResult ? "" : `<a href="#result">${topic.resultTitle || "정상 결과"}</a>`}${topic.packetFormatTitle ? `<a href="#packet-format">데이터 패킷 형식</a>` : ""}<a href="#note">${topic.noteTitle || "주의사항"}</a>
         </aside>
       </div>
     </div>
@@ -731,7 +761,7 @@ function closeMenu() {
 function renderSearch(query) {
   const normalized = query.trim().toLowerCase();
   if (!normalized) return closeSearch();
-  const matches = topics.filter((topic) => `${topic.title} ${topic.summary} ${topic.category.title} ${topic.useCases.join(" ")}`.toLowerCase().includes(normalized)).slice(0, 8);
+  const matches = searchEntries.filter((entry) => entry.text.includes(normalized)).slice(0, 8).map((entry) => entry.topic);
   searchResults.innerHTML = matches.length
     ? matches.map((topic) => `<a class="search-result" href="${topicHref(topic.id)}" data-page="${topic.id}"><strong>${topic.title}</strong><span>${topic.category.title} · ${topic.useCases.join(", ")}</span></a>`).join("")
     : '<div class="search-empty">일치하는 가이드가 없습니다.</div>';
