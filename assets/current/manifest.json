@@ -2126,14 +2126,6 @@
         },
         {
           "x": 0.935,
-          "y": 11.744,
-          "width": 43.224,
-          "height": 4.093,
-          "label": "내 정보와 플랜 관리",
-          "description": "계정 정보와 구독·결제 정보를 탭으로 전환합니다."
-        },
-        {
-          "x": 0.935,
           "y": 20.018,
           "width": 97.196,
           "height": 21.619,
@@ -7482,6 +7474,156 @@
           "description": "손 메트릭·라이브 뷰·설정 등 해당 화면을 선택합니다. 모르는 경우에는 기타를 선택합니다."
         }
       ]
+    },
+    {
+      "file": "recording-library-footer-20261126-ko.png",
+      "src": "assets/current/recording-library-footer-20261126-ko.png",
+      "sha256": "5de9154ba4352a250c022bd3ed634bed874122e851b60946c4e9678ff9e34322",
+      "pixels": {
+        "width": 2560,
+        "height": 1220
+      },
+      "language": "ko",
+      "captured_date": "2026-11-26",
+      "render_entrypoint": "moti::gui::recording::RenderRecordingLibrary",
+      "render_bounds": {
+        "x": 0,
+        "y": 30,
+        "width": 1280,
+        "height": 610
+      },
+      "output_scale": 2,
+      "capture_method": "Windows headless native ImGui fixture, product font, rasterized draw data",
+      "state_ko": "컵 집기_002 선택, 컵 집기_001 불러옴, 장문 메모 저장 상태",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "source_sha256": {
+        "moti_gui/src/gui/recording/legacy_imgui_recording_library_view.cpp": "b31770716a038075d5a62796d31bad6fc973dd754a3dadce6790d5874be2d14b",
+        "moti_gui/include/gui/recording/legacy_imgui_recording_library_view.hpp": "9a8362bfc8c8be5a6ed2c0198ce72a5354cec9352cf54ffa8ca47c3bd258d608",
+        "moti_gui/src/gui/code/ime_text_input.cpp": "faef90c71980d6f35a31c11c5cd28ebfbc0b5f78da4735ff27f67f78aa3b25ca",
+        ".cache/recording-library-footer-tests-20261126/capture.cpp": "9d7599f8f0d01fae7866ff8e156092abdc87be513c8074479789582959a51370"
+      },
+      "annotations": [
+        {
+          "x": 1.56,
+          "y": 9.51,
+          "width": 17.5,
+          "height": 46.89,
+          "label": "분류 목록",
+          "description": "찾아볼 녹화 분류를 선택합니다. 직접 만든 카테고리를 선택하면 오른쪽에 관리 메뉴(…)가 보입니다. 다른 카테고리에도 마우스를 올리거나 키보드 초점을 옮겨 메뉴를 열 수 있습니다."
+        },
+        {
+          "x": 19.69,
+          "y": 2.3,
+          "width": 58.67,
+          "height": 5.9,
+          "label": "이름·메모 검색",
+          "description": "현재 분류 안에서 녹화 이름이나 저장한 메모를 찾습니다."
+        },
+        {
+          "x": 1.56,
+          "y": 84.75,
+          "width": 12.11,
+          "height": 5.9,
+          "label": "선택한 녹화",
+          "description": "하단에서 불러올 대상의 이름을 확인합니다."
+        },
+        {
+          "x": 26.72,
+          "y": 34.43,
+          "width": 7.81,
+          "height": 2.95,
+          "label": "현재 타임라인의 녹화",
+          "description": "예시에서는 컵 집기_001이 이미 타임라인에 불러와 있습니다."
+        },
+        {
+          "x": 77.5,
+          "y": 84.75,
+          "width": 10.16,
+          "height": 5.9,
+          "label": "타임라인에 불러오기",
+          "description": "선택한 녹화를 불러옵니다. 재생하거나 프레임을 살펴보려면 하단 타임라인 탭을 선택합니다."
+        },
+        {
+          "x": 92.42,
+          "y": 2.3,
+          "width": 6.02,
+          "height": 5.9,
+          "label": "정보·메모",
+          "description": "상세 패널을 열거나 닫습니다. 좁은 창에서는 팝업으로 엽니다."
+        },
+        {
+          "x": 23.2,
+          "y": 18.52,
+          "width": 2.81,
+          "height": 5.9,
+          "label": "즐겨찾기",
+          "description": "별을 눌러 즐겨찾기를 지정하거나 해제합니다."
+        }
+      ]
+    },
+    {
+      "file": "recording-library-memo-20261126-ko.png",
+      "src": "assets/current/recording-library-memo-20261126-ko.png",
+      "sha256": "062a964bc14196cdd2c01122971ba7ff3d50448a7d5b29fab5064c1de0b73ff9",
+      "pixels": {
+        "width": 694,
+        "height": 870
+      },
+      "language": "ko",
+      "captured_date": "2026-11-26",
+      "render_entrypoint": "moti::gui::recording::RenderRecordingLibrary",
+      "render_bounds": {
+        "x": 912,
+        "y": 88,
+        "width": 347,
+        "height": 435
+      },
+      "output_scale": 2,
+      "capture_method": "Windows headless native ImGui fixture, product font, rasterized draw data",
+      "state_ko": "컵 집기_002 선택, 컵 집기_001 불러옴, 장문 메모 저장 상태",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "source_sha256": {
+        "moti_gui/src/gui/recording/legacy_imgui_recording_library_view.cpp": "71670b82450724d8fd75f914a9693ad5125259cbc2a9d810a531901eed365e3b",
+        "moti_gui/include/gui/recording/legacy_imgui_recording_library_view.hpp": "9a8362bfc8c8be5a6ed2c0198ce72a5354cec9352cf54ffa8ca47c3bd258d608",
+        "moti_gui/src/gui/code/ime_text_input.cpp": "faef90c71980d6f35a31c11c5cd28ebfbc0b5f78da4735ff27f67f78aa3b25ca",
+        ".cache/recording-library-footer-tests-20261126/capture.cpp": "9d7599f8f0d01fae7866ff8e156092abdc87be513c8074479789582959a51370"
+      },
+      "annotations": [
+        {
+          "x": 14.7,
+          "y": 22.07,
+          "width": 79.25,
+          "height": 8.28,
+          "label": "분류",
+          "description": "선택한 녹화의 분류를 고릅니다."
+        },
+        {
+          "x": 5.76,
+          "y": 40.0,
+          "width": 88.47,
+          "height": 24.83,
+          "label": "메모 입력",
+          "description": "내용이 입력칸 폭에 맞춰 줄바꿈됩니다."
+        },
+        {
+          "x": 73.2,
+          "y": 66.67,
+          "width": 21.04,
+          "height": 8.28,
+          "label": "메모 저장",
+          "description": "내용을 변경하면 활성화됩니다. 눌러 녹화에 반영합니다."
+        },
+        {
+          "x": 2.88,
+          "y": 80.46,
+          "width": 94.24,
+          "height": 8.28,
+          "label": "녹화 세부 정보",
+          "description": "프레임 수와 카메라 등 세부 정보를 펼칩니다."
+        }
+      ]
     }
   ],
   "capture_method": "Mixed capture set. Each asset declares capture_method_id. Original native CPU UI fixtures, additional native CPU data panels, and unedited actual Windows app-window captures have separate provenance and limits below.",
@@ -7915,7 +8057,7 @@
       "Product source, original fixtures and current manifest were not edited. Old assets were retained."
     ]
   },
-  "last_updated_date": "2026-10-30",
+  "last_updated_date": "2026-11-26",
   "pc_session_capture_provenance": {
     "baseline_revision": "1b1b09457468754cad693c7aaa0947c40a494f96",
     "working_tree": "Includes current uncommitted PC-management implementation and visual polish",
