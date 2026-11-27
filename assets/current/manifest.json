@@ -218,6 +218,44 @@
   },
   "assets": [
     {
+      "file": "guide-recovery-verified-id-ko.png",
+      "sha256": "5b844b2b15d06edc7f9b6752e6266c89f5ddf192bf2e4aca83c12a9a49485245",
+      "pixels": [
+        960,
+        1184
+      ],
+      "language": "ko",
+      "source_group": "auth",
+      "render_entrypoint": "LegacyImguiAuthView::Render",
+      "state_ko": "이메일 인증번호 확인 후 MOTI Studio에 로그인 아이디가 표시된 상태. 아이디는 예시 값입니다.",
+      "render_bounds": "AuthCard 480x592 from 950x850 native viewport at 2x",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "personal_account_data": false,
+      "real_hardware_measurement": false,
+      "real_network_or_payment_operation": false,
+      "capture_method_id": "native_imgui_cpu_original"
+    },
+    {
+      "file": "guide-recovery-verified-password-ko.png",
+      "sha256": "ea40dcbbee7947b636a93a81934d76c51107762499ff2b7af99134cb6667da35",
+      "pixels": [
+        960,
+        1152
+      ],
+      "language": "ko",
+      "source_group": "auth",
+      "render_entrypoint": "LegacyImguiAuthView::Render",
+      "state_ko": "로그인 아이디의 등록 이메일로 보낸 인증번호를 확인한 뒤 앱에서 새 비밀번호를 설정하는 상태. 두 입력란은 비어 있습니다.",
+      "render_bounds": "AuthCard 480x576 from 950x850 native viewport at 2x",
+      "synthetic_state": true,
+      "visually_reviewed": true,
+      "personal_account_data": false,
+      "real_hardware_measurement": false,
+      "real_network_or_payment_operation": false,
+      "capture_method_id": "native_imgui_cpu_original"
+    },
+    {
       "file": "login-ko.png",
       "sha256": "ebe8a40844bfe5f2248d94924bd212ef401c5a3d7f2793d33fcfa581b2c4820b",
       "pixels": [
